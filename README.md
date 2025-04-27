@@ -92,7 +92,7 @@ Update-Database
 
 ## **🧑‍💻 Contributors**
 
-- **Nilesh Parmar - Developer**
+- **[Nilesh Parmar](https://github.com/Nileshpar835)** - Developer  
 
 
 
@@ -113,9 +113,12 @@ Update-Database
 ## **📷 Image Credits**
 (Screenshots and visuals were designed and captured for demonstration purposes.)
 
-- **Nilesh Parmar - Developer**
+- **[Nilesh Parmar](https://github.com/Nileshpar835)** - Developer  
 
-### **🙌 Thank You for Checking Out This Project!**
+
+---
+## **🙌 Thank You for Checking Out This Project!**
+
 - **Feel free to contribute by forking the repository, making improvements, and submitting pull requests.**
 - **If you like this project, don't forget to ⭐ star the repository!**
 
