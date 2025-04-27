@@ -1,0 +1,111 @@
+@model EventManagementSystem.Models.User
+
+@{
+    ViewData["Title"] = "Edit User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mb-6">
+    <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Edit User</h3>
+        <span class="text-base font-normal text-gray-500">Update user information</span>
+    </div>
+
+    <form asp-action="EditUser" method="post" enctype="multipart/form-data" class="space-y-6">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreatedAt" />
+        <input type="hidden" asp-for="LastLogin" />
+        <input type="hidden" asp-for="Password" />
+        <input type="hidden" asp-for="Role" />
+        
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="w-full md:w-1/2 space-y-6">
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">
+                        Profile Picture
+                    </label>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden bg-gray-200">
+                            @if (!string.IsNullOrEmpty(Model.ProfilePicture))
+                            {
+                                <img src="@Model.ProfilePicture" alt="@Model.Username" class="w-full h-full object-cover">
+                            }
+                            else
+                            {
+                                <div class="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500 text-xl font-semibold">
+                                    @Model.FirstName?.Substring(0, 1)@Model.LastName?.Substring(0, 1)
+                                </div>
+                            }
+                        </div>
+                        <div>
+                            <input type="file" name="profilePicture" id="profilePicture" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                            <p class="mt-1 text-sm text-gray-500">PNG, JPG or GIF (MAX. 2MB)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium text-gray-900 mb-4">Basic Information</h4>
+                    
+                    <div class="grid gap-4 mb-4 grid-cols-1 sm:grid-cols-2">
+                        <div>
+                            <label asp-for="FirstName" class="block mb-2 text-sm font-medium text-gray-900">First Name</label>
+                            <input asp-for="FirstName" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <span asp-validation-for="FirstName" class="text-red-500 text-xs"></span>
+                        </div>
+                        <div>
+                            <label asp-for="LastName" class="block mb-2 text-sm font-medium text-gray-900">Last Name</label>
+                            <input asp-for="LastName" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <span asp-validation-for="LastName" class="text-red-500 text-xs"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 space-y-6">
+                <div>
+                    <h4 class="text-lg font-medium text-gray-900 mb-4">Contact Information</h4>
+                    <div class="mb-4">
+                        <label asp-for="Email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <input asp-for="Email" type="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <span asp-validation-for="Email" class="text-red-500 text-xs"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label asp-for="PhoneNumber" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                        <input asp-for="PhoneNumber" type="tel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <span asp-validation-for="PhoneNumber" class="text-red-500 text-xs"></span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium text-gray-900 mb-4">Account Information</h4>
+                    
+                    <div class="mb-4">
+                        <label asp-for="Username" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
+                        <input asp-for="Username" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <span asp-validation-for="Username" class="text-red-500 text-xs"></span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900">User Role</label>
+                        <div class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2.5">
+                            @Model.Role
+                        </div>
+                        <p class="mt-1 text-xs text-gray-500">Role Can't be change</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-end space-x-4">
+            <a asp-action="ManageUsers" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+                Cancel
+            </a>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+                Save Changes
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

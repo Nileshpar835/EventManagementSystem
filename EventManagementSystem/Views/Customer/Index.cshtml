@@ -1,0 +1,319 @@
+﻿@model EventManagementSystem.Models.Customer
+
+@{
+    ViewData["Title"] = "Customer Dashboard";
+    Layout = "_CustomerLayout";
+}
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                    <i class="fas fa-calendar-check text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 truncate">
+                            Your Bookings
+                        </dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900">
+                                @Model.BookingsCount
+                            </div>
+                            
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="p-5">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                    <i class="fas fa-star text-white text-xl"></i>
+                </div>
+                <div class="ml-5 w-0 flex-1">
+                    <dl>
+                        <dt class="text-sm font-medium text-gray-500 truncate">
+                            Reviews Given
+                        </dt>
+                        <dd class="flex items-baseline">
+                            <div class="text-2xl font-semibold text-gray-900">
+                                @Model.ReviewsCount
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <div class="mb-8 flex justify-center">
+    <a href="/Venues/Browse" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-300">
+        <i class="fas fa-search mr-2"></i>
+        Browse Venues
+    </a>
+</div> *@
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+    <div class="lg:col-span-2 bg-white shadow rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200 flex justify-between items-center">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Upcoming Bookings
+            </h3>
+            <a href="@Url.Action("Bookings", "Customer")" class="text-sm text-primary-600 hover:text-primary-800">
+                View All
+            </a>
+        </div>
+        <div class="px-4 py-5 sm:p-6">
+            @if (Model.UpcomingBookings != null && Model.UpcomingBookings.Any())
+            {
+                <div class="space-y-4">
+                    @foreach (var booking in Model.UpcomingBookings)
+                    {
+                        <div class="bg-gray-50 p-4 rounded-lg flex flex-col md:flex-row md:items-center hover:bg-gray-100 transition-colors duration-150">
+                            <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-4">
+                                <div class="h-16 w-16 bg-primary-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-lg font-bold text-primary-700">
+                                        @booking.Date.ToString("dd")
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-base font-medium text-gray-900">
+                                    @booking.VenueName
+                                </h4>
+                                <div class="mt-1 text-sm text-gray-500 flex flex-wrap">
+                                    <div class="mr-3 flex items-center">
+                                        <i class="fas fa-calendar mr-1"></i>
+                                        @booking.Date.ToString("MMM dd, yyyy")
+                                    </div>
+                                    <div class="mr-3 flex items-center">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        @booking.StartTime - @booking.EndTime
+                                    </div>
+                                    <div class="mr-3 flex items-center">
+                                        <i class="fas fa-users mr-1"></i>
+                                        @booking.GuestCount Guests
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex-shrink-0 flex">
+                                <span class="px-2 py-1 text-xs rounded-full @(booking.Status == "Confirmed" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800")">
+                                    @booking.Status
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-10">
+                    <i class="fas fa-calendar-times text-4xl text-gray-400 mb-3"></i>
+                    <p class="text-gray-500">No upcoming bookings found.</p>
+                    <a href="/Venues/Browse" class="mt-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Browse Venues
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="bg-white shadow rounded-lg overflow-hidden">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center">
+                    <i class="fas fa-user-circle text-primary-500 mr-2"></i>
+                    Your Profile
+                </h3>
+                <a href="/Customer/Profile" class="text-sm text-primary-600 hover:text-primary-800">
+                    <i class="fas fa-edit mr-1"></i>Edit
+                </a>
+            </div>
+        </div>
+        <div class="px-4 py-5 sm:p-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                <div class="flex-shrink-0">
+                    <div class="relative">
+                        <img class="h-24 w-24 rounded-full ring-4 ring-white object-cover shadow-lg" 
+                             src="@Model.ProfilePictureUrl" 
+                             alt="Profile picture">
+                        <span class="absolute bottom-0 right-0 h-5 w-5 rounded-full bg-green-400 border-2 border-white"></span>
+                    </div>
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h4 class="text-xl font-semibold text-gray-900">
+                        @Model.FirstName @Model.LastName
+                    </h4>
+                    <p class="text-sm text-gray-500">
+                        <i class="fas fa-envelope mr-1"></i>@Model.Email
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        <i class="fas fa-clock mr-1"></i>Member since @Model.MemberSince.ToString("MMMM yyyy")
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center space-x-2 text-sm font-medium text-gray-500 mb-2">
+                        <i class="fas fa-phone"></i>
+                        <span>Contact Information</span>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-sm">
+                            <span class="text-gray-500">Phone:</span>
+                            <span class="text-gray-900 ml-2">@(string.IsNullOrEmpty(Model.Phone) ? "Not provided" : Model.Phone)</span>
+                        </p>
+                        <p class="text-sm">
+                            <span class="text-gray-500">Address:</span>
+                            <span class="text-gray-900 ml-2">@(string.IsNullOrEmpty(Model.Address) ? "Not provided" : Model.Address)</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <div class="flex items-center space-x-2 text-sm font-medium text-gray-500 mb-2">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Event Preferences</span>
+                    </div>
+                    <div>
+                        @if (Model.PreferredEventTypes != null && Model.PreferredEventTypes.Any())
+                        {
+                            <div class="flex flex-wrap gap-2">
+                                @foreach (var eventType in Model.PreferredEventTypes)
+                                {
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                        @eventType
+                                    </span>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <p class="text-sm text-gray-500">
+                                <i class="fas fa-info-circle mr-1"></i>No event preferences set
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="bg-primary-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-semibold text-primary-600">@Model.BookingsCount</div>
+                    <div class="text-xs text-gray-500">Total Bookings</div>
+                </div>
+                <div class="bg-yellow-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-semibold text-yellow-600">@Model.ReviewsCount</div>
+                    <div class="text-xs text-gray-500">Reviews Given</div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <a href="/Customer/Profile" 
+                   class="w-full flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200">
+                    <i class="fas fa-user-edit mr-2"></i>
+                    Edit Your Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-white shadow rounded-lg overflow-hidden">
+    <div class="px-6 py-5 border-b border-gray-200 flex justify-between items-center">
+        <div>
+            <h3 class="text-xl font-semibold text-gray-900 flex items-center">
+                <i class="fas fa-star text-yellow-400 mr-2"></i>
+                Recommended Venues
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">Personalized suggestions based on your preferences</p>
+        </div>
+        <a href="/Venues/Browse" class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 hover:text-primary-800 hover:bg-primary-50 rounded-lg transition-all duration-200">
+            <span>View All</span>
+            <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+    <div class="p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @if (Model.RecommendedVenues != null && Model.RecommendedVenues.Any())
+            {
+                @foreach (var venue in Model.RecommendedVenues)
+                {
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col">
+                        <div class="relative h-48">
+                            <img src="@venue.ImageUrl" alt="@venue.Name" class="w-full h-full object-cover">
+                            @if (venue.IsFeatured)
+                            {
+                                <div class="absolute top-3 right-3 bg-primary-500 text-white text-xs px-2.5 py-1 rounded-full font-medium flex items-center">
+                                    <i class="fas fa-crown text-yellow-300 mr-1"></i>
+                                    Featured
+                                </div>
+                            }
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                                <h4 class="text-lg font-semibold text-white truncate">@venue.Name</h4>
+                                <p class="text-sm text-gray-200 mt-1 flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    @venue.Location
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-4 flex-grow">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center">
+                                    <div class="flex items-center bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
+                                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                        <span class="font-medium">@venue.Rating.ToString("0.0")</span>
+                                    </div>
+                                    <div class="mx-2 h-4 w-px bg-gray-300"></div>
+                                    <div class="text-gray-600 font-medium">
+                                        ₹@venue.PricePerHour<span class="text-gray-400 text-sm">/hr</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                @foreach (var type in venue.VenueTypesList.Take(3))
+                                {
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
+                                        @type
+                                    </span>
+                                }
+                            </div>
+                            <a href="/Venues/Details/@venue.Id" 
+                               class="w-full inline-flex justify-center items-center px-4 py-2 text-sm font-medium rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors duration-200">
+                                View Details
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-span-2 bg-gray-50 rounded-xl p-8 text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                        <i class="fas fa-building text-3xl text-gray-400"></i>
+                    </div>
+                    <h4 class="text-lg font-medium text-gray-900 mb-2">No Recommendations Yet</h4>
+                    <p class="text-gray-500 mb-4">We'll show personalized venue recommendations based on your preferences and booking history.</p>
+                    <a href="/Venues/Browse" 
+                       class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-primary-600 hover:bg-primary-700 text-white transition-colors duration-200">
+                        Browse All Venues
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+} 

@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EventSpot</title>
+    <script type="importmap"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': { 
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('/images/hero-bg.jpg')",
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .btn-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-ripple:after {
+            content: "";
+            background: rgba(255, 255, 255, 0.3);
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+            transition: all 0.5s;
+            transform: scale(0);
+        }
+        
+        .btn-ripple:active:after {
+            transform: scale(3);
+            opacity: 0;
+            transition: 0s;
+        }
+        
+        .dark .testi-card {
+            background-color: rgba(31, 41, 55, 0.8);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0369a1;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #374151;
+        }
+
+        .dark {
+            color-scheme: dark;
+        }
+    </style>
+</head>
+<body class="font-[Inter] antialiased min-h-screen bg-gray-50 text-gray-800 transition-colors duration-300 ease-in-out dark:bg-gray-900 dark:text-gray-100">
+    <header class="fixed w-full z-50 transition-all duration-300">
+        <nav class="backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-primary-600 dark:text-primary-400 font-bold text-xl flex items-center">
+                                <span class="mr-2"><i class="fas fa-calendar-alt"></i></span>
+                                EventSpot
+                            </a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="border-primary-500 text-gray-900 dark:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Home
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="venues" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Venues
+                            </a>
+                           
+                            <a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="testimonials" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Reviews
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="About" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                About
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                       
+
+                        <div class="ml-4 flex items-center space-x-3">
+                            <partial name="_LoginPartial" />
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="pt-16">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-white dark:bg-gray-900 border-t dark:border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1">
+                    <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">EventSpot</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Find and book the perfect venue for any occasion.</p>
+                    <p class="text-gray-600 dark:text-gray-400">&copy; 2025 - EventSpot</p>
+                </div>
+                <div class="col-span-1">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="venues" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out">
+                                Venues
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-base text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out">
+                                Privacy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Contact Us</h3>
+                    <address class="mt-4 not-italic text-gray-600 dark:text-gray-400 space-y-2">
+                        <p>Uka tarsadia university</p>
+                        <p>maliba campus,surat</p>
+                        <p class="flex items-center"><i class="fas fa-phone w-5 text-primary-500 dark:text-primary-400"></i>8080080000</p>
+                        <p class="flex items-center"><i class="fas fa-envelope w-5 text-primary-500 dark:text-primary-400"></i> <a href="mailto:noreplymobileotp.shop@gmail.com" class="hover:text-primary-500 dark:hover:text-primary-400">noreplymobileotp.shop@gmail.com</a></p>
+                    </address>
+                </div>
+                <div class="col-span-1">
+                    <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Follow Us</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out transform hover:scale-110">
+                            <span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out transform hover:scale-110">
+                            <span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out transform hover:scale-110">
+                            <span class="sr-only">Instagram</span>
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-150 ease-in-out transform hover:scale-110">
+                            <span class="sr-only">LinkedIn</span>
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

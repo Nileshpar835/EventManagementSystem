@@ -1,0 +1,432 @@
+@model IEnumerable<EventManagementSystem.Models.Booking>
+
+@{
+    ViewData["Title"] = "My Bookings";
+    Layout = "_CustomerLayout";
+}
+
+<div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+            <span class="text-primary-600">My Bookings</span> 
+        </h1>
+        <a href="/Venues/Browse" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 transition duration-150 ease-in-out">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            Book New Venue
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="bg-green-50 border border-green-200 text-green-800 rounded-lg p-4 mb-6 flex items-center" role="alert">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>@TempData["SuccessMessage"]</span>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 text-green-500 hover:text-green-600 focus:ring-2 focus:ring-green-400 p-1.5 rounded-lg inline-flex h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-6 flex items-center" role="alert">
+            <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+            </svg>
+            <span>@TempData["ErrorMessage"]</span>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 text-red-500 hover:text-red-600 focus:ring-2 focus:ring-red-400 p-1.5 rounded-lg inline-flex h-8 w-8" data-dismiss-target="#alert-3" aria-label="Close">
+                <span class="sr-only">Close</span>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    }
+    <div class="bg-white rounded-lg shadow-sm p-4 mb-6 border border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center space-x-4">
+                <button type="button" class="px-4 py-2 rounded-md bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-all filter-btn" data-filter="all">
+                    All Bookings
+                </button>
+                <button type="button" class="px-4 py-2 rounded-md bg-white text-gray-700 font-medium text-sm hover:bg-gray-100 transition-all filter-btn" data-filter="upcoming">
+                    Upcoming
+                </button>
+                <button type="button" class="px-4 py-2 rounded-md bg-white text-gray-700 font-medium text-sm hover:bg-gray-100 transition-all filter-btn" data-filter="past">
+                    Past
+                </button>
+                <button type="button" class="px-4 py-2 rounded-md bg-white text-gray-700 font-medium text-sm hover:bg-gray-100 transition-all filter-btn" data-filter="cancelled">
+                    Cancelled
+                </button>
+            </div>
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Search bookings..." class="w-full sm:w-60 px-4 py-2 border rounded-md focus:ring-primary-500 focus:border-primary-500">
+                <svg class="w-5 h-5 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="space-y-6" id="bookingsList">
+        @if (Model.Any())
+        {
+            foreach (var booking in Model)
+            {
+                <div class="booking-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-300" 
+                     data-status="@booking.Status.ToLower()"
+                     data-date="@booking.BookingDate.ToString("yyyy-MM-dd")">
+                    <div class="md:flex">
+                        <div class="md:w-1/4 h-48 md:h-auto relative">
+                            @if (booking.Venue?.ImageUrl != null)
+                            {
+                                <img src="@booking.Venue.ImageUrl" alt="@booking.Venue?.Name" class="h-full w-full object-cover">
+                            }
+                            else
+                            {
+                                <div class="h-full w-full bg-gray-300 flex items-center justify-center">
+                                    <svg class="h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                    </svg>
+                                </div>
+                            }
+                            <div class="absolute top-2 left-2">
+                                @{
+                                    string statusClass = booking.Status switch
+                                    {
+                                        "Confirmed" => "bg-green-100 text-green-800",
+                                        "Pending" => "bg-yellow-100 text-yellow-800",
+                                        "Completed" => "bg-blue-100 text-blue-800",
+                                        "Cancelled" => "bg-red-100 text-red-800",
+                                        _ => "bg-gray-100 text-gray-800"
+                                    };
+                                }
+                                <span class="px-2 py-1 text-xs font-medium rounded-full @statusClass">
+                                    @booking.Status
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 md:w-3/4 flex flex-col h-full">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">
+                                        @booking.EventTitle
+                                    </h3>
+                                    <p class="text-gray-600 mt-1">
+                                        <span class="font-medium">Venue:</span> @(booking.Venue?.Name ?? "Unknown Venue")
+                                    </p>
+                                </div>
+                                <div class="mt-2 md:mt-0 flex items-center text-gray-600">
+                                    <span class="text-sm">Booking ID: </span>
+                                    <span class="ml-1 text-sm font-mono bg-gray-100 px-2 py-1 rounded">@booking.BookingReference</span>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Date</p>
+                                        <p class="font-medium text-gray-900">@booking.BookingDate.ToString("MMM dd, yyyy")</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Time</p>
+                                        <p class="font-medium text-gray-900">
+                                            @booking.StartTime - @booking.EndTime
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-xs text-gray-500">Guests</p>
+                                        <p class="font-medium text-gray-900">@booking.GuestCount people</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <p class="text-xs uppercase font-medium text-gray-500">Event Type</p>
+                                    <p class="text-gray-700">@booking.EventType</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase font-medium text-gray-500">Payment Status</p>
+                                    <p class="@(booking.PaymentStatus == "Paid" ? "text-green-600" : "text-yellow-600")">
+                                        @booking.PaymentStatus
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-xs uppercase font-medium text-gray-500">Address</p>
+                                <p class="text-gray-700 flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    @(booking.Venue?.Address ?? "Address not available")
+                                </p>
+                            </div>
+                            <div class="mt-4">
+                                <div class="flex justify-between items-center text-sm text-gray-700">
+                                    <span>Venue Rental</span>
+                                    <span>₹@(booking.TotalPrice - booking.ServiceFee - booking.CleaningFee)</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm text-gray-700 mt-1">
+                                    <span>Service Fee</span>
+                                    <span>₹@booking.ServiceFee</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm text-gray-700 mt-1">
+                                    <span>Cleaning Fee</span>
+                                    <span>₹@booking.CleaningFee</span>
+                                </div>
+                                
+                                <div class="flex justify-between items-center font-medium text-gray-900 mt-2 pt-2 border-t border-gray-200">
+                                    <span>Total</span>
+                                    <span>₹@booking.TotalPrice</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex flex-wrap gap-3 justify-end">
+                                <a href="@Url.Action("Details", "Bookings", new { id = booking.Id })" class="px-3 py-2 text-sm font-medium rounded-md text-primary-700 bg-primary-50 hover:bg-primary-100 transition-colors duration-200">
+                                    View Details
+                                </a>
+                                
+                                @if (booking.Status == "Pending" || booking.Status == "Confirmed")
+                                {
+                                    if (booking.BookingDate > DateTime.Now)
+                                    {
+                                        <form asp-action="CancelBooking" asp-route-id="@booking.Id" method="post" onsubmit="return confirm('Are you sure you want to cancel this booking? This action cannot be undone.');">
+                                            <button type="submit" class="px-3 py-2 text-sm font-medium rounded-md text-red-700 bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                                Cancel Booking
+                                            </button>
+                                        </form>
+                                    }
+                                }
+                                
+                                @if (booking.Status == "Completed")
+                                {
+                                    <button type="button" 
+                                            onclick="openReviewModal(@booking.VenueId, '@booking.Venue?.Name')"
+                                            class="px-3 py-2 text-sm font-medium rounded-md text-yellow-700 bg-yellow-50 hover:bg-yellow-100 transition-colors duration-200">
+                                        Write Review
+                                    </button>
+                                }
+                                
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="bg-white rounded-lg overflow-hidden shadow p-8 text-center border border-gray-200">
+                <div class="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">No Bookings Found</h3>
+                <p class="text-gray-500 mb-6">You haven't made any bookings yet.</p>
+                <a href="/Venues/Browse" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 transition duration-150 ease-in-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    Browse Venues
+                </a>
+            </div>
+        }
+    </div>
+</div>
+<div id="reviewModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden" style="z-index: 50;">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3">
+            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modalVenueName">
+                Write a Review
+            </h3>
+            <form id="reviewForm" class="mt-4">
+                <input type="hidden" id="venueId" name="venueId" />
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Rating
+                    </label>
+                    <div class="flex items-center space-x-2">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <input type="radio" id="modalStar@(i)" name="rating" value="@i" class="hidden peer" required>
+                            <label for="modalStar@(i)" class="cursor-pointer text-2xl text-gray-300 peer-checked:text-yellow-400 hover:text-yellow-400 transition-colors duration-200">
+                                ★
+                            </label>
+                        }
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="comment" class="block text-sm font-medium text-gray-700 mb-2">
+                        Your Review
+                    </label>
+                    <textarea id="comment" name="comment" rows="4" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                        placeholder="Share your experience with this venue..."></textarea>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="closeReviewModal()"
+                        class="px-3 py-2 text-sm font-medium rounded-md text-gray-700 bg-white border border-gray-300 hover:bg-gray-50">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="px-3 py-2 text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const bookingCards = document.querySelectorAll('.booking-card');
+            const searchInput = document.getElementById('searchInput');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary-600', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700');
+                    });
+                    this.classList.remove('bg-white', 'text-gray-700');
+                    this.classList.add('bg-primary-600', 'text-white');
+
+                    bookingCards.forEach(card => {
+                        const status = card.dataset.status;
+                        const date = new Date(card.dataset.date);
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        let show = true;
+                        switch (filter) {
+                            case 'upcoming':
+                                show = status === 'confirmed' && date >= today;
+                                break;
+                            case 'past':
+                                show = date < today;
+                                break;
+                            case 'cancelled':
+                                show = status === 'cancelled';
+                                break;
+                            default: // 'all'
+                                show = true;
+                        }
+
+                        card.style.display = show ? 'block' : 'none';
+                    });
+                });
+            });
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                bookingCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+                });
+            });
+        });
+
+        function openReviewModal(venueId, venueName) {
+            document.getElementById('venueId').value = venueId;
+            document.getElementById('modalVenueName').textContent = `Write a Review for ${venueName}`;
+            document.getElementById('reviewModal').classList.remove('hidden');
+        }
+
+        function closeReviewModal() {
+            document.getElementById('reviewModal').classList.add('hidden');
+            document.getElementById('reviewForm').reset();
+        }
+
+        document.querySelectorAll('label[for^="modalStar"]').forEach(label => {
+            label.addEventListener('mouseover', function() {
+                const rating = this.getAttribute('for').replace('modalStar', '');
+                for (let i = 1; i <= 5; i++) {
+                    const star = document.querySelector(`label[for="modalStar${i}"]`);
+                    if (i <= rating) {
+                        star.classList.add('text-yellow-400');
+                    } else {
+                        star.classList.remove('text-yellow-400');
+                    }
+                }
+            });
+            
+            label.addEventListener('mouseout', function() {
+                document.querySelectorAll('label[for^="modalStar"]').forEach(star => {
+                    if (!document.querySelector(`#${star.getAttribute('for')}`).checked) {
+                        star.classList.remove('text-yellow-400');
+                    }
+                });
+            });
+        });
+
+        document.getElementById('reviewForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                venueId: parseInt(document.getElementById('venueId').value),
+                rating: parseInt(document.querySelector('input[name="rating"]:checked').value),
+                comment: document.getElementById('comment').value
+            };
+
+            try {
+                const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+                const response = await fetch('/Reviews/Create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': token,
+                        'X-CSRF-TOKEN': token
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    closeReviewModal();
+                    const successAlert = document.createElement('div');
+                    successAlert.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                    successAlert.textContent = 'Review submitted successfully!';
+                    document.body.appendChild(successAlert);
+                    setTimeout(() => successAlert.remove(), 3000);
+                    
+                    setTimeout(() => location.reload(), 1000);
+                } else {
+                    throw new Error(result.message || 'Failed to submit review');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                const errorAlert = document.createElement('div');
+                errorAlert.className = 'fixed bottom-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                errorAlert.textContent = error.message || 'Failed to submit review. Please try again.';
+                document.body.appendChild(errorAlert);
+                setTimeout(() => errorAlert.remove(), 3000);
+            }
+        });
+    </script>
+} 

@@ -1,0 +1,82 @@
+@model EventManagementSystem.Models.Booking
+
+<div class="space-y-4">
+    <div class="flex justify-between">
+        <div>
+            <h4 class="font-medium text-gray-900">Booking #@Model.Id</h4>
+            <p class="text-sm text-gray-500">Placed on @Model.CreatedAt.ToString("MMMM dd, yyyy")</p>
+        </div>
+        <span class="px-2 py-1 text-xs rounded-full @(Model.Status == "Confirmed" ? "bg-green-100 text-green-800" : 
+                                                Model.Status == "Pending" ? "bg-yellow-100 text-yellow-800" : 
+                                                Model.Status == "Cancelled" ? "bg-red-100 text-red-800" :
+                                                "bg-blue-100 text-blue-800")">
+            @Model.Status
+        </span>
+    </div>
+    
+    <div class="border-t border-gray-200 pt-4">
+        <h5 class="text-sm font-medium text-gray-900 mb-2">Customer Information</h5>
+        <p class="text-sm text-gray-800">@Model.CustomerName</p>
+        <p class="text-sm text-gray-500">@Model.CustomerEmail</p>
+        <p class="text-sm text-gray-500">@Model.CustomerPhone</p>
+    </div>
+    
+    <div class="border-t border-gray-200 pt-4">
+        <h5 class="text-sm font-medium text-gray-900 mb-2">Event Details</h5>
+        <p class="text-sm text-gray-800">@Model.EventTitle</p>
+        <p class="text-sm text-gray-500">@Model.GuestCount Guests</p>
+        <p class="text-sm text-gray-500">@Model.Date.ToString("MMMM dd, yyyy") • @Model.StartTime - @Model.EndTime</p>
+    </div>
+    
+    @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+    {
+        <div class="border-t border-gray-200 pt-4">
+            <h5 class="text-sm font-medium text-gray-900 mb-2">Special Requests</h5>
+            <p class="text-sm text-gray-500">@Model.SpecialRequests</p>
+        </div>
+    }
+    
+    <div class="border-t border-gray-200 pt-4">
+        <h5 class="text-sm font-medium text-gray-900 mb-2">Payment Information</h5>
+        <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Venue Fee:</span>
+            <span class="text-gray-900">₹@(Model.TotalPrice - Model.ServiceFee - Model.CleaningFee)</span>
+        </div>
+        <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Service Fee:</span>
+            <span class="text-gray-900">₹@Model.ServiceFee</span>
+        </div>
+        <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Cleaning Fee:</span>
+            <span class="text-gray-900">₹@Model.CleaningFee</span>
+        </div>
+        <div class="flex justify-between font-medium mt-2 text-sm">
+            <span class="text-gray-900">Total:</span>
+            <span class="text-gray-900">₹@Model.TotalPrice</span>
+        </div>
+        <div class="flex justify-between text-sm mt-2">
+            <span class="text-gray-500">Payment Method:</span>
+            <span class="text-gray-900">@(Model.PaymentMethod ?? "Not specified")</span>
+        </div>
+        <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Payment Status:</span>
+            <span class="@(Model.PaymentStatus == "Paid" ? "text-green-600" : "text-yellow-600")">
+                @(Model.PaymentStatus ?? "Pending")
+            </span>
+        </div>
+    </div>
+    
+    @if (Model.Status == "Pending")
+    {
+        <div class="border-t border-gray-200 pt-4 flex space-x-2">
+            <a href="@Url.Action("ConfirmBooking", "Registrar", new { id = Model.Id })" class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                <i class="fas fa-check mr-1"></i>
+                Confirm
+            </a>
+            <a href="@Url.Action("CancelBooking", "Registrar", new { id = Model.Id })" class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                <i class="fas fa-times mr-1"></i>
+                Cancel
+            </a>
+        </div>
+    }
+</div> 

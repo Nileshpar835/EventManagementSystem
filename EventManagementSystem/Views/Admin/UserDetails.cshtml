@@ -1,0 +1,71 @@
+@model EventManagementSystem.Models.User
+
+@{
+    ViewData["Title"] = "User Details";
+    Layout = "_AdminLayout";
+}
+
+<div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 mb-6">
+    <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">User Details</h3>
+        <span class="text-base font-normal text-gray-500">View detailed information about the user</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-6">
+        <div class="w-full md:w-2/3 bg-gray-50 rounded-lg p-4">
+            <div class="flex items-center space-x-4 mb-4">
+                <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+                    @if (!string.IsNullOrEmpty(Model.ProfilePicture))
+                    {
+                        <img src="@Model.ProfilePicture" alt="@Model.Username" class="w-full h-full object-cover">
+                    }
+                    else
+                    {
+                        <div class="w-full h-full flex items-center justify-center bg-primary-100 text-primary-600 text-xl font-semibold">
+                            @Model.FirstName?.Substring(0, 1)@Model.LastName?.Substring(0, 1)
+                        </div>
+                    }
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-gray-900">@Model.FirstName @Model.LastName</h5>
+                    <p class="text-sm text-gray-500">@Model.Username | @Model.Email</p>
+                    
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="text-sm text-gray-500">Phone Number</p>
+                    <p class="text-sm font-medium text-gray-900">@(Model.PhoneNumber ?? "Not provided")</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Created On</p>
+                    <p class="text-sm font-medium text-gray-900">@Model.CreatedAt.ToString("MMM dd, yyyy")</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Last Login</p>
+                    <p class="text-sm font-medium text-gray-900">
+                        @(Model.LastLogin.HasValue ? Model.LastLogin.Value.ToString("MMM dd, yyyy") : "Never logged in")
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full md:w-1/3">
+            <div class="bg-gray-50 rounded-lg p-4">
+                <h4 class="text-lg font-medium text-gray-900 mb-4">Role Information</h4>
+                <span class="@(Model.Role == EventManagementSystem.Models.UserRole.Admin ? "bg-blue-100 text-blue-800" : Model.Role == EventManagementSystem.Models.UserRole.Registrar ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800") px-2 py-1 rounded-full text-xs font-medium">
+                    @Model.Role
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-6 flex items-center justify-end space-x-4">
+        <a asp-action="ManageUsers" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+            Back to Users
+        </a>
+        <a asp-action="EditUser" asp-route-id="@Model.Id" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+            Edit User
+        </a>
+    </div>
+</div> 

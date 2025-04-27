@@ -1,0 +1,284 @@
+﻿@model List<EventManagementSystem.Models.Venue>
+@{
+    ViewData["Title"] = "Welcome to EventSpot";
+    Layout = "_Layout";
+}
+
+<div class="relative bg-gradient-to-r from-blue-600 to-primary-600">
+    <div class="relative px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl py-20 sm:py-24 lg:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+                    <span class="block lg:inline">Find the Perfect Venue</span>
+                    <span class="block lg:inline">for Your Next Event</span>
+                </h1>
+                <p class="mx-auto mt-6 max-w-lg text-base text-blue-100 sm:text-lg md:mt-8 md:text-xl md:max-w-3xl">
+                    EventSpot offers a seamless experience for booking, managing, and organizing events across various venues. Find your ideal space in just a few clicks!
+                </p>
+                <div class="mt-8 sm:mt-12 flex justify-center gap-x-4">
+                    <a href="/Account/Register" class="inline-flex items-center rounded-md border border-transparent bg-white px-6 py-3 text-base font-medium text-primary-600 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600">
+                        Get Started
+                    </a>
+                    <a href="#how-it-works" class="inline-flex items-center rounded-md border border-transparent bg-primary-700 px-6 py-3 text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-600">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="venues" class="relative px-6 lg:px-8 py-12 bg-gray-50">
+    <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Browse Available Venues
+            </h2>
+            <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                Discover our selection of venues for your next event
+            </p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <form action="/Venues/Search" method="GET">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="md:col-span-4 lg:col-span-1">
+                        <label for="search" class="block text-sm font-medium text-gray-700">Search</label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                            <input type="text" name="query" id="search" class="focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="Search venues">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
+                        <select id="location" name="location" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
+                            <option value="">Any Location</option>
+                            @foreach (var location in ViewBag.Locations)
+                            {
+                                if (ViewBag.SelectedLocation == location)
+                                {
+                                    <option value="@location" selected>@location</option>
+                                }
+                                else
+                                {
+                                    <option value="@location">@location</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <label for="capacity" class="block text-sm font-medium text-gray-700">Guests</label>
+                        <select id="capacity" name="capacity" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
+                            <option value="">Any Size</option>
+                            <option value="50">1-50 guests</option>
+                            <option value="100">51-100 guests</option>
+                            <option value="200">101-200 guests</option>
+                            <option value="500">201-500 guests</option>
+                            <option value="501">500+ guests</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="priceRange" class="block text-sm font-medium text-gray-700">Price Range</label>
+                        <select id="priceRange" name="priceRange" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm rounded-md">
+                            <option value="">Any Price</option>
+                            <option value="low">Under ₹2000/hr</option>
+                            <option value="medium">₹2000-₹4000/hr</option>
+                            <option value="high">₹4000+/hr</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-4 mt-4">
+                        <button type="submit" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            <i class="fas fa-search mr-2"></i>
+                            Search Venues
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+                All Available Venues
+            </h3>
+            <p class="text-gray-500">
+                Showing all venues
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @if (Model == null || !Model.Any())
+            {
+                <div class="col-span-3 text-center py-12">
+                    <div class="text-gray-400">
+                        <i class="fas fa-building text-5xl mb-4"></i>
+                        <h3 class="text-xl font-medium">No Venues Available</h3>
+                        <p class="mt-2">There are currently no venues in our database. Please check back later.</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var venue in Model)
+                {
+                    <div class="bg-white rounded-lg shadow overflow-hidden flex flex-col">
+                        <div class="relative">
+                            <img class="h-48 w-full object-cover" src="@(string.IsNullOrEmpty(venue.ImageUrl) ? "/images/venues/default.jpg" : venue.ImageUrl)" alt="@venue.Name">
+                            @if (venue.IsFeatured)
+                            {
+                                <div class="absolute top-0 right-0 m-2">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                        Featured
+                                    </span>
+                                </div>
+                            }
+                        </div>
+                        <div class="p-4 flex-grow">
+                           
+                            <p class="mt-1 text-sm text-gray-500 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                @venue.Location
+                            </p>
+                            <p class="mt-2 text-sm text-gray-700">
+                                @(venue.Description?.Length > 100 ? venue.Description.Substring(0, 100) + "..." : venue.Description)
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                @foreach (var eventType in venue.AvailableEventTypesList.Take(3))
+                                {
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        @eventType
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary-600 font-medium">₹@venue.PricePerHour.ToString("0.00") / hour</span>
+                                <a href="/Venues/Details/@venue.Id" class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div class="mt-8 text-center">
+            <a href="/Venues/Browse" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                View All Venues
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="how-it-works" class="relative px-6 lg:px-8 py-16 bg-white">
+    <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                How It Works
+            </h2>
+            <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                Your event journey made simple in three easy steps
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100">
+                    <i class="fas fa-search text-3xl text-primary-600"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-medium text-gray-900">Find Your Venue</h3>
+                <p class="mt-2 text-base text-gray-500">
+                    Search through our extensive collection of venues. Filter by location, capacity, price range, and more to find the perfect match for your event.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100">
+                    <i class="fas fa-calendar-check text-3xl text-primary-600"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-medium text-gray-900">Book & Confirm</h3>
+                <p class="mt-2 text-base text-gray-500">
+                    Choose your date and time, then book directly through our platform. Get instant confirmation and communicate with venue owners for any special requirements.
+                </p>
+            </div>
+            <div class="text-center">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100">
+                    <i class="fas fa-glass-cheers text-3xl text-primary-600"></i>
+                </div>
+                <h3 class="mt-6 text-xl font-medium text-gray-900">Enjoy Your Event</h3>
+                <p class="mt-2 text-base text-gray-500">
+                    Focus on creating memorable experiences while we handle the logistics. After your event, share your experience by leaving a review.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="testimonials" class="relative px-6 lg:px-8 py-16 bg-gray-50">
+    <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                What Our Customers Say
+            </h2>
+            <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+                Read about experiences from our satisfied customers
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @foreach (var review in ViewBag.LatestReviews)
+            {
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img class="h-12 w-12 rounded-full object-cover" 
+                             src="@(string.IsNullOrEmpty(review.UserImage) ? "/images/default-profile.jpg" : $"{review.UserImage.TrimStart('/')}")" 
+                             alt="@review.UserName">
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">@review.UserName</h4>
+                            <div class="flex items-center">
+                                @for (var i = 0; i < 5; i++)
+                                {
+                                    if (i < review.Rating)
+                                    {
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    }
+                                    else
+                                    {
+                                        <i class="far fa-star text-yellow-400"></i>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "@review.Comment"
+                    </p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <a href="/Venues/Details/@review.VenueId" class="hover:text-primary-600">@review.Venue.Name</a>
+                        <span class="mx-2">•</span>
+                        <span>@review.Date.ToString("MMM dd, yyyy")</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="relative px-6 lg:px-8 py-16 bg-primary-700">
+    <div class="mx-auto max-w-7xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Ready to Host or Find the Perfect Venue?
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-100">
+            Join thousands of users who have successfully booked or listed venues on our platform
+        </p>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="mt-8 flex justify-center gap-x-4">
+                <a href="/Account/Register" class="inline-flex items-center rounded-md border border-transparent bg-white px-6 py-3 text-base font-medium text-primary-700 shadow-sm hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700">
+                    Sign Up Now
+                </a>
+                <a href="/Account/Login" class="inline-flex items-center rounded-md border border-white px-6 py-3 text-base font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700">
+                    Log In
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+}

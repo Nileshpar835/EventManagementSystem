@@ -1,0 +1,111 @@
+@model EventManagementSystem.Models.Venue
+@{
+    ViewData["Title"] = "Delete Venue";
+}
+
+<div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Delete Venue</h1>
+        <p class="text-gray-600 mt-2">Are you sure you want to delete this venue?</p>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-6">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/3">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/venues/default.jpg" : Model.ImageUrl)" alt="@Model.Name" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">@Model.Name</h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-700">Description</h3>
+                            <p class="text-gray-600">@Model.Description</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Location</h3>
+                                <p class="text-gray-600">@Model.Location</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Address</h3>
+                                <p class="text-gray-600">@Model.Address</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Capacity</h3>
+                                <p class="text-gray-600">@Model.Capacity people</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Size</h3>
+                                <p class="text-gray-600">@Model.Size sq ft</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Price</h3>
+                                <p class="text-gray-600">₹@Model.PricePerHour per hour</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="px-2 py-1 rounded-full text-xs font-medium @(Model.IsActive ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
+                                @(Model.IsActive ? "Active" : "Inactive")
+                            </div>
+                            
+                            @if (Model.IsFeatured)
+                            {
+                                <div class="px-2 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-medium">
+                                    Featured
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center mt-8 border-t pt-6">
+                <div class="flex-shrink-0 h-12 w-12 bg-gray-100 rounded-full overflow-hidden mr-4">
+                    <img src="@(string.IsNullOrEmpty(Model.HostImage) ? "/images/hosts/default.jpg" : Model.HostImage)" alt="@Model.HostName" class="h-full w-full object-cover">
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-gray-900">Managed by: @Model.HostName</p>
+                    <p class="text-sm text-gray-500">Created on: @Model.CreatedAt.ToString("MMMM dd, yyyy")</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t pt-6">
+                <div class="bg-red-50 border border-red-200 rounded-md p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-red-800">Warning</h3>
+                            <div class="mt-2 text-sm text-red-700">
+                                <p>This action cannot be undone. Deleting this venue will remove all associated data including bookings, reviews, and images.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form asp-action="DeleteVenueConfirmed" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="flex justify-end space-x-3">
+                        <a href="@Url.Action("ManageVenues", "Admin")" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Cancel</a>
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete Venue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 

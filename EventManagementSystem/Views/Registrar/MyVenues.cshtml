@@ -1,0 +1,260 @@
+﻿@model List<EventManagementSystem.Models.Venue>
+
+@{
+    ViewData["Title"] = "My Venues";
+    Layout = "_RegistrarLayout";
+}
+
+<div id="dynamic-content">
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">My Venues</h1>
+                <p class="mt-1 text-sm text-gray-500">Manage your registered venues</p>
+            </div>
+            <a href="#" data-controller="Registrar" data-action="AddVenue" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-300">
+                <i class="fas fa-plus mr-2"></i>
+                Add New Venue
+            </a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="md:col-span-2">
+                    <label for="search" class="sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input id="search" name="search" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500" placeholder="Search venues by name or location..." type="search">
+                    </div>
+                </div>
+                <div>
+                    <label for="status" class="sr-only">Status</label>
+                    <select id="status" name="status" class="block w-full border border-gray-300 rounded-md py-2 pl-3 pr-10 text-base focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-900">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sort" class="sr-only">Sort</label>
+                    <select id="sort" name="sort" class="block w-full border border-gray-300 rounded-md py-2 pl-3 pr-10 text-base focus:outline-none focus:ring-primary-500 focus:border-primary-500 bg-white text-gray-900">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="name_asc">Name (A-Z)</option>
+                        <option value="name_desc">Name (Z-A)</option>
+                        <option value="rating_high">Highest Rated</option>
+                        <option value="rating_low">Lowest Rated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+            @if (Model != null && Model.Any())
+            {
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Venue
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Location
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Price
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Rating
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Created
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach (var venue in Model)
+                            {
+                                <tr class="venue-row hover:bg-gray-50 transition-colors" 
+                                    data-name="@venue.Name.ToLower()"
+                                    data-location="@venue.Location.ToLower()"
+                                    data-status="@venue.Status.ToLower()"
+                                    data-rating="@venue.Rating"
+                                    data-created="@venue.CreatedAt.ToString("yyyy-MM-dd")">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-md object-cover" src="@venue.ImageUrl" alt="@venue.Name">
+                                            </div>
+                                            <div class="ml-4">
+                                                <a href="#" data-controller="Registrar" data-action="VenueDetails" data-venue-id="@venue.Id" class="text-sm font-medium text-gray-900 hover:text-primary-600">
+                                                    @venue.Name
+                                                </a>
+                                                <div class="text-xs text-gray-500">
+                                                    Capacity: @venue.Capacity
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">@venue.Location</div>
+                                        <div class="text-xs text-gray-500">@venue.Address</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">₹@venue.PricePerHour/hr</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="text-sm text-gray-900 mr-1">@venue.Rating</span>
+                                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                            <span class="text-xs text-gray-500 ml-1">(@venue.ReviewCount)</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full @(venue.Status == "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800")">
+                                            @venue.Status
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        @venue.CreatedAt.ToString("MMM dd, yyyy")
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2">
+                                        <a href="#" data-controller="Registrar" data-action="VenueDetails" data-venue-id="@venue.Id" class="text-primary-600 hover:text-primary-800">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="#" data-controller="Registrar" data-action="EditVenue" data-venue-id="@venue.Id" class="text-indigo-600 hover:text-indigo-800">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="#" data-controller="Registrar" data-action="DeleteVenue" data-venue-id="@venue.Id" class="text-red-600 hover:text-red-800">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="px-6 py-4 border-t border-gray-200">
+                    <nav class="flex items-center justify-between">
+                        <div class="flex-1 flex justify-between sm:hidden">
+                            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Previous
+                            </a>
+                            <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Next
+                            </a>
+                        </div>
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Showing
+                                    <span class="font-medium">1</span>
+                                    to
+                                    <span class="font-medium">@Model.Count</span>
+                                    of
+                                    <span class="font-medium">@Model.Count</span>
+                                    results
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Previous</span>
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                    <a href="#" aria-current="page" class="z-10 bg-primary-50 border-primary-500 text-primary-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        1
+                                    </a>
+                                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Next</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            }
+            else
+            {
+                <div class="py-12 text-center">
+                    <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-4xl text-gray-400"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">No venues found</h3>
+                    <p class="text-gray-500 mb-6">You haven't added any venues yet</p>
+                    <a href="#" data-controller="Registrar" data-action="AddVenue" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        <i class="fas fa-plus mr-2"></i>
+                        Add Your First Venue
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search');
+            const statusSelect = document.getElementById('status');
+            const sortSelect = document.getElementById('sort');
+            const venueRows = document.querySelectorAll('.venue-row');
+            const noVenuesMessage = document.querySelector('.no-venues-message');
+            if (searchInput) {
+                searchInput.addEventListener('input', filterAndSortVenues);
+            }
+            
+            if (statusSelect) {
+                statusSelect.addEventListener('change', filterAndSortVenues);
+            }
+            
+            if (sortSelect) {
+                sortSelect.addEventListener('change', filterAndSortVenues);
+            }
+            
+            function filterAndSortVenues() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const statusValue = statusSelect.value.toLowerCase();
+                const sortValue = sortSelect.value;
+                const filteredRows = Array.from(venueRows).filter(row => {
+                    const name = row.dataset.name;
+                    const location = row.dataset.location;
+                    const status = row.dataset.status;
+                    
+                    const matchesSearch = name.includes(searchTerm) || 
+                                        location.includes(searchTerm);
+                    const matchesStatus = statusValue === '' || status === statusValue;
+                    
+                    return matchesSearch && matchesStatus;
+                });
+                const sortedRows = filteredRows.sort((a, b) => {
+                    switch(sortValue) {
+                        case 'name_asc':
+                            return a.dataset.name.localeCompare(b.dataset.name);
+                        case 'name_desc':
+                            return b.dataset.name.localeCompare(a.dataset.name);
+                        case 'rating_high':
+                            return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+                        case 'rating_low':
+                            return parseFloat(a.dataset.rating) - parseFloat(b.dataset.rating);
+                        case 'newest':
+                            return new Date(b.dataset.created) - new Date(a.dataset.created);
+                        case 'oldest':
+                            return new Date(a.dataset.created) - new Date(b.dataset.created);
+                    }
+                });
+                const tbody = document.querySelector('tbody');
+                tbody.innerHTML = '';
+                sortedRows.forEach(row => tbody.appendChild(row));
+            }
+        });
+    </script>
+}
+</div>

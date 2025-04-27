@@ -1,0 +1,197 @@
+﻿@model List<EventManagementSystem.Models.Venue>
+@{
+    ViewData["Title"] = "Manage Venues";
+    Layout = "_AdminLayout";
+}
+
+@* <div class="flex justify-between items-center mb-6"> *@
+@*     <h1 class="text-2xl font-semibold text-gray-800">Venue Management</h1> *@
+@*     <a href="@Url.Action("CreateVenue", "Admin")" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200"> *@
+@*         <i class="fas fa-plus mr-2"></i> Add New Venue *@
+@*     </a> *@
+@* </div> *@
+
+<div class="mb-4 flex space-x-4">
+    <div class="flex-1">
+        <input type="text" id="searchInput" placeholder="Search venues..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+    </div>
+    <select id="statusFilter" class="px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+        <option value="">All Status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+    </select>
+    <select id="typeFilter" class="px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
+        <option value="">All Types</option>
+        @foreach (var type in Model?.SelectMany(v => v.VenueTypesList).Distinct() ?? new List<string>())
+        {
+            <option value="@type.ToLower()">@type</option>
+        }
+    </select>
+</div>
+
+<div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Hour</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Owner</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="venuesTableBody">
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var venue in Model)
+                    {
+                        <tr class="venue-row hover:bg-gray-50 transition-colors duration-150" 
+                            data-name="@venue.Name.ToLower()"
+                            data-type="@(venue.VenueTypesList.FirstOrDefault()?.ToLower() ?? "")"
+                            data-status="@(venue.IsActive ? "active" : "inactive")">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-12 w-12 rounded-md overflow-hidden bg-gray-100">
+                                    <img class="h-12 w-12 object-cover" src="@(string.IsNullOrEmpty(venue.ImageUrl) ? "/images/venues/default.jpg" : venue.ImageUrl)" alt="@venue.Name">
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm font-medium text-gray-900">@venue.Name</div>
+                                <div class="text-xs text-gray-500">@string.Join(", ", venue.VenueTypesList)</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">
+                                    <span class="inline-flex items-center">
+                                        <i class="fas fa-map-marker-alt mr-1 text-red-500"></i> @venue.Location
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-500">
+                                    <span class="inline-flex items-center">
+                                        <i class="fas fa-users mr-1 text-blue-500"></i> @venue.Capacity
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="text-sm text-gray-900 font-medium">₹@venue.PricePerHour.ToString("F2")</div>
+                                @if (venue.CleaningFee > 0)
+                                {
+                                    <div class="text-xs text-gray-500">+₹@venue.CleaningFee cleaning fee</div>
+                                }
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                @if (venue.IsActive)
+                                {
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        <i class="fas fa-check-circle mr-1"></i> Active
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        <i class="fas fa-times-circle mr-1"></i> Inactive
+                                    </span>
+                                }
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-8 w-8">
+                                        <img class="h-8 w-8 rounded-full object-cover" src="@(string.IsNullOrEmpty(venue.HostImage) ? "/images/hosts/default.jpg" : venue.HostImage)" alt="@venue.HostName">
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="text-sm font-medium text-gray-900">@venue.HostName</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <div class="flex space-x-3">
+                                    <a href="@Url.Action("EditVenue", "Admin", new { id = venue.Id })" class="text-primary-600 hover:text-primary-900 transition-colors duration-150" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="@Url.Action("DeleteVenue", "Admin", new { id = venue.Id })" class="text-red-600 hover:text-red-900 transition-colors duration-150" title="Delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                    <a href="@Url.Action("VenueDetails", "Admin", new { id = venue.Id })" class="text-blue-600 hover:text-blue-900 transition-colors duration-150" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="px-6 py-12 whitespace-nowrap text-center">
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-building text-4xl text-gray-400"></i>
+                                </div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-2">No venues found</h3>
+                                <p class="text-gray-500 mb-6">There are no venues in the system yet.</p>
+                                @* <a href="@Url.Action("CreateVenue", "Admin")" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200"> *@
+                                @*     <i class="fas fa-plus mr-2"></i> *@
+                                @*     Add New Venue *@
+                                @* </a> *@
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="bg-gray-50 px-4 py-3 flex items-center justify-between sm:px-6">
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-sm text-gray-700">
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">@Model.Count</span> of <span class="font-medium">@Model.Count</span> venues
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const statusFilter = document.getElementById('statusFilter');
+        const typeFilter = document.getElementById('typeFilter');
+        const venueRows = document.querySelectorAll('.venue-row');
+
+        function filterVenues() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const statusValue = statusFilter.value.toLowerCase();
+            const typeValue = typeFilter.value.toLowerCase();
+
+            venueRows.forEach(row => {
+                const name = row.getAttribute('data-name');
+                const type = row.getAttribute('data-type');
+                const status = row.getAttribute('data-status');
+                
+                const matchesSearch = name.includes(searchTerm);
+                const matchesStatus = !statusValue || status === statusValue;
+                const matchesType = !typeValue || type === typeValue;
+
+                row.style.display = matchesSearch && matchesStatus && matchesType ? '' : 'none';
+            });
+
+            const visibleRows = document.querySelectorAll('.venue-row[style=""]').length;
+            const noVenuesRow = document.querySelector('tr:not(.venue-row)');
+            if (noVenuesRow) {
+                noVenuesRow.style.display = visibleRows === 0 ? '' : 'none';
+            }
+        }
+
+        searchInput.addEventListener('input', filterVenues);
+        statusFilter.addEventListener('change', filterVenues);
+        typeFilter.addEventListener('change', filterVenues);
+    });
+</script> 

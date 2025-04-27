@@ -1,0 +1,470 @@
+@model EventManagementSystem.Models.ViewModels.ProfileUpdateViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "_CustomerLayout";
+    
+    var firstName = ViewData["UserFirstName"]?.ToString() ?? "";
+    var lastName = ViewData["UserLastName"]?.ToString() ?? "";
+    var email = ViewData["UserEmail"]?.ToString() ?? "";
+    var profilePictureUrl = ViewData["ProfilePictureUrl"]?.ToString();
+    var createdAt = ViewData["CreatedAt"] as DateTime? ?? DateTime.Now;
+}
+
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="mb-6">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2">
+                <li>
+                    <a href="@Url.Action("Index", "Customer")" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-home"></i>
+                        <span class="sr-only">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <span class="ml-2 text-gray-600">My Profile</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="mb-4 bg-green-100 border border-green-200 text-green-700 px-4 py-3 rounded relative">
+            <span class="block sm:inline">@TempData["SuccessMessage"]</span>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="mb-4 bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded relative">
+            <span class="block sm:inline">@TempData["ErrorMessage"]</span>
+        </div>
+    }
+
+    <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+        <div class="bg-gradient-to-r from-primary-600 to-indigo-600 h-32 md:h-48"></div>
+
+        <div class="relative px-4 sm:px-6 lg:px-8 pb-8">
+            <div class="flex justify-center">
+                <div class="relative -mt-16">
+                    <div class="relative">
+                        <img class="h-32 w-32 rounded-full ring-4 ring-white object-cover" 
+                            src="@profilePictureUrl" 
+                            alt="Profile picture">
+                        <form id="profile-picture-form" asp-action="UpdateProfilePicture" method="post" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="UserId" />
+                            <input type="hidden" asp-for="CustomerId" />
+                            <label for="ProfilePicture" class="absolute bottom-0 right-0 bg-primary-600 hover:bg-primary-700 transition-all duration-200 p-2 rounded-full cursor-pointer shadow-lg text-white">
+                                <i class="fas fa-camera"></i>
+                                <span class="sr-only">Upload profile picture</span>
+                                <input type="file" name="ProfilePicture" id="ProfilePicture" class="hidden" accept="image/*">
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <h2 class="text-2xl font-bold text-gray-900">@firstName @lastName</h2>
+                <p class="text-gray-600">@email</p>
+                <p class="text-gray-500 text-sm">Member since @createdAt.ToString("MMMM yyyy")</p>
+            </div>
+            <div class="mt-6 border-b border-gray-200">
+                <div class="flex justify-center sm:justify-start space-x-8">
+                    <button id="tab-profile" class="border-b-2 border-primary-600 px-1 py-4 text-sm font-medium text-primary-600 whitespace-nowrap">
+                        <i class="fas fa-user mr-2"></i>Profile Info
+                    </button>
+                    <button id="tab-security" class="border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
+                        <i class="fas fa-lock mr-2"></i>Security
+                    </button>
+                    <button id="tab-preferences" class="border-b-2 border-transparent px-1 py-4 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
+                        <i class="fas fa-sliders-h mr-2"></i>Preferences
+                    </button>
+                </div>
+            </div>
+            <div class="mt-8">
+                <div id="content-profile" class="space-y-8">
+                    @if (string.IsNullOrEmpty(Model.Address) && string.IsNullOrEmpty(Model.City) && 
+                          string.IsNullOrEmpty(Model.State) && string.IsNullOrEmpty(Model.ZipCode))
+                    {
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        Please complete your address information to help us provide better service.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                    <form id="profile-form" asp-action="UpdateProfile" method="post" class="space-y-6">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="UserId" />
+                        <input type="hidden" asp-for="CustomerId" />
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="FirstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input asp-for="FirstName" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                                <span asp-validation-for="FirstName" class="text-red-500 text-sm"></span>
+                            </div>
+                            
+                            <div>
+                                <label for="LastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input asp-for="LastName" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                                <span asp-validation-for="LastName" class="text-red-500 text-sm"></span>
+                            </div>
+                            
+                            <div>
+                                <label for="Email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input asp-for="Email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                                <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
+                            </div>
+                            
+                            <div>
+                                <label for="Phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input asp-for="Phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                                <span asp-validation-for="Phone" class="text-red-500 text-sm"></span>
+                            </div>
+                            
+                            <div class="md:col-span-2">
+                                <label for="Address" class="block text-sm font-medium text-gray-700">
+                                    Address
+                                    @if (string.IsNullOrEmpty(Model.Address))
+                                    {
+                                        <span class="ml-1 text-yellow-600 text-xs font-normal">
+                                            <i class="fas fa-exclamation-circle"></i> Not set
+                                        </span>
+                                    }
+                                </label>
+                                <textarea id="Address" name="Address" rows="3" 
+                                    placeholder="Enter your address" 
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">@(string.IsNullOrEmpty(Model.Address) ? "" : Model.Address)</textarea>
+                            </div>
+                            
+                            <div>
+                                <label for="City" class="block text-sm font-medium text-gray-700">
+                                    City
+                                    @if (string.IsNullOrEmpty(Model.City))
+                                    {
+                                        <span class="ml-1 text-yellow-600 text-xs font-normal">
+                                            <i class="fas fa-exclamation-circle"></i> Not set
+                                        </span>
+                                    }
+                                </label>
+                                <input type="text" id="City" name="City" value="@(string.IsNullOrEmpty(Model.City) ? "" : Model.City)" 
+                                    placeholder="Enter your city"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                            
+                            <div>
+                                <label for="State" class="block text-sm font-medium text-gray-700">
+                                    State
+                                    @if (string.IsNullOrEmpty(Model.State))
+                                    {
+                                        <span class="ml-1 text-yellow-600 text-xs font-normal">
+                                            <i class="fas fa-exclamation-circle"></i> Not set
+                                        </span>
+                                    }
+                                </label>
+                                <input type="text" id="State" name="State" value="@(string.IsNullOrEmpty(Model.State) ? "" : Model.State)" 
+                                    placeholder="Enter your state"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                            
+                            <div>
+                                <label for="ZipCode" class="block text-sm font-medium text-gray-700">
+                                    Zip Code
+                                    @if (string.IsNullOrEmpty(Model.ZipCode))
+                                    {
+                                        <span class="ml-1 text-yellow-600 text-xs font-normal">
+                                            <i class="fas fa-exclamation-circle"></i> Not set
+                                        </span>
+                                    }
+                                </label>
+                                <input type="text" id="ZipCode" name="ZipCode" value="@(string.IsNullOrEmpty(Model.ZipCode) ? "" : Model.ZipCode)" 
+                                    placeholder="Enter your zip code"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                            
+                            <div>
+                                <label for="DateOfBirth" class="block text-sm font-medium text-gray-700">
+                                    Date of Birth
+                                    @if (Model.DateOfBirth.Year <= 1900)
+                                    {
+                                        <span class="ml-1 text-yellow-600 text-xs font-normal">
+                                            <i class="fas fa-exclamation-circle"></i> Not set
+                                        </span>
+                                    }
+                                </label>
+                                <input type="date" id="DateOfBirth" name="DateOfBirth" value="@(Model.DateOfBirth.Year > 1900 ? Model.DateOfBirth.ToString("yyyy-MM-dd") : "")" 
+                                    placeholder="Select your birth date"
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                                <p class="mt-1 text-xs text-gray-500">This helps us tailor event recommendations to you.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div id="content-security" class="hidden space-y-8">
+                    <form id="security-form" asp-action="ChangePassword" method="post" class="space-y-6">
+                        <input type="hidden" name="Id" value="@Model.Id" />
+                        <input type="hidden" name="UserId" value="@Model.UserId" />
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label for="CurrentPassword" class="block text-sm font-medium text-gray-700">Current Password</label>
+                                <input type="password" id="CurrentPassword" name="CurrentPassword" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                            
+                            <div>
+                                <label for="NewPassword" class="block text-sm font-medium text-gray-700">New Password</label>
+                                <input type="password" id="NewPassword" name="NewPassword" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                            
+                            <div>
+                                <label for="ConfirmPassword" class="block text-sm font-medium text-gray-700">Confirm New Password</label>
+                                <input type="password" id="ConfirmPassword" name="ConfirmPassword" required
+                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500">
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                Update Password
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-medium text-gray-900">Delete Account</h3>
+                        <p class="mt-1 text-sm text-gray-500">
+                            Once you delete your account, all of your information will be permanently removed. This action cannot be undone.
+                        </p>
+                        <div class="mt-4">
+                            <form asp-action="DeleteAccount" method="post" id="delete-account-form" class="inline">
+                                <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                    Delete Account
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="content-preferences" class="hidden space-y-8">
+                    <form id="preferences-form" asp-action="UpdatePreferences" method="post" class="space-y-6">
+                        <input type="hidden" name="Id" value="@Model.Id" />
+                        <input type="hidden" name="UserId" value="@Model.UserId" />
+                        <input type="hidden" name="CustomerId" value="@Model.CustomerId" />
+                        
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900">Preferred Event Types</h3>
+                            <p class="mt-1 text-sm text-gray-500">
+                                Select the types of events you're most interested in.
+                            </p>
+                            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                @{
+                                    var eventTypes = new[] { "Wedding", "Corporate", "Birthday", "Conference", "Exhibition", "Party", "Concert", "Workshop", "Seminar", "Retreat" };
+                                }
+                                @foreach (var eventType in eventTypes)
+                                {
+                                    bool isSelected = Model.PreferredEventTypes != null && Model.PreferredEventTypes.Contains(eventType);
+                                    <div class="relative flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="event-@eventType" name="PreferredEventTypes" type="checkbox" value="@eventType" @(isSelected ? "checked" : "")
+                                                class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="event-@eventType" class="font-medium text-gray-700">@eventType</label>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Cancel
+                            </button>
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                Save Preferences
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePictureInput = document.getElementById('ProfilePicture');
+            const profilePictureForm = document.getElementById('profile-picture-form');
+            const profileImage = document.querySelector('img.h-32.w-32');
+            
+            profilePictureInput.addEventListener('change', function(e) {
+                if (this.files && this.files[0]) {
+                    const file = this.files[0];
+                    
+                    if (!file.type.startsWith('image/')) {
+                        alert('Please select an image file.');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('Image size should be less than 5MB.');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profileImage.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                    
+                    const formData = new FormData(profilePictureForm);
+                    
+                    const originalButton = profilePictureInput.parentElement;
+                    originalButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                    
+                    fetch(profilePictureForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            originalButton.innerHTML = '<i class="fas fa-camera"></i><span class="sr-only">Upload profile picture</span>';
+                            
+                            const successDiv = document.createElement('div');
+                            successDiv.className = 'fixed top-0 right-0 m-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded';
+                            successDiv.textContent = data.message;
+                            document.body.appendChild(successDiv);
+                            
+                            setTimeout(() => {
+                                successDiv.remove();
+                            }, 3000);
+                            
+                            profileImage.src = data.imageUrl;
+                            
+                            const layoutProfileImage = document.querySelector('img.h-10.w-10');
+                            if (layoutProfileImage) {
+                                layoutProfileImage.src = data.imageUrl;
+                            }
+                        } else {
+                            throw new Error(data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        originalButton.innerHTML = '<i class="fas fa-camera"></i><span class="sr-only">Upload profile picture</span>';
+                        alert(error.message || 'Failed to upload profile picture. Please try again.');
+                    });
+                }
+            });
+
+            const tabs = ['profile', 'security', 'preferences'];
+            tabs.forEach(tab => {
+                document.getElementById(`tab-${tab}`).addEventListener('click', function() {
+                    tabs.forEach(t => {
+                        document.getElementById(`content-${t}`).classList.add('hidden');
+                        document.getElementById(`tab-${t}`).classList.remove('border-primary-600', 'text-primary-600');
+                        document.getElementById(`tab-${t}`).classList.add('border-transparent', 'text-gray-500');
+                    });
+                    
+                    document.getElementById(`content-${tab}`).classList.remove('hidden');
+                    document.getElementById(`tab-${tab}`).classList.add('border-primary-600', 'text-primary-600');
+                    document.getElementById(`tab-${tab}`).classList.remove('border-transparent', 'text-gray-500');
+                });
+            });
+
+            const deleteForm = document.getElementById('delete-account-form');
+            if (deleteForm) {
+                deleteForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+                        this.submit();
+                    }
+                });
+            }
+
+            const securityForm = document.getElementById('security-form');
+            if (securityForm) {
+                securityForm.addEventListener('submit', function(e) {
+                    const currentPassword = document.getElementById('CurrentPassword').value;
+                    const newPassword = document.getElementById('NewPassword').value;
+                    const confirmPassword = document.getElementById('ConfirmPassword').value;
+                    
+                    if (!currentPassword || !newPassword || !confirmPassword) {
+                        e.preventDefault();
+                        alert('Please fill in all password fields.');
+                        return;
+                    }
+                    
+                    if (newPassword !== confirmPassword) {
+                        e.preventDefault();
+                        alert('New passwords do not match.');
+                        return;
+                    }
+                    
+                    if (newPassword.length < 6) {
+                        e.preventDefault();
+                        alert('New password must be at least 6 characters long.');
+                        return;
+                    }
+                });
+            }
+            
+            document.querySelectorAll('.toggle-password').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const passwordInput = document.getElementById(targetId);
+                    
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        this.querySelector('i').classList.remove('fa-eye');
+                        this.querySelector('i').classList.add('fa-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        this.querySelector('i').classList.remove('fa-eye-slash');
+                        this.querySelector('i').classList.add('fa-eye');
+                    }
+                });
+            });
+        });
+    </script>
+} 

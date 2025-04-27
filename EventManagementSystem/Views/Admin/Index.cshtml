@@ -1,0 +1,322 @@
+﻿@model EventManagementSystem.Models.Admin
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_AdminLayout";
+}
+
+<div id="dynamic-content">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="p-5">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-primary-500 rounded-md p-3">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">
+                                Total Users
+                            </dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">
+                                    @(ViewBag.TotalUsers ?? 0)
+                                </div>
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-5 py-3">
+                <a href="#" data-controller="Admin" data-action="ManageUsers" data-ajax="true" class="text-sm text-primary-600 hover:text-primary-800 flex justify-between items-center">
+                    <span>View details</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="p-5">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                        <i class="fas fa-building text-white text-xl"></i>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">
+                                Total Venues
+                            </dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">
+                                    @(ViewBag.TotalVenues ?? 0)
+                                </div>
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-5 py-3">
+                <a href="#" data-controller="Admin" data-action="ManageVenues" data-ajax="true" class="text-sm text-primary-600 hover:text-primary-800 flex justify-between items-center">
+                    <span>View details</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="p-5">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                        <i class="fas fa-calendar-check text-white text-xl"></i>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">
+                                Venue Booked
+                            </dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">
+                                    @(ViewBag.TotalBookings ?? 0)
+                                </div>
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-5 py-3">
+                <a href="Index"   class="text-sm text-primary-600 hover:text-primary-800 flex justify-between items-center">
+                    <span>View details</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="p-5">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                        <i class="fas fa-rupee-sign text-white text-xl"></i>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">
+                                Total Revenue
+                            </dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">
+                                   @(ViewBag.TotalRevenue?.ToString("C") ?? "₹0.00")
+                                </div>
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-5 py-3">
+                <a href="#" data-controller="Admin" data-action="Reports" data-ajax="true" class="text-sm text-primary-600 hover:text-primary-800 flex justify-between items-center">
+                    <span>View details</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="px-4 py-5 sm:px-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center">
+                    <i class="fas fa-history mr-2 text-primary-500"></i>
+                    Recent Activities
+                </h3>
+            </div>
+            <div class="px-4 py-3 sm:p-6">
+                <div class="space-y-4">
+                    @if (ViewBag.RecentActivities != null && ViewBag.RecentActivities.Count > 0)
+                    {
+                        @foreach (var activity in ViewBag.RecentActivities)
+                        {
+                            <div class="flex py-4 hover:bg-gray-50 transition-colors duration-150 rounded-md px-2">
+                                <div class="flex-shrink-0">
+                                    <img class="h-10 w-10 rounded-full" src="@(activity.UserImage ?? $"https://ui-avatars.com/api/?name={activity.UserName}&background=0284c7&color=fff")" alt="@activity.UserName">
+                                </div>
+                                <div class="ml-3">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        @activity.UserName
+                                    </div>
+                                    <div class="text-sm text-gray-500">
+                                        @activity.Description
+                                    </div>
+                                    <div class="text-xs text-gray-400">
+                                        @activity.TimeAgo
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="text-center text-gray-500 py-4">
+                            No recent activities to display
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="px-4 py-5 sm:px-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center">
+                    <i class="fas fa-user-shield mr-2 text-primary-500"></i>
+                    Admin Information
+                </h3>
+                <a  data-controller="Admin" data-action="Profile" data-ajax="true" class="text-sm text-primary-600 hover:text-primary-800">
+                    Edit Profile
+                </a>
+            </div>
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="h-20 w-20 rounded-full overflow-hidden bg-gray-100 border-4 border-white">
+                            @if (!string.IsNullOrEmpty(Model.ProfilePictureUrl))
+                            {
+                                <img src="@Model.ProfilePictureUrl" alt="@Model.FirstName @Model.LastName" class="h-full w-full object-cover" />
+                            }
+                            else
+                            {
+                                <div class="w-full h-full flex items-center justify-center bg-primary-100 text-primary-600 text-xl font-semibold">
+                                    @(Model.FirstName?.Substring(0, 1))@(Model.LastName?.Substring(0, 1))
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-medium text-gray-900">
+                            @Model.FirstName @Model.LastName
+                        </h4>
+                        <p class="text-sm text-gray-500">
+                            @Model.Email
+                        </p>
+                    </div>
+                </div>
+                <dl class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Username</dt>
+                        <dd class="mt-1 text-sm text-gray-900">@Model.Username</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Department</dt>
+                        <dd class="mt-1 text-sm text-gray-900">@Model.Department</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Position</dt>
+                        <dd class="mt-1 text-sm text-gray-900">@Model.Position</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Access Level</dt>
+                        <dd class="mt-1 text-sm text-gray-900">
+                            <div class="flex items-center">
+                                <span class="mr-2">@Model.AccessLevel</span>
+                                <div class="relative w-full h-2 bg-gray-200 rounded-full">
+                                    <div class="absolute top-0 left-0 h-2 bg-primary-500 rounded-full" style="width: @(Model.AccessLevel * 20)%;"></div>
+                                </div>
+                            </div>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Last Login</dt>
+                        <dd class="mt-1 text-sm text-gray-900">
+                            @(Model.LastLogin.HasValue ? Model.LastLogin.Value.ToString("MMM dd, yyyy HH:mm") : "Never logged in")
+                        </dd>
+                    </div>
+                    
+                </dl>
+                
+                <div class="mt-6">
+                    <a href="#" data-controller="Admin" data-action="Profile" data-ajax="true" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200">
+                        <i class="fas fa-edit mr-2"></i>
+                        Edit Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="px-4 py-5 sm:px-6 border-b border-gray-200 flex justify-between items-center">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 flex items-center">
+                <i class="fas fa-chart-line mr-2 text-primary-500"></i>
+                System Analytics
+            </h3>
+            <a href="#" data-controller="Admin" data-action="Reports" data-ajax="true" class="text-sm text-primary-600 hover:text-primary-800">
+                Detailed Reports
+            </a>
+        </div>
+        <div class="px-4 py-5 sm:p-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="text-sm font-medium text-gray-500 mb-3">User Registration</h4>
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Coming Soon</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="text-sm font-medium text-gray-500 mb-3">Venue Bookings</h4>
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Coming Soon</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="text-sm font-medium text-gray-500 mb-3">Revenue</h4>
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_AjaxScripts")
+    
+    <script>
+        $(document).ready(function() {
+            function refreshStats() {
+                $.ajax({
+                    url: '/Admin/GetLatestStats',
+                    type: 'GET',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                    success: function(data) {
+                        if (data) {
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(1) .text-2xl').text(data.userCount || 0);
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(1) .text-green-600').text(data.userIncrease + '%');
+                            
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(2) .text-2xl').text(data.venueCount || 0);
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(2) .text-green-600').text(data.venueIncrease + '%');
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(3) .text-2xl').text(data.bookingCount || 0);
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(3) .text-green-600').text(data.bookingIncrease + '%');
+                            const revenue = data.revenue || 0;
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(4) .text-2xl').text('₹' + revenue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+                            $('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div:nth-child(4) .text-green-600').text(data.revenueIncrease + '%');
+                            if (data.recentBookings && data.recentBookings.length > 0) {
+                                console.log('Received recent bookings:', data.recentBookings);
+                            }
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching latest stats:", error);
+                    }
+                });
+            }
+            
+            refreshStats();
+            
+            setInterval(refreshStats, 30000);
+        });
+    </script>
+} 

@@ -1,0 +1,154 @@
+@model EventManagementSystem.Models.Light
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Add New Light" : "Edit Light";
+    Layout = "_AdminLayout";
+}
+
+<div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-semibold text-gray-800">@(Model.Id == 0 ? "Add New Light" : "Edit Light")</h1>
+    <a href="@Url.Action("ManageLights", "Admin")" class="text-primary-600 hover:text-primary-700">
+        <i class="fas fa-arrow-left mr-1"></i> Back to Light Management
+    </a>
+</div>
+
+<div class="bg-white shadow-md rounded-lg overflow-hidden p-6">
+    <form asp-action="EditLight" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreatedAt" />
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <div class="mb-4">
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-red-500">*</span></label>
+                    <input asp-for="Name" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required />
+                    <span asp-validation-for="Name" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <textarea asp-for="Description" rows="3" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                    <span asp-validation-for="Description" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Type" class="block text-sm font-medium text-gray-700 mb-1">Type <span class="text-red-500">*</span></label>
+                    <select asp-for="Type" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required>
+                        <option value="">Select a type</option>
+                        <option value="Spotlight">Spotlight</option>
+                        <option value="LED Strip">LED Strip</option>
+                        <option value="Moving Head">Moving Head</option>
+                        <option value="Laser">Laser</option>
+                        <option value="Ambient">Ambient</option>
+                        <option value="Disco">Disco</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Type" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Color" class="block text-sm font-medium text-gray-700 mb-1">Color <span class="text-red-500">*</span></label>
+                    <input asp-for="Color" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required />
+                    <span asp-validation-for="Color" class="text-red-600 text-sm"></span>
+                </div>
+            </div>
+            
+            <div>
+                <div class="mb-4">
+                    <label asp-for="PricePerDay" class="block text-sm font-medium text-gray-700 mb-1">Price Per Day (₹) <span class="text-red-500">*</span></label>
+                    <input asp-for="PricePerDay" type="number"  min="100" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required />
+                    <span asp-validation-for="PricePerDay" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantity <span class="text-red-500">*</span></label>
+                    <input asp-for="Quantity" type="number" min="1" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required />
+                    <span asp-validation-for="Quantity" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Power" class="block text-sm font-medium text-gray-700 mb-1">Power (Watts) <span class="text-red-500">*</span></label>
+                    <input asp-for="Power" type="number" min="0" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" required />
+                    <span asp-validation-for="Power" class="text-red-600 text-sm"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="lightImage" class="block text-sm font-medium text-gray-700 mb-1">Light Image</label>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0">
+                            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                            {
+                                <img src="@Model.ImageUrl" alt="@Model.Name" class="h-20 w-20 rounded-md object-cover border border-gray-300" id="imagePreview">
+                            }
+                            else
+                            {
+                                <div class="h-20 w-20 rounded-md border border-gray-300 flex items-center justify-center bg-gray-100 text-gray-400" id="imagePreview">
+                                    <i class="fas fa-lightbulb text-2xl"></i>
+                                </div>
+                            }
+                        </div>
+                        <div class="flex-grow">
+                            <input type="file" name="lightImage" id="lightImage" class="block w-full text-sm text-gray-900
+                                file:mr-4 file:py-2 file:px-4
+                                file:rounded-md file:border-0
+                                file:text-sm file:font-medium
+                                file:bg-primary-50 file:text-primary-700
+                                hover:file:bg-primary-100
+                            "/>
+                            <p class="mt-1 text-xs text-gray-500">JPG, PNG or GIF. Max 2MB.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="flex items-center">
+                        <input asp-for="IsActive" type="checkbox" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
+                        <label asp-for="IsActive" class="ml-2 block text-sm text-gray-700">Available for Booking</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex justify-end space-x-3">
+            <a href="@Url.Action("ManageLights", "Admin")" class="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                Cancel
+            </a>
+            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                @(Model.Id == 0 ? "Create Light" : "Update Light")
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageInput = document.getElementById('lightImage');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            if (imageInput && imagePreview) {
+                imageInput.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        
+                        reader.onload = function(e) {
+                            if (imagePreview.tagName === 'IMG') {
+                                imagePreview.src = e.target.result;
+                            } else {
+                                const img = document.createElement('img');
+                                img.src = e.target.result;
+                                img.id = 'imagePreview';
+                                img.className = 'h-20 w-20 rounded-md object-cover border border-gray-300';
+                                img.alt = 'Light Preview';
+                                imagePreview.parentNode.replaceChild(img, imagePreview);
+                            }
+                        }
+                        
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+            }
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

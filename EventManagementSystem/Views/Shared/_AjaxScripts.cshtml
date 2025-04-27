@@ -1,0 +1,137 @@
+<script>
+    $(document).ready(function() {
+        initializeAjaxHandlers();
+        setupLoaderAnimation();
+        highlightActiveSidebarItem();
+    });
+    
+    function initializeAjaxHandlers() {
+        $(document).on('click', 'a[data-ajax="true"]', function(e) {
+            e.preventDefault();
+            var $link = $(this);
+            var controller = $link.data('controller');
+            var action = $link.data('action');
+            var venueId = $link.data('venue-id');
+            var url = '/' + controller + '/' + action;
+            if (venueId) {
+                url += '/' + venueId;
+            }
+            history.pushState({
+                controller: controller,
+                action: action,
+                venueId: venueId
+            }, '', url);
+            loadContent(url);
+            updateActiveSidebarItem(controller, action);
+            return false;
+        });
+        $(document).on('submit', 'form[data-ajax="true"]', function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            var url = $form.attr('action');
+            var method = $form.attr('method') || 'POST';
+            var data = $form.serialize();
+            showLoader();
+            $.ajax({
+                url: url,
+                type: method,
+                data: data,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                success: function(response) {
+                    $('#dynamic-content').html(response);
+                    initializeLoadedScripts();
+                    $(document).trigger('ajax-content-loaded');
+                    hideLoader();
+                },
+                error: function(xhr, status, error) {
+                    alert('An error occurred: ' + error);
+                    hideLoader();
+                }
+            });
+            return false;
+        });
+        window.addEventListener('popstate', function(event) {
+            if (event.state) {
+                var url = '/' + event.state.controller + '/' + event.state.action;
+                if (event.state.venueId) {
+                    url += '/' + event.state.venueId;
+                }
+                loadContent(url, false);
+                updateActiveSidebarItem(event.state.controller, event.state.action);
+            } else {
+                window.location.reload();
+            }
+        });
+    }
+    
+    function loadContent(url, updateHistory = true) {
+        showLoader();
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+            success: function(response) {
+                $('#dynamic-content').html(response);
+                if (updateHistory) {
+                    var pathParts = url.split('/').filter(Boolean);
+                    var controller = pathParts[0] || '';
+                    var action = pathParts[1] || '';
+                    var venueId = pathParts[2] || null;
+                    history.pushState({
+                        controller: controller,
+                        action: action,
+                        venueId: venueId
+                    }, '', url);
+                }
+                initializeLoadedScripts();
+                $(document).trigger('ajax-content-loaded');
+                hideLoader();
+                scrollToTop();
+            },
+            error: function(xhr, status, error) {
+                alert('An error occurred: ' + error);
+                hideLoader();
+            }
+        });
+    }
+    
+    function initializeLoadedScripts() {
+        if (typeof $().tooltip === 'function') {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+        if (typeof $().select2 === 'function') {
+            $('.select2').select2();
+        }
+    }
+    function setupLoaderAnimation() {
+        if ($('#ajax-loader').length === 0) {
+            $('body').append('<div id="ajax-loader" class="hidden"><div class="loader-spinner"></div></div>');
+        }
+    }
+    function showLoader() {
+        $('#ajax-loader').removeClass('hidden');
+    }
+    function hideLoader() {
+        $('#ajax-loader').addClass('hidden');
+    }
+    function scrollToTop() {
+        $('html, body').animate({
+            scrollTop: $('#dynamic-content').offset().top - 20
+        }, 200);
+    }
+    
+    function updateActiveSidebarItem(controller, action) {
+        $('.sidebar-menu a').removeClass('active');
+        var $activeLink = $('.sidebar-menu a[data-controller="' + controller + '"][data-action="' + action + '"]');
+        if ($activeLink.length === 0) {
+            $activeLink = $('.sidebar-menu a[data-controller="' + controller + '"]');
+        }
+        $activeLink.addClass('active');
+    }
+    function highlightActiveSidebarItem() {
+        var pathParts = window.location.pathname.split('/').filter(Boolean);
+        var controller = pathParts[0] || '';
+        var action = pathParts[1] || '';
+        updateActiveSidebarItem(controller, action);
+    }
+</script> 

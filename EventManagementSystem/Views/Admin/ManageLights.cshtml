@@ -1,0 +1,140 @@
+﻿@model IEnumerable<EventManagementSystem.Models.Light>
+
+@{
+    ViewData["Title"] = "Manage Lights";
+    Layout = "_AdminLayout";
+}
+
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-semibold text-gray-800">Lighting Management</h1>
+    <a href="@Url.Action("CreateLight", "Admin")" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+        <i class="fas fa-plus mr-2"></i> Add New Light
+    </a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded relative" role="alert">
+        <span class="block sm:inline">@TempData["SuccessMessage"]</span>
+    </div>
+}
+
+<div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Light</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price Per Day</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Specs</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                @foreach (var light in Model)
+                {
+                    <tr class="hover:bg-gray-50 transition duration-150">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="h-10 w-10 flex-shrink-0">
+                                    <img class="h-10 w-10 rounded-full object-cover" src="@(string.IsNullOrEmpty(light.ImageUrl) ? "/images/lights/default.jpg" : light.ImageUrl)" alt="@light.Name">
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">@light.Name</div>
+                                    <div class="text-xs text-gray-500 max-w-xs truncate">@light.Description</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full @light.GetTypeClass()">
+                                @light.Type
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            ₹@light.PricePerDay.ToString("F2")/day
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <div class="flex flex-col">
+                                <span>Color: @light.Color</span>
+                                <span>Power: @light.Power W</span>
+                                <span>Quantity: @light.Quantity</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="flex items-center @light.GetAvailabilityStatusDisplay()">
+                                <i class="fas @light.GetAvailabilityIcon() mr-1"></i> @light.GetAvailabilityText()
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <div class="flex items-center space-x-3">
+                                <a href="@Url.Action("EditLight", "Admin", new { id = light.Id })" class="text-primary-600 hover:text-primary-900 tooltip" data-tooltip="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="@Url.Action("DeleteLight", "Admin", new { id = light.Id })" class="text-red-600 hover:text-red-900 tooltip" data-tooltip="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="px-6 py-4 text-center text-sm text-gray-500">
+                            No lights found. <a href="@Url.Action("CreateLight", "Admin")" class="text-primary-600 hover:underline">Add a new light</a>.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <div class="bg-gray-50 px-4 py-3 flex items-center justify-between sm:px-6">
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-sm text-gray-700">
+                        Showing <span class="font-medium">1</span> to <span class="font-medium">@Model.Count()</span> of <span class="font-medium">@Model.Count()</span> lights
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .tooltip {
+        position: relative;
+    }
+    
+    .tooltip:before {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 8px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: nowrap;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: 10;
+    }
+    
+    .tooltip:hover:before {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    });
+</script> 

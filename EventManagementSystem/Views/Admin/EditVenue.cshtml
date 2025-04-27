@@ -1,0 +1,382 @@
+@model EventManagementSystem.Models.Venue
+@{
+    ViewData["Title"] = "Edit Venue";
+}
+
+<div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Edit Venue</h1>
+        <p class="text-gray-600 mt-2">Update venue information and settings</p>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg overflow-hidden p-6">
+        <form asp-action="@(Model.Id == 0 ? "CreateVenue" : "EditVenue")" method="post" enctype="multipart/form-data" class="space-y-6">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="RegistrarId" />
+            <input type="hidden" asp-for="CreatedAt" />
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Basic Information</h2>
+                    
+                    <div>
+                        <label asp-for="Name" class="block text-sm font-medium text-gray-700">Venue Name</label>
+                        <input asp-for="Name" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
+                        <span asp-validation-for="Name" data-valmsg-for="Name" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Description" class="block text-sm font-medium text-gray-700">Description</label>
+                        <textarea asp-for="Description" rows="4" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required></textarea>
+                        <span asp-validation-for="Description" data-valmsg-for="Description" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Location" class="block text-sm font-medium text-gray-700">Location</label>
+                        <input asp-for="Location" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
+                        <span asp-validation-for="Location" data-valmsg-for="Location" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Address" class="block text-sm font-medium text-gray-700">Address</label>
+                        <input asp-for="Address" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
+                        <span asp-validation-for="Address" data-valmsg-for="Address" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Type" class="block text-sm font-medium text-gray-700">Venue Type</label>
+                        <select asp-for="Type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md" required>
+                            <option value="">Select Venue Type</option>
+                            <option value="Banquet Hall">Banquet Hall</option>
+                            <option value="Conference Center">Conference Center</option>
+                            <option value="Rooftop">Rooftop</option>
+                            <option value="Vineyard">Vineyard</option>
+                            <option value="Warehouse">Warehouse</option>
+                        </select>
+                        <span asp-validation-for="Type" data-valmsg-for="Type" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="VenueTypes" class="block text-sm font-medium text-gray-700">Venue Categories</label>
+                        <div class="mt-2 grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="VenueTypesList" value="Wedding" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.VenueTypesList != null && Model.VenueTypesList.Contains("Wedding") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Wedding</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="VenueTypesList" value="Conference" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.VenueTypesList != null && Model.VenueTypesList.Contains("Conference") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Conference</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="VenueTypesList" value="Party" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.VenueTypesList != null && Model.VenueTypesList.Contains("Party") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Party</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="VenueTypesList" value="Corporate" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.VenueTypesList != null && Model.VenueTypesList.Contains("Corporate") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Corporate</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="VenueTypesList" value="Exhibition" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.VenueTypesList != null && Model.VenueTypesList.Contains("Exhibition") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Exhibition</label>
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="VenueTypes" />
+                        <span asp-validation-for="VenueTypes" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="AvailableEventTypes" class="block text-sm font-medium text-gray-700">Available Event Types</label>
+                        <div class="mt-2 grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AvailableEventTypesList" value="Wedding" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AvailableEventTypesList != null && Model.AvailableEventTypesList.Contains("Wedding") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Wedding</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AvailableEventTypesList" value="Birthday" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AvailableEventTypesList != null && Model.AvailableEventTypesList.Contains("Birthday") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Birthday</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AvailableEventTypesList" value="Corporate" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AvailableEventTypesList != null && Model.AvailableEventTypesList.Contains("Corporate") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Corporate</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AvailableEventTypesList" value="Conference" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AvailableEventTypesList != null && Model.AvailableEventTypesList.Contains("Conference") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Conference</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AvailableEventTypesList" value="Exhibition" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AvailableEventTypesList != null && Model.AvailableEventTypesList.Contains("Exhibition") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Exhibition</label>
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="AvailableEventTypes" />
+                        <span asp-validation-for="AvailableEventTypes" class="text-red-500 text-sm"></span>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Details & Pricing</h2>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label asp-for="Capacity" class="block text-sm font-medium text-gray-700">Capacity</label>
+                            <select asp-for="Capacity" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option value="">Any Capacity</option>
+                                <option value="50">Up to 50 people</option>
+                                <option value="100">Up to 100 people</option>
+                                <option value="200">Up to 200 people</option>
+                                <option value="500">Up to 500 people</option>
+                                <option value="1000">Up to 1000 people</option>
+                            </select>
+                            <span asp-validation-for="Capacity" data-valmsg-for="Capacity" class="text-red-500 text-sm"></span>
+                        </div>
+                        
+                        <div>
+                            <label asp-for="Size" class="block text-sm font-medium text-gray-700">Size (sq ft)</label>
+                            <input asp-for="Size" type="number" min="1" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                            <span asp-validation-for="Size" data-valmsg-for="Size" class="text-red-500 text-sm"></span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Amenities" class="block text-sm font-medium text-gray-700">Amenities</label>
+                        <div class="mt-2 grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AmenitiesList" value="WiFi" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AmenitiesList != null && Model.AmenitiesList.Contains("WiFi") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">WiFi</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AmenitiesList" value="Parking" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AmenitiesList != null && Model.AmenitiesList.Contains("Parking") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Parking</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AmenitiesList" value="Sound System" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AmenitiesList != null && Model.AmenitiesList.Contains("Sound System") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Sound System</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AmenitiesList" value="Catering" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AmenitiesList != null && Model.AmenitiesList.Contains("Catering") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Catering</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="AmenitiesList" value="Air Conditioning" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.AmenitiesList != null && Model.AmenitiesList.Contains("Air Conditioning") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Air Conditioning</label>
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="Amenities" />
+                        <span asp-validation-for="Amenities" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div>
+                        <label asp-for="Features" class="block text-sm font-medium text-gray-700">Features</label>
+                        <div class="mt-2 grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <input type="checkbox" name="FeaturesList" value="Garden" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.FeaturesList != null && Model.FeaturesList.Contains("Garden") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Garden</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="FeaturesList" value="Stage" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.FeaturesList != null && Model.FeaturesList.Contains("Stage") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Stage</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="FeaturesList" value="Lighting" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.FeaturesList != null && Model.FeaturesList.Contains("Lighting") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Lighting</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="FeaturesList" value="Dance Floor" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.FeaturesList != null && Model.FeaturesList.Contains("Dance Floor") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Dance Floor</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" name="FeaturesList" value="Bar" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" @(Model.FeaturesList != null && Model.FeaturesList.Contains("Bar") ? "checked" : "") />
+                                <label class="ml-2 text-sm text-gray-700">Bar</label>
+                            </div>
+                        </div>
+                        <input type="hidden" asp-for="Features" />
+                        <span asp-validation-for="Features" class="text-red-500 text-sm"></span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label asp-for="PricePerHour" class="block text-sm font-medium text-gray-700">Price Per Hour (₹)</label>
+                            <input asp-for="PricePerHour" type="number"  min="1000" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required />
+                            <span asp-validation-for="PricePerHour" data-valmsg-for="PricePerHour" class="text-red-500 text-sm"></span>
+                        </div>
+                        
+                        <div>
+                            <label asp-for="CleaningFee" class="block text-sm font-medium text-gray-700">Cleaning Fee (₹)</label>
+                            <input asp-for="CleaningFee" type="number" min="100" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                            <span asp-validation-for="CleaningFee" data-valmsg-for="CleaningFee" class="text-red-500 text-sm"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div>
+                            <label asp-for="Status" class="block text-sm font-medium text-gray-700">Status</label>
+                            <select asp-for="Status" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label asp-for="IsAvailable" class="block text-sm font-medium text-gray-700">Availability</label>
+                            <select asp-for="IsAvailable" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                <option value="true">Available</option>
+                                <option value="false">Unavailable</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input asp-for="IsFeatured" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+                            <label asp-for="IsFeatured" class="ml-2 block text-sm text-gray-700">Featured</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-4">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Venue Images</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Main Image</label>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 h-24 w-24 bg-gray-100 rounded-md overflow-hidden">
+                                <img id="main-image-preview" src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/venues/default.jpg" : Model.ImageUrl)" alt="Venue main image" class="h-full w-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <input type="hidden" asp-for="ImageUrl" />
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Change Image</label>
+                                <input type="file" name="mainImage" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" onchange="previewImage(event, 'main-image-preview')" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Additional Images (up to 5)</label>
+                        <input type="file" name="additionalImages" accept="image/*" multiple class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                        <input type="hidden" asp-for="AdditionalImages" />
+                        
+                        @if (!string.IsNullOrEmpty(Model.AdditionalImages))
+                        {
+                            var imageArray = Model.AdditionalImages.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                            if (imageArray.Length > 0)
+                            {
+                                <div class="mt-4 grid grid-cols-3 sm:grid-cols-5 gap-2">
+                                    @foreach (var image in imageArray)
+                                    {
+                                        <div class="relative group">
+                                            <img src="@image" alt="Additional venue image" class="h-16 w-16 object-cover rounded-md">
+                                            <input type="hidden" name="existingAdditionalImages" value="@image" />
+                                            <button type="button" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-md" onclick="removeImage(this)">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-white" viewBox="0 0 16 16">
+                                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="pt-4">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Owner Information</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label asp-for="HostName" class="block text-sm font-medium text-gray-700">Host/Company Name</label>
+                        <input asp-for="HostName" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 h-16 w-16 bg-gray-100 rounded-full overflow-hidden">
+                            <img id="host-image-preview" src="@(string.IsNullOrEmpty(Model.HostImage) ? "/images/hosts/default.jpg" : Model.HostImage)" alt="Host image" class="h-full w-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <input type="hidden" asp-for="HostImage" />
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Host Image</label>
+                            <input type="file" name="hostImage" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" onchange="previewImage(event, 'host-image-preview')" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-end space-x-3 pt-6">
+                <a href="@Url.Action("ManageVenues", "Admin")" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Cancel</a>
+                <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function previewImage(event, previewId) {
+            const input = event.target;
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        function removeImage(button) {
+            const imageContainer = button.parentElement;
+            imageContainer.remove();
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            
+            form.addEventListener('submit', function(event) {
+                const name = document.getElementById('Name');
+                const location = document.getElementById('Location');
+                const address = document.getElementById('Address');
+                const capacity = document.getElementById('Capacity');
+                const pricePerHour = document.getElementById('PricePerHour');
+                const type = document.getElementById('Type');
+                
+                let isValid = true;
+                
+                if (!name.value.trim()) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="Name"]').textContent = 'Venue name is required';
+                }
+                
+                if (!location.value.trim()) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="Location"]').textContent = 'Location is required';
+                }
+                
+                if (!address.value.trim()) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="Address"]').textContent = 'Address is required';
+                }
+                
+                if (!capacity.value || capacity.value <= 0) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="Capacity"]').textContent = 'Capacity is required and must be greater than 0';
+                }
+                
+                if (!pricePerHour.value || pricePerHour.value < 0) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="PricePerHour"]').textContent = 'Price per hour is required and must be 0 or greater';
+                }
+                
+                if (!type.value.trim()) {
+                    isValid = false;
+                    document.querySelector('span[data-valmsg-for="Type"]').textContent = 'Venue type is required';
+                }
+                
+                if (!isValid) {
+                    event.preventDefault();
+                    console.log('Form validation failed');
+                } else {
+                    console.log('Form validation passed');
+                }
+            });
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

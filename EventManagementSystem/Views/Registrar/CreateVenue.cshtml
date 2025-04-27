@@ -1,0 +1,318 @@
+@model EventManagementSystem.Models.Venue
+@{
+    ViewData["Title"] = "Create Venue";
+    Layout = "_RegistrarLayout";
+}
+
+<div class="min-h-screen bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-4">
+                <li>
+                    <div>
+                        <a href="@Url.Action("Index", "Registrar")" class="text-gray-400 hover:text-gray-500">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Dashboard</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <a href="@Url.Action("MyVenues", "Registrar")" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">My Venues</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <span class="ml-4 text-sm font-medium text-gray-500" aria-current="page">Create Venue</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+            <div class="px-6 py-5 border-b border-gray-200 bg-gradient-to-r from-primary-600 to-primary-700">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Create New Venue</h2>
+                        <p class="mt-1 text-sm text-primary-100">Fill in the details to add a new venue to your portfolio</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <a href="@Url.Action("MyVenues", "Registrar")" class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-primary-700 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Venues
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <form asp-action="CreateVenue" method="post" enctype="multipart/form-data" class="p-8 space-y-8">
+                <div asp-validation-summary="ModelOnly" class="text-red-500 mb-4"></div>
+                <div class="mb-8">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex items-center relative">
+                                <div class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-primary-600 bg-primary-600">
+                                    <i class="fas fa-info-circle text-white text-lg"></i>
+                                </div>
+                                <div class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium text-primary-600">Basic Info</div>
+                            </div>
+                            <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-primary-600"></div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex items-center relative">
+                                <div class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-gray-300">
+                                    <i class="fas fa-dollar-sign text-gray-500 text-lg"></i>
+                                </div>
+                                <div class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium text-gray-500">Pricing</div>
+                            </div>
+                            <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-gray-300"></div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex items-center relative">
+                                <div class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-gray-300">
+                                    <i class="fas fa-image text-gray-500 text-lg"></i>
+                                </div>
+                                <div class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium text-gray-500">Images</div>
+                            </div>
+                            <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-gray-300"></div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="flex items-center relative">
+                                <div class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-gray-300">
+                                    <i class="fas fa-tags text-gray-500 text-lg"></i>
+                                </div>
+                                <div class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium text-gray-500">Features</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-info-circle text-primary-600 mr-2"></i>
+                        Basic Information
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Name" class="block text-sm font-medium text-gray-700">Venue Name *</label>
+                            <input asp-for="Name" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            <span asp-validation-for="Name" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Type" class="block text-sm font-medium text-gray-700">Venue Type *</label>
+                            <select asp-for="Type" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required>
+                                <option value="">Select a type</option>
+                                <option value="Conference Hall">Conference Hall</option>
+                                <option value="Wedding Venue">Wedding Venue</option>
+                                <option value="Concert Hall">Concert Hall</option>
+                                <option value="Exhibition Center">Exhibition Center</option>
+                                <option value="Sports Facility">Sports Facility</option>
+                                <option value="Banquet Hall">Banquet Hall</option>
+                                <option value="Theater">Theater</option>
+                                <option value="Outdoor Venue">Outdoor Venue</option>
+                            </select>
+                            <span asp-validation-for="Type" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Location" class="block text-sm font-medium text-gray-700">Location *</label>
+                            <input asp-for="Location" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            <span asp-validation-for="Location" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Address" class="block text-sm font-medium text-gray-700">Address *</label>
+                            <input asp-for="Address" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            <span asp-validation-for="Address" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Capacity" class="block text-sm font-medium text-gray-700">Capacity *</label>
+                            <input asp-for="Capacity" type="number" min="1" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            <span asp-validation-for="Capacity" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Size" class="block text-sm font-medium text-gray-700">Size (sq ft) *</label>
+                            <input asp-for="Size" type="number" min="1" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            <span asp-validation-for="Size" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-dollar-sign text-primary-600 mr-2"></i>
+                        Pricing
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="PricePerHour" class="block text-sm font-medium text-gray-700">Price Per Hour *</label>
+                            <div class="mt-1 relative rounded-lg shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm">₹</span>
+                                </div>
+                                <input asp-for="PricePerHour" type="number"  min="1000" class="pl-7 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            </div>
+                            <span asp-validation-for="PricePerHour" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="CleaningFee" class="block text-sm font-medium text-gray-700">Cleaning Fee *</label>
+                            <div class="mt-1 relative rounded-lg shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm">₹</span>
+                                </div>
+                                <input asp-for="CleaningFee" type="number" min="100" class="pl-7 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required />
+                            </div>
+                            <span asp-validation-for="CleaningFee" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-align-left text-primary-600 mr-2"></i>
+                        Description
+                    </h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <label asp-for="Description" class="block text-sm font-medium text-gray-700">Venue Description *</label>
+                        <textarea asp-for="Description" rows="4" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" required></textarea>
+                        <span asp-validation-for="Description" class="mt-1 text-sm text-red-500"></span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-image text-primary-600 mr-2"></i>
+                        Images
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label class="block text-sm font-medium text-gray-700">Main Image</label>
+                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
+                                <div class="space-y-1 text-center">
+                                    <i class="fas fa-image text-gray-400 text-4xl"></i>
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="mainImage" class="relative cursor-pointer bg-white rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500">
+                                            <span>Upload a file</span>
+                                            <input id="mainImage" name="mainImage" type="file" accept="image/*" class="sr-only" />
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label class="block text-sm font-medium text-gray-700">Additional Images</label>
+                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg">
+                                <div class="space-y-1 text-center">
+                                    <i class="fas fa-images text-gray-400 text-4xl"></i>
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="additionalImages" class="relative cursor-pointer bg-white rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500">
+                                            <span>Upload files</span>
+                                            <input id="additionalImages" name="additionalImages" type="file" accept="image/*" multiple class="sr-only" />
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500">Up to 5 images (PNG, JPG, GIF up to 10MB each)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                        <i class="fas fa-tags text-primary-600 mr-2"></i>
+                        Features and Categories
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Amenities" class="block text-sm font-medium text-gray-700">Amenities (comma separated)</label>
+                            <input asp-for="Amenities" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" placeholder="WiFi,Parking,Sound System,Catering" />
+                            <span asp-validation-for="Amenities" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="Features" class="block text-sm font-medium text-gray-700">Features (comma separated)</label>
+                            <input asp-for="Features" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" placeholder="Stage,Dance Floor,Bar" />
+                            <span asp-validation-for="Features" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="VenueTypes" class="block text-sm font-medium text-gray-700">Venue Categories (comma separated) *</label>
+                            <input asp-for="VenueTypes" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" placeholder="Wedding,Conference,Party" required />
+                            <span asp-validation-for="VenueTypes" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <label asp-for="AvailableEventTypes" class="block text-sm font-medium text-gray-700">Available Event Types (comma separated) *</label>
+                            <input asp-for="AvailableEventTypes" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500" placeholder="Wedding,Birthday,Corporate" required />
+                            <span asp-validation-for="AvailableEventTypes" class="mt-1 text-sm text-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end space-x-3">
+                    <a href="@Url.Action("MyVenues", "Registrar")" class="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Cancel
+                    </a>
+                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Create Venue
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImageInput = document.getElementById('mainImage');
+            const additionalImagesInput = document.getElementById('additionalImages');
+            
+            if (mainImageInput) {
+                mainImageInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const preview = document.createElement('img');
+                            preview.src = e.target.result;
+                            preview.className = 'mt-2 max-h-48 rounded-lg shadow-md';
+                            const container = mainImageInput.closest('.border-dashed');
+                            const existingPreview = container.querySelector('img');
+                            if (existingPreview) {
+                                existingPreview.remove();
+                            }
+                            container.appendChild(preview);
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
+            
+            if (additionalImagesInput) {
+                additionalImagesInput.addEventListener('change', function(e) {
+                    const files = e.target.files;
+                    const container = additionalImagesInput.closest('.border-dashed');
+                    const existingPreviews = container.querySelectorAll('img');
+                    existingPreviews.forEach(preview => preview.remove());
+                    
+                    Array.from(files).forEach(file => {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const preview = document.createElement('img');
+                            preview.src = e.target.result;
+                            preview.className = 'mt-2 max-h-48 rounded-lg shadow-md inline-block mr-2';
+                            container.appendChild(preview);
+                        }
+                        reader.readAsDataURL(file);
+                    });
+                });
+            }
+        });
+    </script>
+} 

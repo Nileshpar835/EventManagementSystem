@@ -1,0 +1,155 @@
+@model EventManagementSystem.Models.Food
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Add New Food Item" : "Edit Food Item";
+    Layout = "_AdminLayout";
+}
+
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-semibold text-gray-800">
+        @(Model.Id == 0 ? "Add New Food Item" : "Edit Food Item")
+    </h1>
+    <a href="@Url.Action("ManageFood", "Admin")" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+        <i class="fas fa-arrow-left mr-2"></i> Back to Food Menu
+    </a>
+</div>
+
+<div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="p-6">
+        <form asp-action="EditFood" asp-controller="Admin" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedAt" />
+            
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="mb-4 p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
+                    <div asp-validation-summary="All" class="text-sm"></div>
+                </div>
+            }
+            
+            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                <div class="sm:col-span-4">
+                    <label asp-for="Name" class="block text-sm font-medium text-gray-700">Food Name</label>
+                    <div class="mt-1">
+                        <input asp-for="Name" type="text" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Enter food name">
+                    </div>
+                    <span asp-validation-for="Name" class="text-sm text-red-600"></span>
+                </div>
+                <div class="sm:col-span-2">
+                    <label asp-for="Category" class="block text-sm font-medium text-gray-700">Category</label>
+                    <div class="mt-1">
+                        <select asp-for="Category" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                            <option value="">Select a category</option>
+                            <option value="Appetizer">Appetizer</option>
+                            <option value="Main Course">Main Course</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Beverage">Beverage</option>
+                            <option value="Side Dish">Side Dish</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="Category" class="text-sm text-red-600"></span>
+                </div>
+                <div class="sm:col-span-6">
+                    <label asp-for="Description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <div class="mt-1">
+                        <textarea asp-for="Description" rows="3" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Describe the food item"></textarea>
+                    </div>
+                    <span asp-validation-for="Description" class="text-sm text-red-600"></span>
+                </div>
+                <div class="sm:col-span-2">
+                    <label asp-for="PricePerPerson" class="block text-sm font-medium text-gray-700">Price Per Person (₹)</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="text-gray-500 sm:text-sm">₹</span>
+                        </div>
+                        <input asp-for="PricePerPerson" type="number" min="100" class="pl-7 focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="100">
+                    </div>
+                    <span asp-validation-for="PricePerPerson" class="text-sm text-red-600"></span>
+                </div>
+                <div class="sm:col-span-4">
+                    <label asp-for="DietaryInfo" class="block text-sm font-medium text-gray-700">Dietary Information</label>
+                    <div class="mt-1">
+                        <input asp-for="DietaryInfo" type="text" class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="E.g., Vegetarian, Gluten-free, Contains nuts">
+                    </div>
+                    <span asp-validation-for="DietaryInfo" class="text-sm text-red-600"></span>
+                </div>
+                <div class="sm:col-span-2">
+                    <div class="flex items-start mt-6">
+                        <div class="flex items-center h-5">
+                            <input asp-for="IsAvailable" type="checkbox" class="focus:ring-primary-500 h-4 w-4 text-primary-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label asp-for="IsAvailable" class="font-medium text-gray-700">Available</label>
+                            <p class="text-gray-500">Mark if this food item is currently available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-6">
+                    <label for="foodImage" class="block text-sm font-medium text-gray-700">Food Image</label>
+                    <div class="mt-2 flex items-center">
+                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                        {
+                            <div class="mr-4">
+                                <img src="@Model.ImageUrl" alt="@Model.Name" class="h-20 w-20 rounded-md object-cover">
+                            </div>
+                            <input type="hidden" name="existingImageUrl" value="@Model.ImageUrl" />
+                        }
+                        <div class="flex-1">
+                            <div class="flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                <div class="space-y-1 text-center">
+                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="foodImage" class="relative cursor-pointer bg-white rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500">
+                                            <span>Upload a file</span>
+                                            <input id="foodImage" name="foodImage" type="file" class="sr-only" accept="image/*">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500">
+                                        PNG, JPG, GIF up to 10MB
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-5">
+                <div class="flex justify-end">
+                    <a href="@Url.Action("ManageFood", "Admin")" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Cancel
+                    </a>
+                    <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('foodImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewContainer = document.querySelector('.mr-4');
+                    if (previewContainer) {
+                        previewContainer.querySelector('img').src = e.target.result;
+                    } else {
+                        const newPreview = document.createElement('div');
+                        newPreview.className = 'mr-4';
+                        newPreview.innerHTML = `<img src="${e.target.result}" alt="Preview" class="h-20 w-20 rounded-md object-cover">`;
+                        document.querySelector('.mt-2.flex').prepend(newPreview);
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+} 

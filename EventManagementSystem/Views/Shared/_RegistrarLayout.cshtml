@@ -1,0 +1,153 @@
+@{
+    var registrar = ViewData["Registrar"] as EventManagementSystem.Models.Registrar;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Registrar Dashboard - EventSpot</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/animations.css" asp-append-version="true">
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0369a1;
+        }
+        
+        .sidebar-active {
+            color: #0ea5e9;
+            background-color: rgba(14, 165, 233, 0.1);
+            border-left: 2px solid #0ea5e9;
+        }
+        
+        .loader {
+            border-top-color: #0ea5e9;
+            -webkit-animation: spinner 1.5s linear infinite;
+            animation: spinner 1.5s linear infinite;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-[Inter] h-full antialiased text-gray-800">
+    <div class="min-h-screen flex">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-col md:fixed md:inset-y-0 z-10">
+            <div class="flex flex-col flex-grow w-64 bg-white overflow-y-auto border-r border-gray-200 shadow-sm">
+                <div class="flex items-center justify-center h-16 px-4 bg-primary-800">
+                    <a asp-area="" asp-controller="Registrar" asp-action="Index" class="text-white font-bold text-xl flex items-center">
+                        Registrar Panel
+                    </a>
+                </div>
+                <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
+                    <div class="flex-grow flex flex-col">
+                        <div class="px-4 mb-6">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 mr-3">
+                                    <img class="h-10 w-10 rounded-full bg-primary-200 p-1" src="@(registrar?.ProfilePictureUrl ?? "https://ui-avatars.com/api/?name=" + registrar?.FirstName + "+" + registrar?.LastName + "&background=0284c7&color=fff")" alt="@(registrar?.FirstName) @(registrar?.LastName)" />
+                                </div>
+                                <div>
+                                    <h2 class="text-sm font-medium">@(registrar?.FirstName) @(registrar?.LastName)</h2>
+                                    <p class="text-xs text-gray-500">@(registrar?.Organization)</p>
+                                    <p class="text-xs text-gray-500">@(registrar?.Email)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="flex-1 space-y-1 px-2">
+                            <a href="#" data-controller="Registrar" data-action="Index" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-tachometer-alt w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Dashboard
+                            </a>
+                            
+                            <a href="#" data-controller="Registrar" data-action="Venues" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Venues" || ViewContext.RouteData.Values["Action"].ToString() == "EditVenue" || ViewContext.RouteData.Values["Action"].ToString() == "DeleteVenue" || ViewContext.RouteData.Values["Action"].ToString() == "CreateVenue" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-building w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Venues
+                            </a>
+                            
+                            <a href="#" data-controller="Registrar" data-action="AddVenue" class="@(ViewContext.RouteData.Values["Action"].ToString() == "AddVenue" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-plus-circle w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Add Venue
+                            </a>
+                            
+                            <a href="#" data-controller="Registrar" data-action="Bookings" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Bookings" || ViewContext.RouteData.Values["Action"].ToString() == "BookingDetails" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-calendar-check w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Bookings
+                            </a>
+                            
+                            <a href="#" data-controller="Registrar" data-action="Reports" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Reports" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-chart-bar w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Reports
+                            </a>
+                            
+                            <a href="#" data-controller="Registrar" data-action="Profile" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Profile" ? "sidebar-active" : "") group flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors duration-150">
+                                <i class="fas fa-user-cog w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500"></i>
+                                Profile
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="p-4 border-t border-gray-200">
+                        <a asp-controller="Account" asp-action="Logout" class="mt-2 flex items-center px-3 py-2 text-sm font-medium rounded-md text-red-700 hover:bg-red-50 focus:outline-none transition-colors duration-150">
+                            <i class="fas fa-sign-out-alt w-5 text-center mr-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="md:pl-64 flex flex-col flex-1">
+            <main class="flex-1">
+                <div class="py-6">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                        @RenderBody()
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/registrar-ajax.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html> 

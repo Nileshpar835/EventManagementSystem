@@ -1,0 +1,1403 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\createvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\createvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\editvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\editvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\venuescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\registrarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\registrarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\editvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\editvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\manageequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\manageequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\editlight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\editlight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\editfood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\editfood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\editflower.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\editflower.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\editequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\editequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deleteequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deleteequipment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\venuedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\venuedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\myvenues.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\myvenues.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\deletevenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\deletevenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\venues\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\venues\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\venuedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\venuedetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\customer\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\customer\\bookings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\reports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\venue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\venues\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\venues\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\venues\\browse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\venues\\browse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\services\\lightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\services\\lightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\services\\foodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\services\\bookingdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\services\\bookingdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\_index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Venues.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\bookings\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\bookings\\checkout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\shared\\_registrarlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\shared\\_registrarlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\shared\\_ajaxcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\shared\\_ajaxcontent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\reviews\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\reviews\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\addvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\addvenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\_reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\_reviews.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\registrar\\_bookingdetailspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\registrar\\_bookingdetailspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\customer\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\customer\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\userdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\managevenues.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\managevenues.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\manageusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\managelights.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\managelights.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\managefood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\managefood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\manageflowers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\manageflowers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deletevenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deletevenue.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deleteuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deletelight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deletelight.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deletefood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deletefood.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\admin\\deleteflower.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\admin\\deleteflower.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\views\\bookings\\confirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\controllers\\api\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\controllers\\api\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|c:\\users\\panch\\desktop\\eventmanagementsystem\\eventmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D1F35441-9ACB-4C8F-8D0C-F6B9F0FF8543}|EventManagementSystem\\EventManagementSystem.csproj|solutionrelative:eventmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\newprojct\\EventManagementSystem\\Services\\ILightService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\newprojct\\EventManagementSystem\\Services\\IFoodService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\newprojct\\EventManagementSystem\\Services\\IFlowerService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\newprojct\\EventManagementSystem\\Services\\IEquipmentService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\newprojct\\EventManagementSystem\\Services\\IBookingService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VenuesController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\VenuesController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\VenuesController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\VenuesController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\VenuesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:34:03.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:32:48.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:32:19.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T06:31:23.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\EditVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\EditVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\EditVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\EditVenue.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMMAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:27:14.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\CreateVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\CreateVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\CreateVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\CreateVenue.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T03:55:14.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegistrarController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\RegistrarController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\RegistrarController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\RegistrarController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\RegistrarController.cs",
+              "ViewState": "AgIAADUEAAAAAAAAAAAAAAQCAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T03:31:40.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ManageEquipment.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageEquipment.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageEquipment.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageEquipment.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageEquipment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:05:09.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditVenue.cshtml",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAwMYAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:56.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\BookingsController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAqwNIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T05:37:42.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Food.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Food.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Food.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Food.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Food.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAA/wDAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:25:56.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Flower.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Flower.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Flower.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Flower.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Flower.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:25:25.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T07:28:10.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T03:59:40.315Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Customer.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T03:59:25.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditUser.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditUser.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-20T10:19:13.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EditLight.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditLight.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditLight.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditLight.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditLight.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwDoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:48.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EditFood.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditFood.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditFood.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditFood.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditFood.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAwD8AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:42.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EditFlower.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditFlower.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditFlower.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditFlower.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditFlower.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAwDkAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:36.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Equipment.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Equipment.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Equipment.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Equipment.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwDEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:25:13.637Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EditEquipment.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditEquipment.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\EditEquipment.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\EditEquipment.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\EditEquipment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:30.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DeleteEquipment.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteEquipment.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteEquipment.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteEquipment.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteEquipment.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwDcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:02:45.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "VenueDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\VenueDetails.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\VenueDetails.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\VenueDetails.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\VenueDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T03:38:38.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Reviews.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Reviews.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\Reviews.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Reviews.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\Reviews.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T03:57:09.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Profile.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Profile.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\Profile.cshtml",
+              "ViewState": "AgIAADMBAAAAAAAAAAAwwFoBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-20T10:09:02.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MyVenues.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\MyVenues.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\MyVenues.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\MyVenues.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\MyVenues.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:23:48.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DeleteVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\DeleteVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\DeleteVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\DeleteVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\DeleteVenue.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T03:55:57.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Details.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Venues\\Details.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Details.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Venues\\Details.cshtml",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAQwKkAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:35:08.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Reports.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Reports.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\Reports.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Reports.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\Reports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:28:44.493Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Reports.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Reports.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\Reports.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Reports.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\Reports.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwDAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:07:28.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:57:28.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Bookings.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Bookings.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Customer\\Bookings.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Bookings.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Customer\\Bookings.cshtml",
+              "ViewState": "AgIAAN4AAAAAAAAAAAAAAO0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:08:10.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "VenueDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\VenueDetails.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\VenueDetails.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\VenueDetails.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\VenueDetails.cshtml",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAQwMkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:07:45.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "FoodService.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\FoodService.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Services\\FoodService.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\FoodService.cs",
+              "RelativeToolTip": "EventManagementSystem\\Services\\FoodService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T02:59:59.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Program.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Program.cs",
+              "RelativeToolTip": "EventManagementSystem\\Program.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T07:41:23.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Profile.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Profile.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\Profile.cshtml",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAAAPsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:07:18.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAwwA0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:05:03.122Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAADsAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T07:37:19.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Admin.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:25:10.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Venue.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Venue.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Venue.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Venue.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Venue.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAuwEEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:26:27.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Light.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Light.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\Light.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\Light.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\Light.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:32.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "dbo.Users.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Users.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-25T05:36:27.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "IBookingService.cs",
+              "DocumentMoniker": "E:\\newprojct\\EventManagementSystem\\Services\\IBookingService.cs",
+              "ToolTip": "E:\\newprojct\\EventManagementSystem\\Services\\IBookingService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:00:39.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EventManagementSystem\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T14:13:55.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Browse.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Browse.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Venues\\Browse.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Browse.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Venues\\Browse.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T14:26:37.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Venues\\Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Venues\\Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Venues\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T14:26:40.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:52:30.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAB8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:09:34.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "IEquipmentService.cs",
+              "DocumentMoniker": "E:\\newprojct\\EventManagementSystem\\Services\\IEquipmentService.cs",
+              "ToolTip": "E:\\newprojct\\EventManagementSystem\\Services\\IEquipmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:01.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "IFlowerService.cs",
+              "DocumentMoniker": "E:\\newprojct\\EventManagementSystem\\Services\\IFlowerService.cs",
+              "ToolTip": "E:\\newprojct\\EventManagementSystem\\Services\\IFlowerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:13.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "IFoodService.cs",
+              "DocumentMoniker": "E:\\newprojct\\EventManagementSystem\\Services\\IFoodService.cs",
+              "ToolTip": "E:\\newprojct\\EventManagementSystem\\Services\\IFoodService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:15.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "ILightService.cs",
+              "DocumentMoniker": "E:\\newprojct\\EventManagementSystem\\Services\\ILightService.cs",
+              "ToolTip": "E:\\newprojct\\EventManagementSystem\\Services\\ILightService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:17.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAAAPQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T18:53:21.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "LightService.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\LightService.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Services\\LightService.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\LightService.cs",
+              "RelativeToolTip": "EventManagementSystem\\Services\\LightService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T03:01:44.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "EventManagementSystem\\Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T02:27:18.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T02:26:40.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Checkout.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Bookings\\Checkout.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Bookings\\Checkout.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Bookings\\Checkout.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Bookings\\Checkout.cshtml",
+              "ViewState": "AgIAAGgCAAAAAAAAAAAAAGgCAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:40:31.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "BookingDbService.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\BookingDbService.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Services\\BookingDbService.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\BookingDbService.cs",
+              "RelativeToolTip": "EventManagementSystem\\Services\\BookingDbService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T03:13:01.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "_Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\_Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\_Index.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAwGsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:57:58.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAiwIUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:33:34.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Reviews\\Create.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Reviews\\Create.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Reviews\\Create.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Reviews\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:11:03.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "CreateUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\CreateUser.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\CreateUser.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\CreateUser.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\CreateUser.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:02:42.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "_RegistrarLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_RegistrarLayout.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Shared\\_RegistrarLayout.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_RegistrarLayout.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Shared\\_RegistrarLayout.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAwDUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:57:33.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "dbo.Venues.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Venues.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/EventManagementSystem/True/SqlTable/dbo.Venues.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-14T07:34:19.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "_AjaxContent.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_AjaxContent.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Shared\\_AjaxContent.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_AjaxContent.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Shared\\_AjaxContent.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:11:14.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\EmailService.cs",
+              "RelativeToolTip": "EventManagementSystem\\Services\\EmailService.cs",
+              "ViewState": "AgIAACUCAAAAAAAAAAAIwAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T07:26:24.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "EquipmentService.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\EquipmentService.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Services\\EquipmentService.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Services\\EquipmentService.cs",
+              "RelativeToolTip": "EventManagementSystem\\Services\\EquipmentService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T07:26:48.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "_CustomerLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_CustomerLayout.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Shared\\_CustomerLayout.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Shared\\_CustomerLayout.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Shared\\_CustomerLayout.cshtml",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAAANgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:11:18.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "_Reviews.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_Reviews.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\_Reviews.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_Reviews.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\_Reviews.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:10:42.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "_BookingDetailsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_BookingDetailsPartial.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\_BookingDetailsPartial.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\_BookingDetailsPartial.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\_BookingDetailsPartial.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwDYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:09:56.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Profile.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Customer\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Profile.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Customer\\Profile.cshtml",
+              "ViewState": "AgIAAKUBAAAAAAAAAAAAwLABAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:09:26.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AgIAABMBAAAAAAAAAAAAwBkBAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:09:09.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AddVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\AddVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Registrar\\AddVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Registrar\\AddVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Registrar\\AddVenue.cshtml",
+              "ViewState": "AgIAACABAAAAAAAAAAAAwCYBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:32:24.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "UserDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\UserDetails.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\UserDetails.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\UserDetails.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\UserDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:08:14.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "ManageUsers.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageUsers.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageUsers.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageUsers.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageUsers.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:06:44.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "ManageLights.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageLights.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageLights.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageLights.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageLights.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwDcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:06:16.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "ManageFood.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageFood.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageFood.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageFood.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageFood.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAwDQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:05:52.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ManageFlowers.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageFlowers.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageFlowers.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageFlowers.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageFlowers.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAwDQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:05:17.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "ManageVenues.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageVenues.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\ManageVenues.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\ManageVenues.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\ManageVenues.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAwFMAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T07:23:21.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "DeleteVenue.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteVenue.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteVenue.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteVenue.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteVenue.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:22.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "DeleteUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteUser.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteUser.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteUser.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:17.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "DeleteLight.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteLight.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteLight.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteLight.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteLight.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwBkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:04:01.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "DeleteFood.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteFood.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteFood.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteFood.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteFood.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAwCwAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:03:45.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "DeleteFlower.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteFlower.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Admin\\DeleteFlower.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Admin\\DeleteFlower.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Admin\\DeleteFlower.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAwDIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T05:03:30.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "Confirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Bookings\\Confirmation.cshtml",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Views\\Bookings\\Confirmation.cshtml",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Views\\Bookings\\Confirmation.cshtml",
+              "RelativeToolTip": "EventManagementSystem\\Views\\Bookings\\Confirmation.cshtml",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAQwJQAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T04:50:18.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\Api\\ServicesController.cs",
+              "RelativeDocumentMoniker": "EventManagementSystem\\Controllers\\Api\\ServicesController.cs",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\Controllers\\Api\\ServicesController.cs",
+              "RelativeToolTip": "EventManagementSystem\\Controllers\\Api\\ServicesController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T04:43:27.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "EventManagementSystem\\appsettings.json",
+              "ToolTip": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\appsettings.json",
+              "RelativeToolTip": "EventManagementSystem\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-11T06:58:46.734Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

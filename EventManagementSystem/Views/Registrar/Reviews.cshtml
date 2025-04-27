@@ -1,0 +1,14 @@
+@model dynamic
+
+@{
+    ViewData["Title"] = "Venue Reviews";
+    Layout = "_RegistrarLayout";
+}
+
+<div id="dynamic-content">
+    @await Html.PartialAsync("_Reviews", (object)Model)
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_AjaxScripts")
+}

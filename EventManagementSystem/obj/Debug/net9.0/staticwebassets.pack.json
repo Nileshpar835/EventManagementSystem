@@ -1,0 +1,1117 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\EventManagementSystem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\EventManagementSystem.e3kt5c33wx.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\css\\animations.css",
+      "PackagePath": "staticwebassets\\css\\animations.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\default-profile.jpg",
+      "PackagePath": "staticwebassets\\images\\default-profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\default\\default-profile.jpg",
+      "PackagePath": "staticwebassets\\images\\default\\default-profile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638785113042466429.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638785113042466429.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638787130897649070.png",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638787130897649070.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638794760360637355.png",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638794760360637355.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800123388898915.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800123388898915.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800123845602634.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800123845602634.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800124308194509.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800124308194509.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800124726164165.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800124726164165.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800125095084550.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800125095084550.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_0_638800125483624888.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_0_638800125483624888.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_1_638785113198707996.png",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_1_638785113198707996.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_1_638785113285220301.png",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_1_638785113285220301.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_1_638811820378527737.png",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_1_638811820378527737.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_1_638812574871193298.jpeg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_1_638812574871193298.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_1_638812580886319466.webp",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_1_638812580886319466.webp"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\equipment\\equipment_2_638812575820345297.jpeg",
+      "PackagePath": "staticwebassets\\images\\equipment\\equipment_2_638812575820345297.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_0_638785143685288084.png",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_0_638785143685288084.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_0_638785165918036166.png",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_0_638785165918036166.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_0_638787131098913554.jpeg",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_0_638787131098913554.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_0_638794760537088412.png",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_0_638794760537088412.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_0_638807543510986667.jpeg",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_0_638807543510986667.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_1_638812577387264061.jpg",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_1_638812577387264061.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\flowers\\flower_2_638812578384415588.jpg",
+      "PackagePath": "staticwebassets\\images\\flowers\\flower_2_638812578384415588.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\chocolate-mousse.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\chocolate-mousse.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638785102294946759.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638785102294946759.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638785102746316236.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638785102746316236.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638787117286214432.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638787117286214432.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638794760182651142.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638794760182651142.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638800087829912792.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638800087829912792.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638800117285677410.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638800117285677410.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638800118067018006.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638800118067018006.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638800118674559374.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638800118674559374.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_0_638800532517757432.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_0_638800532517757432.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_1_638785108675076208.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_1_638785108675076208.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_1_638785108871751637.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_1_638785108871751637.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_1_638812569027425252.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_1_638812569027425252.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_1_638812570820436735.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_1_638812570820436735.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_2_638785109055050144.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_2_638785109055050144.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_2_638785109220766773.png",
+      "PackagePath": "staticwebassets\\images\\foods\\food_2_638785109220766773.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_2_638785109414890634.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_2_638785109414890634.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_2_638807536099933924.jpeg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_2_638807536099933924.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\food_2_638812570131129624.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\food_2_638812570131129624.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\grilled-chicken.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\grilled-chicken.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\foods\\veggie-pasta.jpg",
+      "PackagePath": "staticwebassets\\images\\foods\\veggie-pasta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_12_638785073727989727.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_12_638785073727989727.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_13_638785064436956067.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_13_638785064436956067.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_1_638785201740324071.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_1_638785201740324071.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_1_638795219005019817.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_1_638795219005019817.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638785311225587688.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638785311225587688.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638796160361794300.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638796160361794300.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638797161735184960.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638797161735184960.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638797207011316895.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638797207011316895.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638797208166844337.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638797208166844337.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_2_638797210088025171.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_2_638797210088025171.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_3_638797192188304751.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_3_638797192188304751.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_3_638797210005543012.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_3_638797210005543012.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_3_638811872003623507.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_3_638811872003623507.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_4_638797191634078424.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_4_638797191634078424.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_4_638797209904241418.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_4_638797209904241418.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_4_638811872202594488.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_4_638811872202594488.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_5_638796127710172693.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_5_638796127710172693.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_5_638796454532272434.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_5_638796454532272434.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638797180865736485.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638797180865736485.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638799994179284322.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638799994179284322.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638800469636746951.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638800469636746951.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638800470551207530.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638800470551207530.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638800473037213531.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638800473037213531.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638803385532301737.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638803385532301737.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638806055048482814.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638806055048482814.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638806060297757419.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638806060297757419.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638806061898251082.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638806061898251082.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638807526993642909.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638807526993642909.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638812585199730981.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638812585199730981.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638812588018259129.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638812588018259129.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_638812590787669292.jpeg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_638812590787669292.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_6_638797191381369828.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_6_638797191381369828.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_6_638797192360335958.jpg",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_6_638797192360335958.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_6_638797208031587280.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_6_638797208031587280.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_6_638797209823271386.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_6_638797209823271386.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_7_638797200310929487.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_7_638797200310929487.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_7_638797203609668054.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_7_638797203609668054.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_9_638797197976613014.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_9_638797197976613014.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_9_638797200051302336.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_9_638797200051302336.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_9_638797202159645846.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_9_638797202159645846.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\hosts\\host_9_638797203346049732.png",
+      "PackagePath": "staticwebassets\\images\\hosts\\host_9_638797203346049732.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_0_638785174623847672.png",
+      "PackagePath": "staticwebassets\\images\\lights\\light_0_638785174623847672.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_0_638785177261407822.png",
+      "PackagePath": "staticwebassets\\images\\lights\\light_0_638785177261407822.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_0_638787131414788805.png",
+      "PackagePath": "staticwebassets\\images\\lights\\light_0_638787131414788805.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_0_638794760757985893.png",
+      "PackagePath": "staticwebassets\\images\\lights\\light_0_638794760757985893.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_0_638807544032029548.jpg",
+      "PackagePath": "staticwebassets\\images\\lights\\light_0_638807544032029548.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_1_638785176342341400.png",
+      "PackagePath": "staticwebassets\\images\\lights\\light_1_638785176342341400.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_1_638812581494625737.jpeg",
+      "PackagePath": "staticwebassets\\images\\lights\\light_1_638812581494625737.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\lights\\light_2_638812581930267714.jpg",
+      "PackagePath": "staticwebassets\\images\\lights\\light_2_638812581930267714.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\placeholder-food.jpg",
+      "PackagePath": "staticwebassets\\images\\placeholder-food.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\1_638797471774260509.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\1_638797471774260509.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\26_638807610459421812.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\26_638807610459421812.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\3_638797471918019222.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\3_638797471918019222.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\4_638784949155569626.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\4_638784949155569626.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638784946083743509.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638784946083743509.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638784949634541574.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638784949634541574.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638795230287693524.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638795230287693524.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796954410133649_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796954410133649_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796954809478968_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796954809478968_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796959384781551_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796959384781551_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796964151288320_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796964151288320_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796964837120230_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796964837120230_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796969880138959_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796969880138959_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796971747303669_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796971747303669_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796973261446450_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796973261446450_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638796979913515951_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638796979913515951_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797022053354417_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797022053354417_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797038905415490_20230601_113726.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797038905415490_20230601_113726.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797049763552587_1682518167500.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797049763552587_1682518167500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797049852349651_maa travels1.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797049852349651_maa travels1.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797472350069289.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797472350069289.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797475805039818.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797475805039818.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797478523430535.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797478523430535.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797481679206106.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797481679206106.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797481958257455.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797481958257455.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797482362888825.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797482362888825.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638797484052812218.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638797484052812218.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638807611111387996.jpeg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638807611111387996.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\638811871305877159_img1.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\638811871305877159_img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\700f6237-139e-48e3-951e-e8417eea68d8.png",
+      "PackagePath": "staticwebassets\\images\\profiles\\700f6237-139e-48e3-951e-e8417eea68d8.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\f953eb3a-4a44-4019-920e-61c6bfac5364.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\f953eb3a-4a44-4019-920e-61c6bfac5364.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\jane.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\jane.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\john.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\john.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\robert.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\robert.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_10_638807606346673524.jpeg",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_10_638807606346673524.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_11_638808629886182784.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_11_638808629886182784.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_12_638811852706503510.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_12_638811852706503510.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_1_638811871582761695.jpg",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_1_638811871582761695.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_2_638796453862014005.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_2_638796453862014005.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_2_638796454087450932.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_2_638796454087450932.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_8_638799239840815804.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_8_638799239840815804.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\registrars\\registrar_9_638800011614835562.png",
+      "PackagePath": "staticwebassets\\images\\registrars\\registrar_9_638800011614835562.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\placeholder.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\placeholder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_0_638785051171364426.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_0_638785051171364426.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_638783210078627320.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_638783210078627320.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_638785201740299031.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_638785201740299031.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_638785301020157882.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_638785301020157882.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_638795219004957950.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_638795219004957950.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638785201740346241.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638785201740346241.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638787135357201380.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638787135357201380.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638787135640288341.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638787135640288341.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638787135743675451.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638787135743675451.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638795219005046579.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638795219005046579.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638795219234290654.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638795219234290654.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638797186603118416.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638797186603118416.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_1_additional_638800432861878831.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_1_additional_638800432861878831.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_638785311225541230.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_638785311225541230.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_638796160361767656.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_638796160361767656.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_additional_638785311225609387.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_additional_638785311225609387.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_additional_638787134956510789.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_additional_638787134956510789.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_additional_638787135443719692.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_additional_638787135443719692.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_additional_638796160361813510.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_additional_638796160361813510.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_2_additional_638797161735213626.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_2_additional_638797161735213626.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_3_638811872703989726.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_3_638811872703989726.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_3_additional_638811872704006309.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_3_additional_638811872704006309.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_4_638811872863938372.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_4_638811872863938372.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_4_additional_638811872863971664.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_4_additional_638811872863971664.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_5_638812585344547330.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_5_638812585344547330.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_5_638812585489782547.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_5_638812585489782547.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638785060474699704.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638785060474699704.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638785060952786963.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638785060952786963.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638795244501016379.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638795244501016379.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638795244501063183.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638795244501063183.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638795568623524493.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638795568623524493.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638795575965054687.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638795575965054687.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638797143784704982.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638797143784704982.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638797180865716918.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638797180865716918.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638797192934009672.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638797192934009672.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638797197762706060.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638797197762706060.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638799994179243989.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638799994179243989.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638800469636730975.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638800469636730975.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638800470551195327.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638800470551195327.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638800473037155281.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638800473037155281.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638803385532279389.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638803385532279389.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638806055048459492.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638806055048459492.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638806060297742947.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638806060297742947.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638806061898226857.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638806061898226857.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638807526993610352.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638807526993610352.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638812585199689499.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638812585199689499.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638812588018161084.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638812588018161084.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_638812590787620243.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_638812590787620243.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638785060474729995.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638785060474729995.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638785060952833079.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638785060952833079.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638795568623541001.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638795568623541001.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638795575965086620.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638795575965086620.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638797143784732091.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638797143784732091.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638797180865743435.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638797180865743435.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638797192934039452.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638797192934039452.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638797197762726464.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638797197762726464.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638799994179320378.png",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638799994179320378.png"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638800469636760240.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638800469636760240.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638800470551220996.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638800470551220996.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638800473037237956.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638800473037237956.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638803385532312571.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638803385532312571.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638806055048494561.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638806055048494561.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638806060297766880.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638806060297766880.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638806061898268977.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638806061898268977.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638807526993654806.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638807526993654806.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638812585199752815.jpg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638812585199752815.jpg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638812588018320430.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638812588018320430.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\venues\\venue_additional_638812590787726170.jpeg",
+      "PackagePath": "staticwebassets\\images\\venues\\venue_additional_638812590787726170.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\js\\customer-ajax.js",
+      "PackagePath": "staticwebassets\\js\\customer-ajax.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\js\\registrar-ajax.js",
+      "PackagePath": "staticwebassets\\js\\registrar-ajax.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\panch\\Desktop\\EventManagementSystem\\EventManagementSystem\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EventManagementSystem.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.EventManagementSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.EventManagementSystem.props",
+      "PackagePath": "build\\EventManagementSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.EventManagementSystem.props",
+      "PackagePath": "buildMultiTargeting\\EventManagementSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.EventManagementSystem.props",
+      "PackagePath": "buildTransitive\\EventManagementSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

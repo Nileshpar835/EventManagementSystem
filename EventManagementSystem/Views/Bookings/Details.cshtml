@@ -1,0 +1,169 @@
+@model EventManagementSystem.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Details";
+    Layout = "_CustomerLayout";
+}
+
+<div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+            <span class="text-primary-600">Booking Details</span> 
+        </h1>
+        <a href="/Customer/Bookings" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 transition duration-150 ease-in-out">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Bookings
+        </a>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
+        <div class="px-6 py-4 border-b border-gray-200">
+            @{
+                string statusClass = Model.Status switch
+                {
+                    "Confirmed" => "bg-green-100 text-green-800",
+                    "Pending" => "bg-yellow-100 text-yellow-800",
+                    "Completed" => "bg-blue-100 text-blue-800",
+                    "Cancelled" => "bg-red-100 text-red-800",
+                    _ => "bg-gray-100 text-gray-800"
+                };
+            }
+            <span class="px-3 py-1 text-sm font-medium rounded-full @statusClass">
+                @Model.Status
+            </span>
+        </div>
+
+        <div class="p-6">
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Booking Reference</h2>
+                <p class="mt-1 text-sm text-gray-500">@Model.BookingReference</p>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Event Information</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Event Title</p>
+                        <p class="mt-1 text-gray-900">@Model.EventTitle</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Event Type</p>
+                        <p class="mt-1 text-gray-900">@Model.EventType</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Venue Information</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Venue Name</p>
+                        <p class="mt-1 text-gray-900">@Model.VenueName</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Address</p>
+                        <p class="mt-1 text-gray-900">@(Model.Venue?.Address ?? "Address not available")</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Date and Time</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Date</p>
+                        <p class="mt-1 text-gray-900">@Model.BookingDate.ToString("MMM dd, yyyy")</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Time</p>
+                        <p class="mt-1 text-gray-900">@Model.StartTime - @Model.EndTime</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Guest Information</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Number of Guests</p>
+                        <p class="mt-1 text-gray-900">@Model.GuestCount people</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Payment Information</h2>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Payment Status</p>
+                        <p class="mt-1 @(Model.PaymentStatus == "Paid" ? "text-green-600" : "text-yellow-600")">
+                            @Model.PaymentStatus
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Payment Method</p>
+                        <p class="mt-1 text-gray-900">@Model.PaymentMethod</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-lg font-medium text-gray-900">Price Breakdown</h2>
+                <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm text-gray-700">
+                        <span>Venue Rental</span>
+                        <span>₹@(Model.TotalPrice - Model.ServiceFee - Model.CleaningFee)</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700">
+                        <span>Service Fee</span>
+                        <span>₹@Model.ServiceFee</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-700">
+                        <span>Cleaning Fee</span>
+                        <span>₹@Model.CleaningFee</span>
+                    </div>
+                    @if (Model.AdditionalServicesCost > 0)
+                    {
+                        <div class="flex justify-between text-sm text-gray-700">
+                            <span>Additional Services</span>
+                            <span>₹@Model.AdditionalServicesCost</span>
+                        </div>
+                    }
+                    <div class="flex justify-between font-medium text-gray-900 pt-2 border-t border-gray-200">
+                        <span>Total</span>
+                        <span>₹@Model.TotalPrice</span>
+                    </div>
+                </div>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+            {
+                <div class="mb-6">
+                    <h2 class="text-lg font-medium text-gray-900">Special Requests</h2>
+                    <p class="mt-1 text-gray-900">@Model.SpecialRequests</p>
+                </div>
+            }
+            <div class="mt-6 flex flex-wrap gap-3">
+                @if (Model.Status == "Pending" || Model.Status == "Confirmed")
+                {
+                    if (Model.BookingDate > DateTime.Now)
+                    {
+                        <form asp-action="CancelBooking" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Are you sure you want to cancel this booking? This action cannot be undone.');">
+                            <button type="submit" class="px-3 py-2 text-sm font-medium rounded-md text-red-700 bg-red-50 hover:bg-red-100 transition-colors duration-200">
+                                Cancel Booking
+                            </button>
+                        </form>
+                    }
+                }
+                @if (Model.Status == "Completed")
+                {
+                    <a href="@Url.Action("Create", "Reviews", new { bookingId = Model.Id })" class="px-3 py-2 text-sm font-medium rounded-md text-yellow-700 bg-yellow-50 hover:bg-yellow-100 transition-colors duration-200">
+                        Write Review
+                    </a>
+                }
+                @if (Model.Status == "Confirmed" && Model.BookingDate > DateTime.Now)
+                {
+                    <a href="#" class="px-3 py-2 text-sm font-medium rounded-md text-blue-700 bg-blue-50 hover:bg-blue-100 transition-colors duration-200">
+                        Modify Booking
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div> 

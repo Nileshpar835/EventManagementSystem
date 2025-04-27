@@ -1,0 +1,12 @@
+@model dynamic
+
+@{
+    Layout = null;
+}
+
+@RenderBody()
+
+@if (ViewData["ScriptsSection"] != null)
+{
+    @Html.Raw(ViewData["ScriptsSection"])
+} 

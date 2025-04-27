@@ -1,0 +1,482 @@
+@model EventManagementSystem.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_Layout";
+}
+
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 bg-white rounded-lg shadow-lg p-8">
+        <div>
+            <div class="flex justify-center">
+                <span class="text-primary-600 text-4xl">
+                    <i class="fas fa-user-plus"></i>
+                </span>
+            </div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Create your account
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600">
+                Or
+                <a asp-controller="Account" asp-action="Login" class="font-medium text-primary-600 hover:text-primary-500">
+                    sign in to your existing account
+                </a>
+            </p>
+        </div>
+        <form class="mt-8 space-y-6" asp-controller="Account" asp-action="Register" method="post" id="registerForm">
+            <div id="validation-summary" class="hidden bg-red-50 p-4 rounded-md mb-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-circle text-red-400"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-red-800">Please correct the following errors:</h3>
+                        <div class="mt-2 text-sm text-red-700" id="validation-messages">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rounded-md space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="FirstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                        <input asp-for="FirstName" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="First name">
+                        <span asp-validation-for="FirstName" class="text-red-500 text-xs"></span>
+                    </div>
+                    <div>
+                        <label asp-for="LastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                        <input asp-for="LastName" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Last name">
+                        <span asp-validation-for="LastName" class="text-red-500 text-xs"></span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label asp-for="Email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <div class="flex space-x-2">
+                    <input asp-for="Email" type="email" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Email address">
+                        <button type="button" id="sendOtpBtn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                            Send OTP
+                        </button>
+                    </div>
+                    <span asp-validation-for="Email" class="text-red-500 text-xs"></span>
+                </div>
+
+                <div id="otpSection" class="hidden">
+                    <label for="OTP" class="block text-sm font-medium text-gray-700 mb-1">Enter OTP</label>
+                    <div class="flex flex-col items-center space-y-4">
+                        <div class="flex justify-center space-x-2">
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                            <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center text-2xl font-bold rounded-lg border-2 border-gray-300 focus:border-primary-500 focus:ring-primary-500" />
+                        </div>
+                        <input type="hidden" id="OTP" name="OTP" />
+                        <div class="flex items-center space-x-4">
+                            <button type="button" id="verifyOtpBtn" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                Verify OTP
+                            </button>
+                            <div class="text-sm">
+                                <span id="otpTimer" class="font-medium text-gray-700"></span>
+                                <button type="button" id="resendOtpBtn" class="text-primary-600 hover:text-primary-500 ml-2 hidden">
+                                    Resend OTP
+                                </button>
+                            </div>
+                        </div>
+                        <div id="otpMessage" class="mt-2 text-sm text-center w-full"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label asp-for="Username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                    <input asp-for="Username" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Choose a username">
+                    <span asp-validation-for="Username" class="text-red-500 text-xs"></span>
+                </div>
+                
+                <div>
+                    <label asp-for="PhoneNumber" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input asp-for="PhoneNumber" type="tel" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Phone number">
+                    <span asp-validation-for="PhoneNumber" class="text-red-500 text-xs"></span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="Password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input asp-for="Password" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Password">
+                        <div id="password-requirements" class="mt-2 text-xs">
+                            <p class="text-gray-600">Password must contain:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li id="req-length" class="text-red-500">At least 8 characters</li>
+                                <li id="req-uppercase" class="text-red-500">One uppercase letter</li>
+                                <li id="req-lowercase" class="text-red-500">One lowercase letter</li>
+                                <li id="req-number" class="text-red-500">One number</li>
+                                <li id="req-special" class="text-red-500">One special character</li>
+                            </ul>
+                        </div>
+                        <span asp-validation-for="Password" class="text-red-500 text-xs"></span>
+                    </div>
+                    <div>
+                        <label asp-for="ConfirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input asp-for="ConfirmPassword" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Confirm password">
+                        <span asp-validation-for="ConfirmPassword" class="text-red-500 text-xs"></span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label asp-for="Role" class="block text-sm font-medium text-gray-700 mb-1">Register as</label>
+                    <select asp-for="Role" asp-items="Html.GetEnumSelectList<EventManagementSystem.Models.UserRole>()" class="rounded-md relative block w-full px-3 py-2 border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm">
+                    </select>
+                    <span asp-validation-for="Role" class="text-red-500 text-xs"></span>
+                </div>
+
+                <div id="businessInfo" class="hidden space-y-4 border-t border-gray-200 pt-4 mt-4">
+                    <h3 class="text-lg font-medium text-gray-900">Business Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label asp-for="OrganizationName" class="block text-sm font-medium text-gray-700 mb-1">Organization Name</label>
+                            <input asp-for="OrganizationName" type="text" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Your organization name">
+                            <span asp-validation-for="OrganizationName" class="text-red-500 text-xs"></span>
+                        </div>
+                        
+                        <div>
+                            <label asp-for="Position" class="block text-sm font-medium text-gray-700 mb-1">Position</label>
+                            <input asp-for="Position" type="text" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Your position">
+                            <span asp-validation-for="Position" class="text-red-500 text-xs"></span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label asp-for="BusinessPhone" class="block text-sm font-medium text-gray-700 mb-1">Business Phone</label>
+                            <input asp-for="BusinessPhone" type="tel" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Business phone number">
+                            <span asp-validation-for="BusinessPhone" class="text-red-500 text-xs"></span>
+                        </div>
+                        
+                        <div>
+                            <label asp-for="BusinessEmail" class="block text-sm font-medium text-gray-700 mb-1">Business Email</label>
+                            <input asp-for="BusinessEmail" type="email" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Business email">
+                            <span asp-validation-for="BusinessEmail" class="text-red-500 text-xs"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label asp-for="BusinessAddress" class="block text-sm font-medium text-gray-700 mb-1">Business Address</label>
+                        <textarea asp-for="BusinessAddress" rows="3" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Enter your business address"></textarea>
+                        <span asp-validation-for="BusinessAddress" class="text-red-500 text-xs"></span>
+                    </div>
+
+                    <div>
+                        <label asp-for="TaxId" class="block text-sm font-medium text-gray-700 mb-1">Tax ID</label>
+                        <input asp-for="TaxId" type="text" class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary-500 focus:border-primary-500 focus:z-10 sm:text-sm" placeholder="Enter your tax ID">
+                        <span asp-validation-for="TaxId" class="text-red-500 text-xs"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <input id="agree-terms" name="agree-terms" type="checkbox" required class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded">
+                    <label for="agree-terms" class="ml-2 block text-sm text-gray-900">
+                        I agree to the Terms of Service and Privacy Policy
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" id="registerBtn" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <i class="fas fa-user-plus text-primary-500 group-hover:text-primary-400 transition-colors duration-300"></i>
+                    </span>
+                    Create Account
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            let isOtpVerified = false;
+            let otpResendTimer = null;
+            const emailInput = $('#Email');
+            const sendOtpBtn = $('#sendOtpBtn');
+            const verifyOtpBtn = $('#verifyOtpBtn');
+            const resendOtpBtn = $('#resendOtpBtn');
+            const otpSection = $('#otpSection');
+            const otpInput = $('#OTP');
+            const otpMessage = $('#otpMessage');
+            const registerBtn = $('#registerBtn');
+            const registerForm = $('#registerForm');
+            const otpTimer = $('#otpTimer');
+            const otpInputs = $('.otp-input');
+
+            registerBtn.prop('disabled', true).addClass('opacity-50 cursor-not-allowed');
+            otpInputs.on('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+
+                if (this.value.length === 1) {
+                    $(this).next('.otp-input').focus();
+                }
+
+                const otp = Array.from(otpInputs).map(input => input.value).join('');
+                otpInput.val(otp);
+            });
+
+            otpInputs.on('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value) {
+                    $(this).prev('.otp-input').focus();
+                }
+            });
+
+            function startOtpTimer() {
+                let timeLeft = 30;
+                resendOtpBtn.addClass('hidden');
+                
+                if (otpResendTimer) {
+                    clearInterval(otpResendTimer);
+                }
+
+                otpResendTimer = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(otpResendTimer);
+                        otpTimer.text('');
+                        resendOtpBtn.removeClass('hidden');
+                    } else {
+                        otpTimer.html(`Resend OTP in <span class="text-primary-600">${timeLeft}s</span>`);
+                        timeLeft--;
+                    }
+                }, 1000);
+            }
+
+            sendOtpBtn.click(function () {
+                const email = emailInput.val();
+                if (!email) {
+                    showMessage('error', 'Please enter an email address');
+                    return;
+                }
+
+                sendOtpBtn.prop('disabled', true)
+                    .html('<i class="fas fa-spinner fa-spin mr-2"></i>Sending...')
+                    .addClass('opacity-75');
+
+                $.ajax({
+                    url: '/Account/SendOTP',
+                    type: 'POST',
+                    data: { email: email },
+                    success: function (response) {
+                        if (response.success) {
+                            otpSection.removeClass('hidden').addClass('animate-fade-in');
+                            sendOtpBtn.html('<i class="fas fa-check mr-2"></i>OTP Sent');
+                            showMessage('success', 'OTP sent successfully! Please check your email.');
+                            startOtpTimer();
+                            otpInputs.first().focus();
+                        } else {
+                            sendOtpBtn.prop('disabled', false)
+                                .html('Send OTP')
+                                .removeClass('opacity-75');
+
+                            $('#validation-summary').removeClass('hidden');
+                            $('#validation-messages').html(`<ul class="list-disc pl-5"><li>${response.message}</li></ul>`);
+                            $('[data-valmsg-for="Email"]').text(response.message);
+                            $('html, body').animate({
+                                scrollTop: $('#validation-summary').offset().top - 20
+                            }, 500);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        sendOtpBtn.prop('disabled', false)
+                            .html('Send OTP')
+                            .removeClass('opacity-75');
+                        showMessage('error', 'Failed to send OTP. Please try again.');
+                        console.error('Error:', error);
+                    }
+                });
+            });
+            resendOtpBtn.click(function() {
+                sendOtpBtn.click();
+            });
+            function showMessage(type, message) {
+                const icon = type === 'success' ? 'check-circle' : 'exclamation-circle';
+                const color = type === 'success' ? 'green' : 'red';
+                otpMessage.html(`
+                    <div class="flex items-center justify-center text-${color}-500">
+                        <i class="fas fa-${icon} mr-2"></i>
+                        <span>${message}</span>
+                    </div>
+                `);
+            }
+            verifyOtpBtn.click(function () {
+                const email = emailInput.val();
+                const otp = Array.from(otpInputs).map(input => input.value).join('');
+
+                if (!otp || otp.length !== 6) {
+                    showMessage('error', 'Please enter the complete 6-digit OTP');
+                    return;
+                }
+                verifyOtpBtn.prop('disabled', true)
+                    .html('<i class="fas fa-spinner fa-spin mr-2"></i>Verifying...')
+                    .addClass('opacity-75');
+                $.ajax({
+                    url: '/Account/VerifyOTP',
+                    type: 'POST',
+                    data: { email: email, otp: otp },
+                    success: function (response) {
+                        if (response.success) {
+                            isOtpVerified = true;
+                            showMessage('success', 'Email verified successfully!');
+                            verifyOtpBtn.html('<i class="fas fa-check-circle mr-2"></i>Verified')
+                                .addClass('bg-green-600 hover:bg-green-700')
+                                .prop('disabled', true);
+                            otpInputs.prop('disabled', true).addClass('bg-gray-100');
+                            registerBtn.prop('disabled', false).removeClass('opacity-50 cursor-not-allowed');
+                            emailInput.prop('readonly', true).addClass('bg-gray-100');
+                            sendOtpBtn.hide();
+                            resendOtpBtn.hide();
+                            otpTimer.hide();
+                            clearInterval(otpResendTimer);
+                            emailInput.data('verified-email', email);
+                            $('[data-valmsg-for="Email"]').text('');
+                            $('.validation-summary-errors').remove();
+                        } else {
+                            verifyOtpBtn.prop('disabled', false)
+                                .html('<i class="fas fa-check-circle mr-2"></i>Verify OTP')
+                                .removeClass('opacity-75');
+                            showMessage('error', response.message || 'Invalid OTP');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        verifyOtpBtn.prop('disabled', false)
+                            .html('<i class="fas fa-check-circle mr-2"></i>Verify OTP')
+                            .removeClass('opacity-75');
+                        showMessage('error', 'Failed to verify OTP. Please try again.');
+                        console.error('Error:', error);
+                    }
+                });
+            });
+
+            registerForm.on('submit', function (e) {
+                e.preventDefault(); 
+
+                $('#validation-messages').empty();
+                $('#validation-summary').addClass('hidden');
+                $('.validation-summary-errors').remove();
+
+                if (!isOtpVerified) {
+                    showMessage('error', 'Please verify your email with OTP first');
+                    return false;
+                }
+
+                const password = $('#Password').val();
+                const confirmPassword = $('#ConfirmPassword').val();
+                const validationMessages = [];
+
+                if (password.length < 8) {
+                    validationMessages.push("Password must be at least 8 characters long");
+                }
+                if (!/[A-Z]/.test(password)) {
+                    validationMessages.push("Password must contain at least one uppercase letter");
+                }
+                if (!/[a-z]/.test(password)) {
+                    validationMessages.push("Password must contain at least one lowercase letter");
+                }
+                if (!/\d/.test(password)) {
+                    validationMessages.push("Password must contain at least one number");
+                }
+                if (!/[^\da-zA-Z]/.test(password)) {
+                    validationMessages.push("Password must contain at least one special character");
+                }
+                if (password !== confirmPassword) {
+                    validationMessages.push("Passwords do not match");
+                }
+
+                if (validationMessages.length > 0) {
+                    $('#validation-summary').removeClass('hidden');
+                    const messageList = validationMessages.map(msg => `<li>${msg}</li>`).join('');
+                    $('#validation-messages').html(`<ul class="list-disc pl-5">${messageList}</ul>`);
+                    
+                    $('html, body').animate({
+                        scrollTop: $('#validation-summary').offset().top - 20
+                    }, 500);
+                    return false;
+                }
+
+                const formData = new FormData(this);
+                
+                registerBtn.prop('disabled', true)
+                    .html('<i class="fas fa-spinner fa-spin mr-2"></i>Creating Account...')
+                    .addClass('opacity-75');
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        if (response.success) {
+                            showMessage('success', 'Account created successfully! Redirecting...');
+                            setTimeout(function() {
+                                window.location.href = response.redirectUrl || '/';
+                            }, 1500);
+                        } else {
+                            $('#validation-summary').removeClass('hidden');
+                            $('#validation-messages').html(`<ul class="list-disc pl-5"><li>${response.message || 'Registration failed. Please try again.'}</li></ul>`);
+                            registerBtn.prop('disabled', false)
+                                .html('<i class="fas fa-user-plus mr-2"></i>Create Account')
+                                .removeClass('opacity-75');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $('#validation-summary').removeClass('hidden');
+                        $('#validation-messages').html(`<ul class="list-disc pl-5"><li>Registration failed. Please try again.</li></ul>`);
+                        registerBtn.prop('disabled', false)
+                            .html('<i class="fas fa-user-plus mr-2"></i>Create Account')
+                            .removeClass('opacity-75');
+                    }
+                });
+
+                return false;
+            });
+            emailInput.on('input', function () {
+                const email = $(this).val();
+                if (!isOtpVerified) {
+                    sendOtpBtn.prop('disabled', !email);
+                }
+            });
+            $('#Role').change(function() {
+                var selectedRole = $(this).val();
+                var businessInfo = $('#businessInfo');
+                
+                if (selectedRole === 'Registrar') {
+                    businessInfo.slideDown(300);
+                    businessInfo.find('input, textarea').prop('required', false);
+                    businessInfo.find('label').each(function() {
+                        $(this).html($(this).html().replace(' <span class="text-red-500">*</span>', ''));
+                    });
+                } else {
+                    businessInfo.slideUp(300);
+                    businessInfo.find('input, textarea').prop('required', false);
+                    businessInfo.find('input, textarea').val('');
+                    businessInfo.find('label').each(function() {
+                        $(this).html($(this).html().replace(' <span class="text-red-500">*</span>', ''));
+                    });
+                }
+            });
+            $('#Role').trigger('change');
+            $('#Password').on('input', function() {
+                const password = $(this).val();
+                $('#req-length').toggleClass('text-red-500 text-green-500', password.length >= 8);
+                $('#req-uppercase').toggleClass('text-red-500 text-green-500', /[A-Z]/.test(password));
+                $('#req-lowercase').toggleClass('text-red-500 text-green-500', /[a-z]/.test(password));
+                $('#req-number').toggleClass('text-red-500 text-green-500', /\d/.test(password));
+                $('#req-special').toggleClass('text-red-500 text-green-500', /[^\da-zA-Z]/.test(password));
+            });
+        });
+    </script>
+} 

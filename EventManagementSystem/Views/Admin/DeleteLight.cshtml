@@ -1,0 +1,59 @@
+﻿@model EventManagementSystem.Models.Light
+
+@{
+    ViewData["Title"] = "Delete Light";
+    Layout = "_AdminLayout";
+}
+
+<div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-semibold text-gray-800 dark:text-white">Delete Light</h1>
+    <a href="@Url.Action("ManageLights", "Admin")" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">
+        <i class="fas fa-arrow-left mr-1"></i> Back to Light Management
+    </a>
+</div>
+
+<div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+    <div class="p-6">
+        <div class="flex items-start">
+            <div class="flex-shrink-0 mr-4">
+                <div class="h-16 w-16 rounded-md overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/lights/default.jpg" : Model.ImageUrl)" alt="@Model.Name" class="h-full w-full object-cover" />
+                </div>
+            </div>
+            <div>
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">@Model.Name</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Type: @Model.Type</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Price: ₹@Model.PricePerDay.ToString("F2")/day</p>
+            </div>
+        </div>
+        
+        <div class="mt-4">
+            <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-400 dark:border-red-500 p-4">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-red-400 dark:text-red-500"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Warning</h3>
+                        <div class="text-sm text-red-700 dark:text-red-300">
+                            <p>Are you sure you want to delete this light? This action cannot be undone.</p>
+                            <p class="mt-1">If this light is currently booked for any events, those bookings may be affected.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-5 flex items-center justify-end space-x-3">
+            <a href="@Url.Action("ManageLights", "Admin")" class="inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                Cancel
+            </a>
+            <form asp-action="DeleteLight" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                    <i class="fas fa-trash mr-1"></i> Delete Light
+                </button>
+            </form>
+        </div>
+    </div>
+</div> 

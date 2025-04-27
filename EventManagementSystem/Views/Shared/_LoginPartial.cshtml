@@ -1,0 +1,56 @@
+@using System.Security.Claims
+
+<ul class="flex items-center space-x-4">
+@if (User?.Identity != null && User.Identity.IsAuthenticated)
+{
+    <li class="text-sm">
+        <span class="text-gray-500 dark:text-gray-400">
+            Hello, @(User.Identity.Name ?? "User")!
+        </span>
+    </li>
+    
+    @if (User.IsInRole("Admin"))
+    {
+        <li>
+            <a asp-controller="Admin" asp-action="Index" class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
+            </a>
+        </li>
+    }
+    else if (User.IsInRole("Registrar"))
+    {
+        <li>
+            <a asp-controller="Registrar" asp-action="Index" class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
+            </a>
+        </li>
+    }
+    else if (User.IsInRole("Customer"))
+    {
+        <li>
+            <a asp-controller="Customer" asp-action="Index" class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+                <i class="fas fa-tachometer-alt mr-1"></i> Dashboard
+            </a>
+        </li>
+    }
+    
+    <li>
+        <a asp-controller="Account" asp-action="Logout" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
+            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+        </a>
+    </li>
+}
+else
+{
+    <li>
+        <a asp-controller="Account" asp-action="Login" class="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300">
+            <i class="fas fa-sign-in-alt mr-1"></i> Login
+        </a>
+    </li>
+    <li>
+        <a asp-controller="Account" asp-action="Register" class="bg-primary-600 hover:bg-primary-700 text-white py-1 px-3 rounded-md transition-colors duration-300">
+            <i class="fas fa-user-plus mr-1"></i> Register
+        </a>
+    </li>
+}
+</ul> 

@@ -1,0 +1,690 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+    Layout = "_Layout";
+}
+
+<div class="bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-4">
+                <li>
+                    <div>
+                        <a href="/" class="text-gray-400 hover:text-gray-500">
+                            <i class="fas fa-home"></i>
+                            <span class="sr-only">Home</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <a href="/Venues" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Venues</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <a href="#" id="venue-link" class="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">Venue</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 text-sm"></i>
+                        <span class="ml-4 text-sm font-medium text-gray-500" aria-current="page">Checkout</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="bg-white shadow rounded-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Add Services</h2>
+                        <div class="mb-6 border-b border-gray-200">
+                            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="services-tabs" role="tablist">
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 rounded-t-lg active" id="flowers-tab" data-tabs-target="#flowers" type="button" role="tab" aria-controls="flowers" aria-selected="true">
+                                        <i class="fas fa-flower mr-2"></i>Flowers
+                                    </button>
+                                </li>
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="food-tab" data-tabs-target="#food" type="button" role="tab" aria-controls="food" aria-selected="false">
+                                        <i class="fas fa-utensils mr-2"></i>Food
+                                    </button>
+                                </li>
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="lights-tab" data-tabs-target="#lights" type="button" role="tab" aria-controls="lights" aria-selected="false">
+                                        <i class="fas fa-lightbulb mr-2"></i>Lights
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" id="equipment-tab" data-tabs-target="#equipment" type="button" role="tab" aria-controls="equipment" aria-selected="false">
+                                        <i class="fas fa-tools mr-2"></i>Equipment
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="services-content">
+                            <div class="block" id="flowers" role="tabpanel" aria-labelledby="flowers-tab">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 services-grid" id="flowers-grid">
+                                    <div class="text-center py-8 text-gray-500">
+                                        <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                        <p>Loading flowers...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden" id="food" role="tabpanel" aria-labelledby="food-tab">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 services-grid" id="food-grid">
+                                    <div class="text-center py-8 text-gray-500">
+                                        <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                        <p>Loading food options...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden" id="lights" role="tabpanel" aria-labelledby="lights-tab">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 services-grid" id="lights-grid">
+                                    <div class="text-center py-8 text-gray-500">
+                                        <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                        <p>Loading lighting options...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 services-grid" id="equipment-grid">
+                                    <div class="text-center py-8 text-gray-500">
+                                        <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                        <p>Loading equipment...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow rounded-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Complete Your Booking</h2>
+                        
+                        <form id="payment-form" asp-action="ProcessPayment" asp-controller="Bookings" method="post">
+                            <input type="hidden" id="VenueId" name="VenueId" />
+                            <input type="hidden" id="VenueName" name="VenueName" />
+                            <input type="hidden" id="Date" name="Date" />
+                            <input type="hidden" id="StartTime" name="StartTime" />
+                            <input type="hidden" id="EndTime" name="EndTime" />
+                            <input type="hidden" id="GuestCount" name="GuestCount" />
+                            <input type="hidden" id="TotalPrice" name="TotalPrice" />
+                            <input type="hidden" id="ServiceFee" name="ServiceFee" />
+                            <input type="hidden" id="CleaningFee" name="CleaningFee" />
+                            <div class="mb-8">
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Customer Information</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="CustomerName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                        <input type="text" id="CustomerName" name="CustomerName" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                    <div>
+                                        <label for="CustomerEmail" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                        <input type="email" id="CustomerEmail" name="CustomerEmail" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                    <div>
+                                        <label for="CustomerPhone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                        <input type="tel" id="CustomerPhone" name="CustomerPhone" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                    <div>
+                                        <label for="EventTitle" class="block text-sm font-medium text-gray-700 mb-1">Event Title</label>
+                                        <input type="text" id="EventTitle" name="EventTitle" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label for="EventType" class="block text-sm font-medium text-gray-700 mb-1">Event Type</label>
+                                    <select id="EventType" name="EventType" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm">
+                                        <option value="">Select Event Type</option>
+                                        <option value="Wedding">Wedding</option>
+                                        <option value="Birthday">Birthday</option>
+                                        <option value="Corporate">Corporate</option>
+                                        <option value="Conference">Conference</option>
+                                        <option value="Party">Party</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mt-4">
+                                    <label for="SpecialRequests" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+                                    <textarea id="SpecialRequests" name="SpecialRequests" rows="3" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900 mb-4">Payment Information</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Payment Method</label>
+                                    <div class="flex space-x-4">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="payment-method" value="card" class="form-radio h-4 w-4 text-primary-600" checked>
+                                            <span class="ml-2 text-sm text-gray-700">Credit/Debit Card</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="payment-method" value="upi" class="form-radio h-4 w-4 text-primary-600">
+                                            <span class="ml-2 text-sm text-gray-700">UPI</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="card-payment-section">
+                                    <div class="mb-4">
+                                        <label for="card-name" class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                                        <input type="text" id="card-name" name="card-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                        <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="expiry-date" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                        </div>
+                                        <div>
+                                            <label for="cvc" class="block text-sm font-medium text-gray-700 mb-1">CVC</label>
+                                            <input type="text" id="cvc" name="cvc" placeholder="CVC" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" required />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="upi-payment-section" class="hidden">
+                                    <div class="mb-4">
+                                        <label for="upi-id" class="block text-sm font-medium text-gray-700 mb-1">UPI ID</label>
+                                        <input type="text" id="upi-id" name="upi-id" placeholder="username@upi" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm" />
+                                    </div>
+                                    <div class="text-sm text-gray-500 mb-4">
+                                        <p>You will be redirected to your UPI app to complete the payment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <button type="submit" class="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                                    Complete Payment
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-1">
+                <div class="bg-white shadow rounded-lg overflow-hidden sticky top-8">
+                    <div class="p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Booking Summary</h3>
+                        
+                        <div class="mb-6">
+                            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4">
+                                <img id="venue-image" src="" alt="Venue" class="w-full h-full object-cover" />
+                            </div>
+                            <h4 id="venue-name" class="text-lg font-medium text-gray-900"></h4>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Date</span>
+                                <span id="booking-date" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Time</span>
+                                <span id="booking-time" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Guests</span>
+                                <span id="guest-count" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3 border-t border-gray-200 pt-4 mb-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Subtotal</span>
+                                <span id="venue-subtotal" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Service Fee</span>
+                                <span id="service-fee-display" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Cleaning Fee</span>
+                                <span id="cleaning-fee-display" class="text-sm font-medium text-gray-900"></span>
+                            </div>
+                            
+                            <div id="additional-services-container" class="hidden">
+                                <div class="flex items-center justify-between border-t border-gray-200 pt-3 mt-3">
+                                    <span class="text-sm text-gray-600">Additional Services</span>
+                                    <span id="additional-services-cost" class="text-sm font-medium text-gray-900">₹0.00</span>
+                                </div>
+                                <div id="selected-services-list" class="mt-2 space-y-2 text-xs text-gray-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+                            <span class="text-base font-medium text-gray-900">Total</span>
+                            <span id="total-price-display" class="text-lg font-bold text-primary-600"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<template id="service-item-template">
+    <div class="service-item bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div class="aspect-w-4 aspect-h-3">
+            <img src="" alt="" class="service-image w-full h-full object-cover">
+        </div>
+        <div class="p-4">
+            <div class="flex justify-between items-start mb-2">
+                <h4 class="service-name text-sm font-medium text-gray-900 truncate"></h4>
+                <span class="service-price text-sm font-medium text-primary-600"></span>
+            </div>
+            <p class="service-description text-xs text-gray-500 mb-3 line-clamp-2"></p>
+            
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox" class="service-checkbox form-checkbox h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500">
+                        <span class="ml-2 text-xs font-medium text-gray-900">Select</span>
+                    </label>
+                </div>
+                
+                <div class="quantity-selector flex items-center" style="display: none;">
+                    <button type="button" class="decrease-qty text-gray-500 focus:outline-none focus:text-gray-600">
+                        <i class="fas fa-minus-circle"></i>
+                    </button>
+                    <input type="number" class="quantity-input mx-2 w-12 text-center border-gray-300 text-xs rounded-md" value="1" min="1" max="100">
+                    <button type="button" class="increase-qty text-gray-500 focus:outline-none focus:text-gray-600">
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingData = JSON.parse(sessionStorage.getItem('bookingData'));
+            
+            if (!bookingData) {
+                window.location.href = '/Venues';
+                return;
+            }
+            
+            document.getElementById('venue-name').textContent = bookingData.venueName;
+            document.getElementById('venue-image').src = bookingData.venueImage;
+            document.getElementById('venue-link').textContent = bookingData.venueName;
+            document.getElementById('venue-link').href = '/Venues/Details/' + bookingData.venueId;
+            
+            const date = new Date(bookingData.date);
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                weekday: 'long',
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            });
+            document.getElementById('booking-date').textContent = formattedDate;
+            
+            document.getElementById('booking-time').textContent = `${bookingData.startTime} - ${bookingData.endTime} (${bookingData.hours} hours)`;
+            
+            document.getElementById('guest-count').textContent = bookingData.guestCount;
+            document.getElementById('venue-subtotal').textContent = `₹${bookingData.venueTotal.toFixed(2)}`;
+            document.getElementById('service-fee-display').textContent = `₹${bookingData.serviceFee.toFixed(2)}`;
+            document.getElementById('cleaning-fee-display').textContent = `₹${bookingData.cleaningFee.toFixed(2)}`;
+            document.getElementById('total-price-display').textContent = `₹${bookingData.totalPrice.toFixed(2)}`;
+            
+            document.getElementById('VenueId').value = bookingData.venueId;
+            document.getElementById('VenueName').value = bookingData.venueName;
+            document.getElementById('Date').value = bookingData.date;
+            document.getElementById('StartTime').value = bookingData.startTime;
+            document.getElementById('EndTime').value = bookingData.endTime;
+            document.getElementById('GuestCount').value = bookingData.guestCount;
+            document.getElementById('TotalPrice').value = bookingData.totalPrice;
+            document.getElementById('ServiceFee').value = bookingData.serviceFee;
+            document.getElementById('CleaningFee').value = bookingData.cleaningFee;
+            
+            const tabs = document.querySelectorAll('[data-tabs-target]');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = document.querySelector(this.dataset.tabsTarget);
+                    
+                    document.querySelectorAll('#services-content > div').forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    target.classList.remove('hidden');
+                    target.classList.add('block');
+                    
+                    tabs.forEach(t => {
+                        t.classList.remove('active', 'border-primary-600', 'text-primary-600');
+                        t.classList.add('border-transparent');
+                    });
+                    
+                    this.classList.add('active', 'border-primary-600', 'text-primary-600');
+                });
+            });
+            
+            if (tabs.length > 0) {
+                tabs[0].classList.add('active', 'border-primary-600', 'text-primary-600');
+            }
+            
+            loadServiceData('flowers', '/api/flowers');
+            loadServiceData('food', '/api/food');
+            loadServiceData('lights', '/api/lights');
+            loadServiceData('equipment', '/api/equipment');
+            
+            if (!sessionStorage.getItem('selectedServices')) {
+                sessionStorage.setItem('selectedServices', JSON.stringify([]));
+            }
+
+            // Handle payment method toggle
+            const paymentMethodRadios = document.querySelectorAll('input[name="payment-method"]');
+            const cardSection = document.getElementById('card-payment-section');
+            const upiSection = document.getElementById('upi-payment-section');
+
+            paymentMethodRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'card') {
+                        cardSection.classList.remove('hidden');
+                        upiSection.classList.add('hidden');
+                        // Make card fields required
+                        document.getElementById('card-name').required = true;
+                        document.getElementById('card-number').required = true;
+                        document.getElementById('expiry-date').required = true;
+                        document.getElementById('cvc').required = true;
+                        // Make UPI field not required
+                        document.getElementById('upi-id').required = false;
+                    } else {
+                        cardSection.classList.add('hidden');
+                        upiSection.classList.remove('hidden');
+                        // Make UPI field required
+                        document.getElementById('upi-id').required = true;
+                        // Make card fields not required
+                        document.getElementById('card-name').required = false;
+                        document.getElementById('card-number').required = false;
+                        document.getElementById('expiry-date').required = false;
+                        document.getElementById('cvc').required = false;
+                    }
+                });
+            });
+        });
+        function loadServiceData(serviceType, apiEndpoint) {
+            const container = document.getElementById(`${serviceType}-grid`);
+            container.innerHTML = `
+                <div class="text-center py-8 text-gray-500 col-span-full">
+                    <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                    <p>Loading ${serviceType}...</p>
+                </div>
+            `;
+            fetch(apiEndpoint)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    renderServiceItems(serviceType, data);
+                })
+                .catch(error => {
+                    console.error(`Error fetching ${serviceType}:`, error);
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-8 text-gray-500">
+                            <i class="fas fa-exclamation-triangle text-2xl mb-2"></i>
+                            <p>Failed to load ${serviceType}. Please try again later.</p>
+                        </div>
+                    `;
+                });
+        }
+        function renderServiceItems(serviceType, items) {
+            const container = document.getElementById(`${serviceType}-grid`);
+            container.innerHTML = ''; 
+            
+            if (!items || items.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-8 text-gray-500">No ${serviceType} available</div>`;
+                return;
+            }
+            
+            const template = document.getElementById('service-item-template');
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            
+            items.forEach(item => {
+                const clone = template.content.cloneNode(true);
+                const image = clone.querySelector('.service-image');
+                image.src = item.imageUrl;
+                image.alt = item.name;
+                
+                clone.querySelector('.service-name').textContent = item.name;
+                let price;
+                if (serviceType === 'food') {
+                    price = item.pricePerPerson;
+                } else if (serviceType === 'lights' || serviceType === 'equipment') {
+                    price = item.pricePerDay;
+                } else {
+                    price = item.price;
+                }
+
+                clone.querySelector('.service-price').textContent = `₹${price.toFixed(2)}`;
+                clone.querySelector('.service-description').textContent = item.description;
+                
+                const checkbox = clone.querySelector('.service-checkbox');
+                const quantitySelector = clone.querySelector('.quantity-selector');
+                const quantityInput = clone.querySelector('.quantity-input');
+                const existingSelection = selectedServices.find(s => 
+                    s.serviceType === serviceType && s.serviceId === item.id
+                );
+                
+                if (existingSelection) {
+                    checkbox.checked = true;
+                    quantitySelector.style.display = 'flex';
+                    quantityInput.value = existingSelection.quantity;
+                }
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        quantitySelector.style.display = 'flex';
+                        addService(serviceType, item, parseInt(quantityInput.value));
+                    } else {
+                        quantitySelector.style.display = 'none';
+                        removeService(serviceType, item.id);
+                    }
+                });
+                
+                clone.querySelector('.decrease-qty').addEventListener('click', function() {
+                    if (parseInt(quantityInput.value) > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                        updateServiceQuantity(serviceType, item.id, parseInt(quantityInput.value));
+                    }
+                });
+                
+                clone.querySelector('.increase-qty').addEventListener('click', function() {
+                    quantityInput.value = parseInt(quantityInput.value) + 1;
+                    updateServiceQuantity(serviceType, item.id, parseInt(quantityInput.value));
+                });
+                
+                quantityInput.addEventListener('change', function() {
+                    if (parseInt(this.value) < 1) this.value = 1;
+                    updateServiceQuantity(serviceType, item.id, parseInt(this.value));
+                });
+                
+                container.appendChild(clone);
+            });
+        }
+        function addService(serviceType, service, quantity) {
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            let price;
+            if (serviceType === 'food') {
+                price = service.pricePerPerson;
+            } else if (serviceType === 'lights' || serviceType === 'equipment') {
+                price = service.pricePerDay;
+            } else {
+                price = service.price;
+            }
+            
+            const imageUrl = service.imageUrl || `/images/services/${serviceType.toLowerCase()}/default.jpg`;
+            
+            selectedServices.push({
+                serviceType: serviceType,
+                serviceId: service.id,
+                serviceName: service.name,
+                servicePrice: price,
+                quantity: quantity,
+                imageUrl: imageUrl
+            });
+            
+            sessionStorage.setItem('selectedServices', JSON.stringify(selectedServices));
+            updateBookingSummary();
+        }
+        
+        function removeService(serviceType, serviceId) {
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            
+            const updatedServices = selectedServices.filter(s => 
+                !(s.serviceType === serviceType && s.serviceId === serviceId)
+            );
+            
+            sessionStorage.setItem('selectedServices', JSON.stringify(updatedServices));
+            updateBookingSummary();
+        }
+        
+        function updateServiceQuantity(serviceType, serviceId, quantity) {
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            
+            const updatedServices = selectedServices.map(s => {
+                if (s.serviceType === serviceType && s.serviceId === serviceId) {
+                    return { ...s, quantity: quantity };
+                }
+                return s;
+            });
+            
+            sessionStorage.setItem('selectedServices', JSON.stringify(updatedServices));
+            updateBookingSummary();
+        }
+        
+        function updateBookingSummary() {
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            const bookingData = JSON.parse(sessionStorage.getItem('bookingData'));
+            const servicesList = document.getElementById('selected-services-list');
+            const servicesContainer = document.getElementById('additional-services-container');
+            
+            let totalServicesCost = 0;
+            selectedServices.forEach(service => {
+                totalServicesCost += service.servicePrice * service.quantity;
+            });
+            
+            if (selectedServices.length > 0) {
+                servicesContainer.classList.remove('hidden');
+                document.getElementById('additional-services-cost').textContent = `₹${totalServicesCost.toFixed(2)}`;
+                servicesList.innerHTML = '';
+                selectedServices.forEach(service => {
+                    const item = document.createElement('div');
+                    item.className = 'flex justify-between';
+                    item.innerHTML = `
+                        <span>${service.serviceName} x${service.quantity}</span>
+                        <span>₹${(service.servicePrice * service.quantity).toFixed(2)}</span>
+                    `;
+                    servicesList.appendChild(item);
+                });
+                const existingField = document.getElementById('services-data');
+                if (!existingField) {
+                    const servicesData = document.createElement('input');
+                    servicesData.type = 'hidden';
+                    servicesData.id = 'services-data';
+                    servicesData.name = 'ServicesData';
+                    servicesData.value = JSON.stringify(selectedServices);
+                    document.getElementById('payment-form').appendChild(servicesData);
+                } else {
+                    existingField.value = JSON.stringify(selectedServices);
+                }
+            } else {
+                servicesContainer.classList.add('hidden');
+            }
+            
+            const newTotal = bookingData.totalPrice + totalServicesCost;
+            document.getElementById('total-price-display').textContent = `₹${newTotal.toFixed(2)}`;
+            
+            document.getElementById('TotalPrice').value = newTotal;
+        }
+
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const bookingData = JSON.parse(sessionStorage.getItem('bookingData'));
+            if (!bookingData) {
+                alert('Booking data not found. Please try again.');
+                return;
+            }
+            
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+            
+            if (paymentMethod === 'upi') {
+                const upiId = document.getElementById('upi-id').value;
+                if (!upiId) {
+                    alert('Please enter your UPI ID');
+                    return;
+                }
+                // Add UPI ID to form data
+                const upiField = document.createElement('input');
+                upiField.type = 'hidden';
+                upiField.name = 'UPIId';
+                upiField.value = upiId;
+                this.appendChild(upiField);
+            }
+
+            document.getElementById('VenueId').value = bookingData.venueId;
+            document.getElementById('VenueName').value = bookingData.venueName;
+            document.getElementById('Date').value = bookingData.date;
+            document.getElementById('StartTime').value = bookingData.startTime;
+            document.getElementById('EndTime').value = bookingData.endTime;
+            document.getElementById('GuestCount').value = bookingData.guestCount;
+            
+            const selectedServices = JSON.parse(sessionStorage.getItem('selectedServices')) || [];
+            let additionalServicesCost = 0;
+            if (selectedServices.length > 0) {
+                additionalServicesCost = selectedServices.reduce((total, service) => total + (service.servicePrice * service.quantity), 0);
+            }
+            const totalPrice = bookingData.totalPrice + additionalServicesCost;
+            
+            document.getElementById('TotalPrice').value = totalPrice;
+            document.getElementById('ServiceFee').value = bookingData.serviceFee;
+            document.getElementById('CleaningFee').value = bookingData.cleaningFee;
+            
+            const statusField = document.createElement('input');
+            statusField.type = 'hidden';
+            statusField.name = 'Status';
+            statusField.value = 'Pending';
+            this.appendChild(statusField);
+            
+            const selectedServicesData = document.createElement('input');
+            selectedServicesData.type = 'hidden';
+            selectedServicesData.name = 'ServicesData';
+            selectedServicesData.value = JSON.stringify(selectedServices);
+            this.appendChild(selectedServicesData);
+
+            const requiredFields = ['CustomerName', 'CustomerEmail', 'CustomerPhone', 'EventTitle', 'EventType'];
+            let missingFields = [];
+            
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    missingFields.push(field.replace(/([A-Z])/g, ' $1').trim());
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+
+            if (missingFields.length > 0) {
+                alert('Please fill in all required fields: ' + missingFields.join(', '));
+                return;
+            }
+            
+            this.submit();
+        });
+    </script>
+} 
