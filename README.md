@@ -70,7 +70,7 @@ The project supports three types of users with role-specific functionalities:
 
 ### **Step 1: Clone the Repository**  
 ```bash
-git clone https://github.com/your-username/event-management-system.git
+git clone https://github.com/nileshpar835/event-management-system.git
 ```
 ### **Step 2: Configure the Environment**
 - **Open the project in Visual Studio 2022.**
@@ -91,6 +91,7 @@ Update-Database
 ---
 
 ### **🧑‍💻 Contributors**
+
 - **Nilesh Parmar - Developer**
 
 
