@@ -90,7 +90,7 @@ Update-Database
 
 ---
 
-### **🧑‍💻 Contributors**
+## **🧑‍💻 Contributors**
 
 - **Nilesh Parmar - Developer**
 
