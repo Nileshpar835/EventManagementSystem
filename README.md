@@ -46,10 +46,10 @@ The project supports three types of users with role-specific functionalities:
 ![Admin Dashboard](EventManagementSystem/wwwroot/images/Adash.png)
 
 ### **Customer Dashboard**  
-![Customer Dashboard](EventManagementSystem/wwwroot/images/cdash.jpg)
+![Customer Dashboard](EventManagementSystem/wwwroot/images/cdash.png)
 
 ### **Registrar Dashboard**  
-![Registrar Dashboard](EventManagementSystem/wwwroot/images/rdash.jpg)
+![Registrar Dashboard](EventManagementSystem/wwwroot/images/rdash.png)
 
 ---
 
