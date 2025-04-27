@@ -89,8 +89,12 @@ Update-Database
 - **Open your web browser and navigate to http://localhost:5000 (or the port configured in your project).**
 
 ---
+
 ### **🧑‍💻 Contributors**
 - **Nilesh Parmar - Developer**
+
+
+
 
 ### **🌟 Future Enhancements**
 - **Real-time event status updates for customers.**
