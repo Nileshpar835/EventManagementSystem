@@ -45,7 +45,7 @@ The project supports three types of users with role-specific functionalities:
 ![Home Page](https://via.placeholder.com/800x400?text=Event+Management+Home+Page)
 
 ### **Login Page**  
-![Home Page](EventManagementSystem/wwwroot/images/login page.jpg)
+![Home Page](EventManagementSystem/wwwroot/images/loginpage.jpg)
 
 ### **Admin Dashboard**  
 ![Admin Dashboard](EventManagementSystem/wwwroot/images/Adash.png)
