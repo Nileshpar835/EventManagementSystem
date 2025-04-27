@@ -42,7 +42,7 @@ The project supports three types of users with role-specific functionalities:
 
 
 ### **Home Page**  
-![Home Page](EventManagementSystem/wwwroot/images/home.png)
+![Home Page](EventManagementSystem/wwwroot/images/home.jpg)
 
 ### **Login Page**  
 ![login Page](EventManagementSystem/wwwroot/images/loginpage.jpg)
