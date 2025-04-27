@@ -96,8 +96,9 @@ Update-Database
 
 
 
+---
+## **🌟 Future Enhancements**
 
-### **🌟 Future Enhancements**
 - **Real-time event status updates for customers.**
 
 - **Enhanced reporting and analytics for admin users.**
@@ -108,7 +109,8 @@ Update-Database
 
 - **Multi-language support for global event management.**
 
-### **📷 Image Credits**
+---
+## **📷 Image Credits**
 (Screenshots and visuals were designed and captured for demonstration purposes.)
 
 - **Nilesh Parmar - Developer**
