@@ -2394,6 +2394,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\profiles\700f6237-139e-48e3-951e-e8417eea68d8.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\profiles\be803a83-5586-492b-b2c8-e5cd9ce7380d.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EventManagementSystem</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EventManagementSystem</BasePath>
+      <RelativePath>images/profiles/be803a83-5586-492b-b2c8-e5cd9ce7380d.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>cc8ikx2q83</Fingerprint>
+      <Integrity>vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\profiles\be803a83-5586-492b-b2c8-e5cd9ce7380d.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\profiles\f953eb3a-4a44-4019-920e-61c6bfac5364.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>EventManagementSystem</SourceId>

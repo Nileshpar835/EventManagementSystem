@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v20GKKhMy+0EC1NNnbmKxiVhju6n+5173gIjQj0edg4=",
+  "Hash": "9QDuE/6vstskuWkbN1njKyqia+v7p+JKlGTQ+T6iG/4=",
   "Source": "EventManagementSystem",
   "BasePath": "_content/EventManagementSystem",
   "Mode": "Default",
@@ -4236,6 +4236,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profiles\\700f6237-139e-48e3-951e-e8417eea68d8.png"
+    },
+    {
+      "Identity": "E:\\developingdotnet\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\be803a83-5586-492b-b2c8-e5cd9ce7380d.png",
+      "SourceId": "EventManagementSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\developingdotnet\\EventManagementSystem\\EventManagementSystem\\wwwroot\\",
+      "BasePath": "_content/EventManagementSystem",
+      "RelativePath": "images/profiles/be803a83-5586-492b-b2c8-e5cd9ce7380d#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cc8ikx2q83",
+      "Integrity": "vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\profiles\\be803a83-5586-492b-b2c8-e5cd9ce7380d.png"
     },
     {
       "Identity": "E:\\developingdotnet\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\f953eb3a-4a44-4019-920e-61c6bfac5364.jpg",
@@ -19370,6 +19391,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-5C48c542OFKV2dxCT0YEYKUm6wEc+8jYFUUYcBIz14s="
+        }
+      ]
+    },
+    {
+      "Route": "images/profiles/be803a83-5586-492b-b2c8-e5cd9ce7380d.cc8ikx2q83.png",
+      "AssetFile": "E:\\developingdotnet\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\be803a83-5586-492b-b2c8-e5cd9ce7380d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "831766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Nov 2025 15:25:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cc8ikx2q83"
+        },
+        {
+          "Name": "label",
+          "Value": "images/profiles/be803a83-5586-492b-b2c8-e5cd9ce7380d.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0="
+        }
+      ]
+    },
+    {
+      "Route": "images/profiles/be803a83-5586-492b-b2c8-e5cd9ce7380d.png",
+      "AssetFile": "E:\\developingdotnet\\EventManagementSystem\\EventManagementSystem\\wwwroot\\images\\profiles\\be803a83-5586-492b-b2c8-e5cd9ce7380d.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "831766"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Nov 2025 15:25:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFIBK1bKjlRj3VPtWWfVjgEmBaPQ2JNyDk8WyL/Niq0="
         }
       ]
     },

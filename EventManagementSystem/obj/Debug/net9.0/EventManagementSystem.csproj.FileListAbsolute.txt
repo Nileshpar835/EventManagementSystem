@@ -949,3 +949,5 @@ E:\developingdotnet\EventManagementSystem\EventManagementSystem\obj\Debug\net9.0
 E:\developingdotnet\EventManagementSystem\EventManagementSystem\obj\Debug\net9.0\EventManagementSystem.pdb
 E:\developingdotnet\EventManagementSystem\EventManagementSystem\obj\Debug\net9.0\EventManagementSystem.genruntimeconfig.cache
 E:\developingdotnet\EventManagementSystem\EventManagementSystem\obj\Debug\net9.0\ref\EventManagementSystem.dll
+E:\developingdotnet\EventManagementSystem\EventManagementSystem\bin\Debug\net9.0\DotNetEnv.dll
+E:\developingdotnet\EventManagementSystem\EventManagementSystem\bin\Debug\net9.0\Sprache.dll
