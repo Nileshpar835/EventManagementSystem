@@ -85,7 +85,7 @@ namespace EventManagementSystem.Controllers
                     Department = "System Administration",
                     Position = "Administrator",
                     AccessLevel = 5,
-                    LastActivity = DateTime.Now,
+                    LastActivity = DateTime.UtcNow,
                     AdminId = $"A{user.Id:D5}", 
                     ActionsPerformed = 0
                 };
@@ -100,7 +100,7 @@ namespace EventManagementSystem.Controllers
             var totalBookings = await _context.Bookings.CountAsync();
             var totalRevenue = await _context.Bookings.SumAsync(b => b.TotalPrice);
 
-            var previousMonth = DateTime.Now.AddMonths(-1);
+            var previousMonth = DateTime.UtcNow.AddMonths(-1);
             var previousMonthUsers = await _context.Users.CountAsync(u => u.CreatedAt < previousMonth);
             var previousMonthVenues = await _context.Venues.CountAsync(v => v.CreatedAt < previousMonth);
             var previousMonthBookings = await _context.Bookings.CountAsync(b => b.BookingDate < previousMonth);
@@ -165,7 +165,7 @@ namespace EventManagementSystem.Controllers
 
         private string GetTimeAgo(DateTime dateTime)
         {
-            var timeSpan = DateTime.Now - dateTime;
+            var timeSpan = DateTime.UtcNow - dateTime;
             
             if (timeSpan.TotalMinutes < 1)
                 return "Just now";
@@ -205,7 +205,7 @@ namespace EventManagementSystem.Controllers
                 {
                     var fileName = Path.GetFileName(profilePicture.FileName);
                     var fileExtension = Path.GetExtension(fileName);
-                    var newFileName = $"{user.Id}_{DateTime.Now.Ticks}{fileExtension}";
+                    var newFileName = $"{user.Id}_{DateTime.UtcNow.Ticks}{fileExtension}";
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "profiles", newFileName);
                     
                     using (var stream = new FileStream(filePath, FileMode.Create))
@@ -279,8 +279,8 @@ namespace EventManagementSystem.Controllers
             var venue = new Venue
             {
                 IsActive = true,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
                 Name = "",
                 Location = "",
                 Address = "",
@@ -296,7 +296,7 @@ namespace EventManagementSystem.Controllers
                 AvailableEventTypes = "",
                 HostName = "Host",
                 HostImage = "/images/hosts/default.jpg",
-                HostMemberSince = DateTime.Now,
+                HostMemberSince = DateTime.UtcNow,
                 HostBookingCount = 0,
                 HostResponseRate = 100,
                 HostResponseTime = 24,
@@ -312,8 +312,8 @@ namespace EventManagementSystem.Controllers
         public IActionResult CreateVenue(Venue venue, IFormFile? mainImage, IFormFile[]? additionalImages, IFormFile? hostImage)
         {
             venue.AdditionalImages = "";
-            venue.UpdatedAt = DateTime.Now;
-            venue.CreatedAt = DateTime.Now;
+            venue.UpdatedAt = DateTime.UtcNow;
+            venue.CreatedAt = DateTime.UtcNow;
             
             if (!ModelState.IsValid)
             {
@@ -331,7 +331,7 @@ namespace EventManagementSystem.Controllers
                 {
                     var fileName = Path.GetFileName(mainImage.FileName);
                     var fileExtension = Path.GetExtension(fileName);
-                    var newFileName = $"venue_{DateTime.Now.Ticks}{fileExtension}";
+                    var newFileName = $"venue_{DateTime.UtcNow.Ticks}{fileExtension}";
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "venues", newFileName);
                     
                     using (var stream = new FileStream(filePath, FileMode.Create))
@@ -1102,8 +1102,8 @@ namespace EventManagementSystem.Controllers
             {
                 IsAvailable = true,
                 ImageUrl = "/images/equipment/default.jpg",
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
                 Name = "",
                 Description = "",
                 Category = "",
@@ -1167,11 +1167,11 @@ namespace EventManagementSystem.Controllers
                         equipment.ImageUrl = "/images/equipment/default.jpg";
                     }
                     
-                    equipment.UpdatedAt = DateTime.Now;
+                    equipment.UpdatedAt = DateTime.UtcNow;
                     
                     if (equipment.Id == 0)
                     {
-                        equipment.CreatedAt = DateTime.Now;
+                        equipment.CreatedAt = DateTime.UtcNow;
                         _context.Equipment.Add(equipment);
                     }
                     else
@@ -1287,7 +1287,7 @@ namespace EventManagementSystem.Controllers
                     Department = "System Administration",
                     Position = "Administrator",
                     AccessLevel = 5,
-                    LastActivity = DateTime.Now,
+                    LastActivity = DateTime.UtcNow,
                     AdminId = $"A{user.Id:D5}", 
                     User = user 
                 };
@@ -1347,7 +1347,7 @@ namespace EventManagementSystem.Controllers
                         Directory.CreateDirectory(uploadsFolder);
                     }
                     
-                    var uniqueFileName = $"{DateTime.Now.Ticks}_{Path.GetFileName(profilePicture.FileName)}";
+                    var uniqueFileName = $"{DateTime.UtcNow.Ticks}_{Path.GetFileName(profilePicture.FileName)}";
                     var filePath = Path.Combine(uploadsFolder, uniqueFileName);
                     
                     using (var stream = new FileStream(filePath, FileMode.Create))
@@ -1372,7 +1372,7 @@ namespace EventManagementSystem.Controllers
 
                 adminToUpdate.Department = model.Department;
                 adminToUpdate.Position = model.Position;
-                adminToUpdate.LastActivity = DateTime.Now;
+                adminToUpdate.LastActivity = DateTime.UtcNow;
 
                 _context.Admins.Update(adminToUpdate);
                 await _context.SaveChangesAsync();
@@ -1402,7 +1402,7 @@ namespace EventManagementSystem.Controllers
                     var totalVenues = _context.Venues.Count();
                     var totalBookings = _context.Bookings.Count();
                     var totalRevenue = _context.Bookings.Sum(b => b.TotalPrice);
-                    var previousMonth = DateTime.Now.AddMonths(-1);
+                    var previousMonth = DateTime.UtcNow.AddMonths(-1);
                     var previousMonthUsers = _context.Users.Count(u => u.CreatedAt < previousMonth);
                     var previousMonthVenues = _context.Venues.Count(v => v.CreatedAt < previousMonth);
                     var previousMonthBookings = _context.Bookings.Count(b => b.BookingDate < previousMonth);

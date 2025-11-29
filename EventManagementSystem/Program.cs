@@ -1,24 +1,50 @@
-using EventManagementSystem.Models;
-using EventManagementSystem.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using EventManagementSystem.Data;
+using EventManagementSystem.Services;
+
+// Fix timestamp behavior for PostgreSQL
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configure Kestrel (Render requires PORT)
+builder.WebHost.ConfigureKestrel(options =>
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+    options.ListenAnyIP(int.Parse(port));
+});
+
+// Add MVC
 builder.Services.AddControllersWithViews();
 
-// Add DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-    .ConfigureWarnings(warnings => 
-        warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.MultipleCollectionIncludeWarning)));
+// Get PostgreSQL connection string
+var connectionString =
+    Environment.GetEnvironmentVariable("DATABASE_URL") ??
+    builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Configure Email Service
+// Register DbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(connectionString)
+           .ConfigureWarnings(warnings =>
+               warnings.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.MultipleCollectionIncludeWarning))
+);
+
+// Register Email Settings
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<EmailService>();
 
-// Configure authentication
+// Register application services
+builder.Services.AddScoped<VenueService>();
+builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<EquipmentService>();
+builder.Services.AddScoped<BookingService>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<FoodService>();
+builder.Services.AddScoped<FlowerService>();
+builder.Services.AddScoped<LightService>();
+
+// Cookie Authentication (if used)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -26,42 +52,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Account/Logout";
         options.AccessDeniedPath = "/Account/AccessDenied";
         options.Cookie.HttpOnly = true;
-        options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        options.SecurePolicy = CookieSecurePolicy.SameAsRequest;
         options.ExpireTimeSpan = TimeSpan.FromDays(30);
         options.SlidingExpiration = true;
-        
-        options.Events = new CookieAuthenticationEvents
-        {
-            OnRedirectToAccessDenied = context =>
-            {
-                if (context.HttpContext.User.IsInRole("Registrar"))
-                {
-                    context.Response.Redirect("/Registrar/Index");
-                    return Task.CompletedTask;
-                }
-                
-                context.Response.Redirect(options.AccessDeniedPath);
-                return Task.CompletedTask;
-            }
-        };
     });
-
-// Register application services
-builder.Services.AddScoped<VenueService>();
-builder.Services.AddScoped<BookingDbService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<FoodService>();
-builder.Services.AddScoped<FlowerService>();
-builder.Services.AddScoped<LightService>();
-builder.Services.AddScoped<EquipmentService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Error handling
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -72,7 +73,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Initialize database
+// Run migrations on startup (Render needs this)
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -84,7 +85,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while migrating the database.");
+        logger.LogError(ex, "Database migration failed.");
     }
 }
 

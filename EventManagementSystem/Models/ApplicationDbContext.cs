@@ -124,17 +124,17 @@ namespace EventManagementSystem.Models
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
-                    Id = 1,
-                    Email = "admin@example.com",
-                    Username = "admin",
-                    Password = "admin123", 
-                    FirstName = "Admin",
-                    LastName = "User",
-                    PhoneNumber = "1234567890",
-                    ProfilePicture = "", 
-                    CreatedAt = new DateTime(2025, 1, 1),
-                    Role = UserRole.Admin
-                }
+            Id = 1,
+            Email = "admin@example.com",
+            Username = "admin",
+            Password = "admin123", 
+            FirstName = "Admin",
+            LastName = "User",
+            PhoneNumber = "1234567890",
+            ProfilePicture = "", 
+            CreatedAt = DateTime.SpecifyKind(new DateTime(2025, 1, 1, 0, 0, 0), DateTimeKind.Utc),
+            Role = UserRole.Admin
+        }
             );
         }
     }
