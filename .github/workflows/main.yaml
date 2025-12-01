@@ -9,30 +9,50 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-    
+
+    - name: Repo contents (debug)
+      run: ls -Rla
+
+    - name: Locate solution
+      id: find_sln
+      shell: bash
+      run: |
+        # find the first solution file (search depth limited)
+        Sln=$(find . -maxdepth 5 -name '*.sln' | head -n1 || true)
+        echo "Found solution: $Sln"
+        if [ -z "$Sln" ]; then
+          echo "No .sln file found in the repository (searched maxdepth 5). Failing the job."
+          exit 1
+        fi
+        # strip leading ./ for cleanliness
+        Sln=${Sln#./}
+        echo "sln=$Sln" >> $GITHUB_OUTPUT
+
     - name: Restore dependencies
-      run: dotnet restore EventManagementSystem/EventManagementSystem.sln
-    
+      run: dotnet restore "${{ steps.find_sln.outputs.sln }}"
+
     - name: Build
-      run: dotnet build EventManagementSystem/EventManagementSystem.sln --no-restore --configuration Release
-    
+      run: dotnet build "${{ steps.find_sln.outputs.sln }}" --no-restore --configuration Release
+
     - name: Test
-      run: dotnet test EventManagementSystem/EventManagementSystem.sln --no-build --configuration Release --verbosity normal
+      run: dotnet test "${{ steps.find_sln.outputs.sln }}" --no-build --configuration Release --verbosity normal
 
   deploy:
     needs: test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    
+
     steps:
+    - uses: actions/checkout@v4
+
     - name: Deploy to Render
       uses: johnbeynon/render-deploy-action@v0.0.8
       with:
