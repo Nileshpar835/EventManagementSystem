@@ -195,10 +195,30 @@
                 </button>
             </div>
         </form>
+        <!-- Registration Blocked Modal -->
+<div id="registrationBlockedModal"
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl p-8 max-w-md text-center animate-fade-in">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">
+            Registration Temporarily Disabled
+        </h2>
+
+        <p class="text-gray-700 mb-6">
+            New user registrations are currently blocked.<br>
+            Please login using the demo accounts.
+        </p>
+
+        <a href="/Account/Login"
+           class="inline-flex items-center px-6 py-2 rounded-md bg-primary-600 text-white hover:bg-primary-700">
+            Go to Login
+        </a>
+    </div>
+</div>
     </div>
 </div>
 
 @section Scripts {
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
         $(document).ready(function () {
@@ -478,5 +498,15 @@
                 $('#req-special').toggleClass('text-red-500 text-green-500', /[^\da-zA-Z]/.test(password));
             });
         });
+
+        // Show modal & disable registration page interaction
+$('#registrationBlockedModal').show();
+
+// Disable the whole form so user cannot register
+$('#registerForm :input').prop('disabled', true);
+
+// Keep login button active
+$('#registrationBlockedModal').find('a').prop('disabled', false);
+
     </script>
 } 
