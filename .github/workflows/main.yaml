@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '9.0.x'
 
     - name: Repo contents (debug)
       run: ls -Rla
@@ -59,3 +59,15 @@ jobs:
         service-id: ${{ secrets.RENDER_SERVICE_ID }}
         api-key: ${{ secrets.RENDER_API_KEY }}
         wait-for-success: true
+
+    - name: Deployment notification
+      if: success()
+      run: |
+        echo "🚀 Deployment successful!"
+        echo "✅ Site updated successfully at $(date)"
+
+    - name: Deployment failed notification
+      if: failure()
+      run: |
+        echo "❌ Deployment failed!"
+        echo "Please check the logs for more details."
