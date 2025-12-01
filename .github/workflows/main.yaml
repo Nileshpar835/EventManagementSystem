@@ -1,4 +1,4 @@
-name: Deploy to Render
+name: Build & Deploy to Render
 
 on:
   push:
@@ -7,67 +7,67 @@ on:
     branches: [ main, master ]
 
 jobs:
-  test:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: 9.0.x
 
-    - name: Repo contents (debug)
-      run: ls -Rla
+    - name: Debug repo structure
+      run: ls -R
 
-    - name: Locate solution
+    - name: Find solution
       id: find_sln
-      shell: bash
       run: |
-        # find the first solution file (search depth limited)
         Sln=$(find . -maxdepth 5 -name '*.sln' | head -n1 || true)
         echo "Found solution: $Sln"
         if [ -z "$Sln" ]; then
-          echo "No .sln file found in the repository (searched maxdepth 5). Failing the job."
+          echo "❌ No .sln file found!"
           exit 1
         fi
-        # strip leading ./ for cleanliness
-        Sln=${Sln#./}
         echo "sln=$Sln" >> $GITHUB_OUTPUT
 
-    - name: Restore dependencies
+    - name: Restore
       run: dotnet restore "${{ steps.find_sln.outputs.sln }}"
 
     - name: Build
-      run: dotnet build "${{ steps.find_sln.outputs.sln }}" --no-restore --configuration Release
+      run: dotnet build "${{ steps.find_sln.outputs.sln }}" -c Release --no-restore
 
     - name: Test
-      run: dotnet test "${{ steps.find_sln.outputs.sln }}" --no-build --configuration Release --verbosity normal
+      run: dotnet test "${{ steps.find_sln.outputs.sln }}" --no-build --verbosity normal
 
   deploy:
-    needs: test
+    needs: build-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: Deploy to Render
+    # 🚀 Render Deployment Trigger
+    - name: Deploy Docker App to Render
       uses: johnbeynon/render-deploy-action@v0.0.8
       with:
         service-id: ${{ secrets.RENDER_SERVICE_ID }}
         api-key: ${{ secrets.RENDER_API_KEY }}
-        wait-for-success: true
+        clear-cache: true       # forces full rebuild on Render
+        wait-for-success: true  # waits until Render deploy finishes
 
-    - name: Deployment notification
+    - name: Success message
       if: success()
       run: |
         echo "🚀 Deployment successful!"
-        echo "✅ Site updated successfully at $(date)"
+        echo "Your Render service has rebuilt using the Dockerfile."
 
-    - name: Deployment failed notification
+    - name: Failure message
       if: failure()
       run: |
         echo "❌ Deployment failed!"
-        echo "Please check the logs for more details."
+        echo "Check Render logs for more details."
