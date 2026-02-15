@@ -6,11 +6,12 @@ namespace EventManagementSystem.Controllers
     [Route("api/[controller]")]
     public class HealthController : ControllerBase
     {
-        [HttpGet("health")]
+        // Allow both GET and POST
+        [HttpGet]
+        [HttpPost]
         public IActionResult GetHealth()
         {
             return Ok(new { status = "Healthy" });
         }
     }
 }
-
